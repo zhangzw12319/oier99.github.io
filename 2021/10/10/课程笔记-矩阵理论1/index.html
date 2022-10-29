@@ -1,0 +1,890 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/github_usericon.png">
+  <link rel="icon" href="/img/github_usericon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="oier99">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="选课前是谁给我灌输的“矩阵理论课给分高，都是学过的知识”？我居然信了，还把这门课计入了GPA。 结果第一节课老师板书了3*4&#x3D;12块黑板，我记了11页笔记。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课程笔记-矩阵理论(1)——线性代数知识回顾(上)">
+<meta property="og:url" content="https://oier99.cn/2021/10/10/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA1/index.html">
+<meta property="og:site_name" content="Oier99">
+<meta property="og:description" content="选课前是谁给我灌输的“矩阵理论课给分高，都是学过的知识”？我居然信了，还把这门课计入了GPA。 结果第一节课老师板书了3*4&#x3D;12块黑板，我记了11页笔记。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/25/Y6W8Ie54P1onyvA.jpg">
+<meta property="article:published_time" content="2021-10-10T05:58:35.000Z">
+<meta property="article:modified_time" content="2022-10-29T19:05:48.202Z">
+<meta property="article:author" content="zhangzw12319">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="矩阵，线性代数">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/25/Y6W8Ie54P1onyvA.jpg">
+  
+  
+  
+  <title>课程笔记-矩阵理论(1)——线性代数知识回顾(上) - Oier99</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css# 滚动条颜色.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                时间轴
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tag-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/music/">
+                <i class="iconfont icon-music"></i>
+                每日音乐
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://i.loli.net/2021/09/25/NGX9KzhdUfDwCx3.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="课程笔记-矩阵理论(1)——线性代数知识回顾(上)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        oier99
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-10-10 13:58" pubdate>
+          2021年10月10日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.9k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          67 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">课程笔记-矩阵理论(1)——线性代数知识回顾(上)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="课程笔记：矩阵理论-1-——线性代数知识回顾-上"><a href="#课程笔记：矩阵理论-1-——线性代数知识回顾-上" class="headerlink" title="课程笔记：矩阵理论(1)——线性代数知识回顾(上)"></a>课程笔记：矩阵理论(1)——线性代数知识回顾(上)</h1><p>📚书籍：《矩阵理论与应用》张跃辉 Chap 1</p>
+<h2 id="梦开始的地方："><a href="#梦开始的地方：" class="headerlink" title="梦开始的地方："></a>梦开始的地方：</h2><p>约定本课程讨论均在复数域$C$的子域上进行。</p>
+<h2 id="引言：-线性代数是什么"><a href="#引言：-线性代数是什么" class="headerlink" title="引言： 线性代数是什么"></a>引言： 线性代数是什么</h2><blockquote>
+<p>本科阶段的线性代数课程讨论两个相关问题：一个是引入矩阵来阶线性方程组，另一个是利用线性方程组来研究矩阵。</p>
+</blockquote>
+<h4 id="矩阵解线性方程组"><a href="#矩阵解线性方程组" class="headerlink" title="矩阵解线性方程组"></a>矩阵解线性方程组</h4><p>$$<br>\begin{align}<br>\textbf{A}x &amp;&#x3D; b \<br>x_1 \alpha_1 + x_2 \alpha_2 + \dots + x_n \alpha_n &amp;&#x3D;  b<br>\end{align}<br>$$</p>
+<p>可以通过研究齐次方程组<br>$$<br>\textbf{A}x &#x3D; 0<br>$$<br>的解结构来来研究$$\textbf{A}x&#x3D;b$$的解结构，任意解可以表达为基础解系的线性组合。</p>
+<details>
+<summary>展开可详细回顾线性方程组求解</summary>
+<p><b>截图自《线性代数》第二版 居余马著 P47 - P48</b></p>
+<img width="680" src="https://i.loli.net/2021/10/10/725C3QEdf1hiDVA.jpg" srcset="/img/loading.gif" lazyload alt="图1">
+<img width="680" src="https://i.loli.net/2021/10/10/XlW96OenEbxMIZv.jpg" srcset="/img/loading.gif" lazyload alt="图2">
+</details>
+
+
+
+
+
+<h4 id="矩阵提供二次型的简洁表达"><a href="#矩阵提供二次型的简洁表达" class="headerlink" title="矩阵提供二次型的简洁表达"></a>矩阵提供二次型的简洁表达</h4><p>$$<br>\begin{align}<br>f(x) &amp;&#x3D; x^T\textbf{A}x \<br>&amp;&#x3D;  x^T [\alpha_1, \alpha_2, \dots, \alpha_n] x \<br>&amp;&#x3D; [x^T \alpha_1, x^T\alpha_2, \dots, x^T\alpha_n] x \<br>&amp;&#x3D; \sum_j{(x^T\alpha_j)x_j} \<br>&amp;&#x3D; \sum_j(\sum_i(x_i\alpha_{ij})x_j) \<br>&amp;&#x3D; \sum_{ij}{\alpha_{ij} x_i x_j}</p>
+<p>\end{align}<br>$$</p>
+<p>请熟悉这个形式和上面的推导过程~系数矩阵$$\textbf{A}$$中的每一项$$a_{ij}$$对应的$$x_i$$与$$x_j$$的乘积的系数。假如$$\textbf{A}$$是一个对角矩阵的话，那么就是标准型$$\sum_{i} \alpha_{ii}x_i^2 $$，（就好比二维平面上的圆），有交叉项的话好比二维平面的椭圆。$$\textbf{A}$$一定是一个对称矩阵，因为$$x_ix_j$$的系数就是$$x_jx_i$$的系数。</p>
+<h3 id="矩阵乘法与二次型的关系"><a href="#矩阵乘法与二次型的关系" class="headerlink" title="矩阵乘法与二次型的关系"></a>矩阵乘法与二次型的关系</h3><p>如何理解n阶方阵的高次幂$$\textbf{A}^m$$?</p>
+<p>相似矩阵$$\textbf{A} \sim \textbf{B}$$,  $$\textbf{B} &#x3D; \textbf{P}^{-1}A\textbf{P}$$。如果利用特征值与特征向量可将$$\textbf{A} &#x3D; \textbf{P}^{-1}\textbf{D}\textbf{P}$$，那么$$\textbf{A}^m &#x3D; \textbf{P}^{-1}\textbf{D}^m\textbf{P}$$, $$\textbf{A}^{-1} &#x3D; \textbf{P}^{-1}\textbf{D}^{-1}\textbf{P}$$。</p>
+<p>此外实对称矩阵可以正交对角化，即存在正交矩阵$$\textbf{Q}$$，使得<br>$$<br>\textbf{Q}^{-1}\textbf{A}\textbf{Q} &#x3D; \textbf{Q}^T \textbf{A} \textbf{Q} &#x3D; \textbf{D}<br>$$<br>可以利用坐标变换$$x &#x3D; \textbf{Q}y $$ 将实二次型化为标准型<br>$$<br>f &#x3D; \lambda_1y_1^2 + \lambda_2y_2^2 + \lambda_3y_3^2 + \dots + \lambda_ny_n^2<br>$$</p>
+<h2 id="矩阵的基础运算及其性质"><a href="#矩阵的基础运算及其性质" class="headerlink" title="矩阵的基础运算及其性质"></a>矩阵的基础运算及其性质</h2><h3 id="共轭转置"><a href="#共轭转置" class="headerlink" title="共轭转置"></a>共轭转置</h3><ol>
+<li>$\mathbf{A}$的共轭矩阵记作$\bar{\mathbf{A}}$，$\mathbf{A}$的共轭转置矩阵记作$\mathbf{A}^H$, $\mathbf{A}^H&#x3D;\bar{\mathbf{A}}^T$当,$\mathbf{A} \in \mathbb{R}^{m \times n}$时，$\bar{\mathbf{A}}&#x3D;\mathbf{A}^T$</li>
+<li>$$\textbf{A} &#x3D; \textbf{A}^H$$的矩阵被称为Hermitte矩阵，其中当$$\mathbf{A} \in \mathbb{R}^{n \times n}$$是实对称矩阵。</li>
+</ol>
+<h3 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h3><p>矩阵乘法可以按照行向量进行, 比如对于$$n \times m$$与$$m \times p$$的两个矩阵相乘<br>$$<br>\begin{align}<br>\mathbf{A}\mathbf{B}<br>&amp;&#x3D;\left[ \begin{matrix}\alpha_1^T \ \alpha_2^T \ \cdots \ \alpha_n^T  \end{matrix}\right]<br>\left[ \begin{matrix}x_1, x_2,\cdots,x_p  \end{matrix}\right] \<br>&amp;&#x3D;\left[ \begin{matrix}\alpha_1^Tx_1 &amp; \alpha_1^Tx_2 &amp; \cdots &amp; \alpha_1^T x_p \ \alpha_2^Tx_1&amp; \alpha_2^Tx_2 &amp; \cdots &amp; \alpha_2^T x_p \<br>\vdots&amp; \vdots &amp; \ddots &amp; \vdots \<br>\alpha_n^Tx_1 &amp; \alpha_n^Tx_2 &amp; \cdots &amp; \alpha_n^T x_p</p>
+<p>\end{matrix}\right]<br>\end{align}<br>$$<br>前一个矩阵的每一行乘以后一个矩阵的每一列，得到新矩阵的每一个元素。</p>
+<p>其中，当$$\mathbf{B}$$ 是一个$$m \times 1$$(列向量)时,<br>$$<br>\begin{align}<br>\mathbf{A}\mathbf{B}<br>&amp;&#x3D;\left[ \begin{matrix}\alpha_1^T \ \alpha_2^T \ \cdots \ \alpha_n^T  \end{matrix}\right]\left[x\right] \<br>&amp;&#x3D;\left[ \begin{matrix} \alpha_1^T x\ \alpha_2^Tx \ \vdots \ \alpha_n^T x \end{matrix}\right] \<br>&amp;&#x3D;\left[ \begin{matrix} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 + \dots + a_{1m} x_m\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 + \dots + a_{2m} x_m \ \vdots \ a_{n1}x_1 + a_{n2}x_2 + a_{n3}x_3 + \dots + a_{nm} x_m<br>\end{matrix}\right] \<br>&amp;&#x3D;x_1\left[ \begin{matrix} a_{11} \ a_{21} \ \vdots \ a_{n1} \end{matrix}\right] + \dots + x_m\left[ \begin{matrix} a_{1m} \ a_{2m} \ \vdots \ a_{nm} \end{matrix}\right] \<br>&amp;&#x3D; x_1A_1 + x_2 A_2 + \dots + x_m A_m \<br>&amp;&#x3D; \left[\begin{matrix}A_1 &amp; A_2 &amp; \cdots &amp; A_n \end{matrix} \right] \left[x \right]<br>\end{align}<br>$$</p>
+<p>这里，可以把第一个矩阵摆成$$n$$行组成的列向量形式，也可以摆成$$m$$列的行向量的形式。<strong>其中第一种形式比较容易理解，因为这就是高斯消元法中$$n$$个线性方程组联立在一起的形式</strong>。但是第二种形式特别容易出错，搞晕，因为第二种形式的线性组合是数乘向量求和的形式，多做几遍就熟悉了。</p>
+<div class="note note-primary">
+            <p><strong>第二种形式的意义：矩阵乘一个列向量相当于矩阵所有列的线性组合。</strong></p>
+          </div>
+
+<p>同样的，一个行向量乘矩阵相当于矩阵所有行的线性组合，即<br>$$<br>y^T \mathbf{A} &#x3D; y^T \left[\begin{matrix}\alpha_1^T \ \alpha_2^T \ \cdots \ \alpha_n^T  \end{matrix} \right] &#x3D; y_1\alpha_1^T + y_2\alpha_2^T + \dots y_n \alpha_n^T<br>$$<br>因此矩阵乘法$$\mathbf{A}\mathbf{B} &#x3D; \mathbf{C}$$,可以看做$$\mathbf{C}$$的每一列，都是$$\mathbf{A}$$每一列的线性组合，组合系数是$$\mathbf{B}$$的对应列；$$\mathbf{C}$$的每一行可以看做是$$\mathbf{A}$$的每一行的线性组合，组合系数是$$\mathbf{A}$$的对应行。若$$\mathbf{A}\mathbf{B}&#x3D;0$$，那么$$\mathbf{B}$$的每一列向量都是$$\mathbf{A}x &#x3D; 0$$的齐次方程组的解。同理，$$\mathbf{A}$$的每一行也是$$y^T\mathbf{B}&#x3D;0$$的齐次方程组的解。</p>
+<h3 id="方阵的多项式"><a href="#方阵的多项式" class="headerlink" title="方阵的多项式"></a>方阵的多项式</h3><p>$$<br>f(\mathbf{A}) &#x3D; a_0 \mathbf{I} + a_1 \mathbf{A} + a_2\mathbf{A}^2 + \dots + a_m\mathbf{A}^m<br>$$</p>
+<p>称为$$\mathbf{A}$$的多项式。易知，$$f(\mathbf{A})g(\mathbf{A}) &#x3D; g(\mathbf{A})f(\mathbf{A})$$，同一方阵的多项式是可以交换的。</p>
+<h2 id="行列式，迹，伴随矩阵，逆，秩等性质"><a href="#行列式，迹，伴随矩阵，逆，秩等性质" class="headerlink" title="行列式，迹，伴随矩阵，逆，秩等性质"></a>行列式，迹，伴随矩阵，逆，秩等性质</h2><h3 id="行列式"><a href="#行列式" class="headerlink" title="行列式"></a>行列式</h3><ol>
+<li>$$\det{\mathbf{A}} &#x3D; |\mathbf{A}|$$</li>
+<li>$$|\mathbf{AB}| &#x3D; |\mathbf{A}||\mathbf{B}|$$</li>
+<li>当$$|\mathbf{A}| \ne 0$$时， $$\mathbf{AB} &#x3D; 0$$必有$$\mathbf{B}&#x3D;0$$,$$\mathbf{AB} &#x3D; \mathbf{AC}$$必有$$\mathbf{B}&#x3D;\mathbf{C}$$(满秩矩阵齐次方程有唯一解，就是0解)。</li>
+<li>求解二阶行列式对角线法，求解三阶行列式用沙路法。求解$$n$$阶行列式用递推法（如下按照第$$i$$行展开）$$\left|\begin{matrix} a_{11} &amp; a_{12} &amp; \dots &amp; a_{1n} \ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \ a_{n1} &amp; a_{n2}&amp; \dots &amp;a_{nn}  \end{matrix} \right| &#x3D; \sum_j a_{ij}A_{ij}$$ (代数余子式忘了的自己wiki去)。最后完全展开的结果有$$n!$$项，每一项都是不同行不同列元素乘积，然后一半是正号，一半是负号。</li>
+<li>n阶方程组有克莱默法则，理论意义上解释了线性方程组和其系数的关系。</li>
+</ol>
+<h3 id="矩阵的迹"><a href="#矩阵的迹" class="headerlink" title="矩阵的迹"></a>矩阵的迹</h3><ol>
+<li><p>$$\tr{(\alpha\mathbf{A}+ \beta \mathbf{B})} &#x3D; \alpha\tr{\mathbf{A}} + \beta \tr{\mathbf{B}} $$</p>
+</li>
+<li><p>$$\tr{\mathbf{AB}} &#x3D; \tr{\mathbf{BA}}$$（如果分别是$$n \times m$$和$$m \times n$$的矩阵即可）</p>
+</li>
+<li><p>$$\tr{ \mathbf{A} \mathbf{A}^H} &#x3D; \sum_{i,j} |a_{ij}|^2$$（所有元素的平方和，故$$\tr{ \mathbf{A} \mathbf{A}^H} &#x3D; 0 \Longrightarrow \mathbf{A}&#x3D;0 $$）</p>
+</li>
+</ol>
+<h3 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h3><ol>
+<li>定义：矩阵所有不为0的子式中最高的阶数为矩阵的秩</li>
+<li>如果一个矩阵的秩为1，那么一定存在列向量$$\alpha, \beta$$, 使得$$A &#x3D; \alpha\beta^T$$(列向量x行向量，得到矩阵的每一行都是$$\alpha_i \beta$$，显然任意两行都线性相关)。那么计算矩阵高次幂时$$\mathbf{A}^m &#x3D; \alpha(\beta^T\alpha)^{m-1}\beta^T $$</li>
+<li>矩阵和和乘积的秩有如下不等式($$n \times p , p \times m$$)：</li>
+</ol>
+<p>$$<br>\begin{align}<br>r(\mathbf{A+B}) &amp;\le r(\mathbf{A}) + r(\mathbf{B}) \<br>r(\mathbf{A}) + r(\mathbf{B}) - p \le r(\mathbf{AB}) &amp; \le \min{r(\mathbf{A}), r(\mathbf{B})}<br>\end{align}<br>$$</p>
+<details>
+<summary>想看证明请展开</summary>
+<p><b>截图自<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="《线性代数》 第二版 居余马 清华大学出版社">[1]</span></a></sup>P6</b></p>
+<img width="680" src="https://i.loli.net/2021/10/11/NOefIEdJkPUxwVt.jpg" srcset="/img/loading.gif" lazyload alt="图1">
+</details>
+
+<h3 id="伴随矩阵，逆矩阵"><a href="#伴随矩阵，逆矩阵" class="headerlink" title="伴随矩阵，逆矩阵"></a>伴随矩阵，逆矩阵</h3><ol>
+<li><p>伴随矩阵(如果是实矩阵通常用$$A^*$$，否则常用$$adj \mathbf{A}$$表示，个人喜好，即便是在复数域上也喜欢用$$A^*$$表示，敬请理解)。$$AA^* &#x3D; A^*A &#x3D; |A|I$$(证明可参考<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="《线性代数》 第二版 居余马 清华大学出版社">[1]</span></a></sup>中2.2节例题6)</p>
+</li>
+<li><p>$$\mathbf{A}^{-1} &#x3D; \frac{A^*}{|A|}$$</p>
+</li>
+<li><p>$$(\mathbf{A}^T)^{-1} &#x3D; (\mathbf{A}^{-1})^T$$</p>
+</li>
+<li><p>$$ |\mathbf{A}^{-1}| &#x3D; |\mathbf{A}|^{-1}$$</p>
+</li>
+<li><p>可逆矩阵与任何矩阵乘积不会改变原矩阵的秩 $$r(\mathbf{A}) &#x3D; r(\mathbf{PA}) &#x3D; r(\mathbf{AQ}) &#x3D; r(\mathbf{PAQ}) $$</p>
+</li>
+<li><p>矩阵满秩，非奇异，可逆三者概念等价</p>
+</li>
+</ol>
+<h3 id="分块矩阵"><a href="#分块矩阵" class="headerlink" title="分块矩阵"></a>分块矩阵</h3><div class="note note-info">
+            <p>分块矩阵是一种非常好用的技巧。</p>
+          </div>
+
+<ol>
+<li><p>分块矩阵的加法和数乘就不说了🐒</p>
+</li>
+<li><p>分块矩阵乘法：对于$$n \times p , p \times m $$的两个矩阵相乘，假设把矩阵$$\mathbf{A}$$横切$$r$$刀，竖着切$$s$$刀(你就想象一下家里切豆腐凉拌),矩阵$$\mathbf{B}$$横着切$$s$$刀，竖着切$$t$$刀，显然分块后也是对应每一行x每一列。最后乘起来得到的是$$r \times t$$块<del>油炸豆腐</del> 矩阵。但由于分块乘法，乘法本身也是矩阵乘法，所以也要满足$$\mathbf{A}$$块的列数&#x3D;$$\mathbf{B}$$块的行数。所以在<del>豆腐下锅</del>矩阵分块乘法前，第一个矩阵竖着切的每一刀的宽度要和第二块豆腐横着切的每一刀宽度相同</p>
+<p> (脑子全是香喷喷的铁锅油炸豆腐，浇上味极鲜酱油撒上葱花后热气腾腾地出锅……)</p>
+</li>
+</ol>
+<p>E.g.</p>
+<details>
+<summary>想看例子请戳我，不想看可忽略</summary>
+<p><b>截图自<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="《线性代数》 第二版 居余马 清华大学出版社">[1]</span></a></sup>P82</b></p>
+<img width="680" src="https://i.loli.net/2021/10/11/ktlFSeGERgNmb4B.png" srcset="/img/loading.gif" lazyload alt="图1">
+<img width="680" src="https://i.loli.net/2021/10/11/OGQ1cNxFh4J2Uny.png" srcset="/img/loading.gif" lazyload alt="图1">
+</details>
+
+
+<ol start="3">
+<li>分块矩阵的转置(自己想，想不出来wiki去)</li>
+<li>分块矩阵的逆矩阵：</li>
+</ol>
+<p>对角分块阵(假如$$\mathbf{A}<em>i$$都可逆)<br>$$<br>\left[\begin{matrix}\mathbf{A}<em>1 &amp;  \  &amp;\mathbf{A}<em>2&amp; \ &amp; &amp;\ddots&amp; \ &amp;&amp;&amp; \mathbf{A}<em>k \end{matrix} \right]^{-1} &#x3D; \left[\begin{matrix} \mathbf{A}^{-1}<em>1 &amp;  \  &amp;\mathbf{A}^{-1}<em>2&amp; \ &amp; &amp;\ddots&amp; \ &amp;&amp;&amp; \mathbf{A}^{-1}<em>k  \end{matrix}  \right]<br>$$<br>普通矩阵，分成几块后做乘法，比如设:<br>$$<br>\left[\begin{matrix}\mathbf{A}</em>{11} &amp; \mathbf{A}</em>{12}   \ \mathbf{A}</em>{21} &amp; \mathbf{A}</em>{22} \  \end{matrix} \right]^{-1} &#x3D; \left[\begin{matrix}\mathbf{X} &amp; \mathbf{Y}  \ \mathbf{U} &amp; \mathbf{V} \  \end{matrix} \right]<br>$$<br>可得<br>$$<br>\begin{align}<br>\mathbf{A}</em>{11}\mathbf{X} + \mathbf{A}</em>{12}\mathbf{U} &amp;&#x3D; \mathbf{I} \<br>\mathbf{A}</em>{11}\mathbf{Y} + \mathbf{A}<em>{12}\mathbf{V} &amp;&#x3D; 0 \<br>\mathbf{A}</em>{21}\mathbf{X} + \mathbf{A}<em>{22}\mathbf{U} &amp;&#x3D; 0 \<br>\mathbf{A}</em>{21}\mathbf{Y} + \mathbf{A}_{22}\mathbf{V} &amp;&#x3D; \mathbf{I}<br>\end{align}<br>$$<br>这样可以把一个高阶的矩阵求逆问题转化成低阶矩阵求逆问题。结合<strong>分治法</strong>和一些<strong>奇奇怪怪</strong>的trick，可以像矩阵乘法一样从$$O(n^3)$$进行时间复杂度优化。</p>
+<ol start="5">
+<li>分块矩阵的初等变换(以$2 \times 2$为例， 以后填坑)</li>
+</ol>
+<p>分块对换阵<br>$$<br>\left[\begin{matrix}<br>0 &amp; \mathbf{I} \<br>\mathbf{I} &amp; 0<br>\end{matrix} \right]<br>$$</p>
+<p>分块倍乘阵<br>$$<br>\left[\begin{matrix}<br>\mathbf{C}_1 &amp; 0 \<br>0 &amp; \mathbf{I}<br>\end{matrix} \right]<br>$$<br>分块倍加阵<br>$$<br>\left[\begin{matrix}<br>\mathbf{I} &amp; 0 \<br>\mathbf{C}_1 &amp; \mathbf{I}<br>\end{matrix} \right]<br>$$</p>
+<h2 id="线性方程组"><a href="#线性方程组" class="headerlink" title="线性方程组"></a>线性方程组</h2><div class="note note-warning">
+            <p>这一块讲的非常简略，因为学过线代的人大多数这一章掌握的比较牢靠(往往相似矩阵，矩阵分解，二次型那一块快到期末，掌握得通常不太好)。所以省下笔墨只零零星星地提几点。</p>
+          </div>
+
+<ol>
+<li>（<strong>非常重要</strong>）$${\alpha_1, \alpha_2, \dots, \alpha_m }$$ 线性无关 $$\Leftrightarrow$$ $$k_1\alpha_1 + k_2\alpha_2 + \dots + k_m\alpha_m &#x3D; 0$$仅有0解</li>
+<li>（<strong>非常重要</strong>）<strong>极大线性无关组</strong>的定义。(此外，极大线性无关组可以作为方程组的一个基础解系)</li>
+<li>（<strong>非常重要</strong>）齐次线性方程组基本定理：基础解系的向量数量&#x3D; $$n - r(\mathbf{A})$$(从这里可以看出齐次方程组的解空间是$$\mathbb{F}^{n \times m}$$的子空间， 正因为系数矩阵有了秩(序)，才导致解空间维度比原来的空间小了，变成了基础解系的向量数量)</li>
+<li>线性方程组基本定理：是否有解(判别条件)；通解和特解。</li>
+<li>具体计算：化简为Hermitte标准形(行阶梯矩阵标准型)。$$\left[\begin{matrix} \mathbf{I} &amp; \mathbf{A} \ 0 &amp; 0 \end{matrix} \right]$$</li>
+</ol>
+<div class="note note-success">
+            <blockquote><p>“有的人天生就是战士。他&#x2F;她不会惧怕一切困难，也不会为一切失败与挫折低头，因为他&#x2F;她的目标是星辰大海”⭐️</p></blockquote>
+          </div>
+
+
+
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>《线性代数》 第二版 居余马 清华大学出版社
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>《矩阵理论与应用》 张跃辉  上海交通大学出版社
+<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="category-chain-item">课程笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/" class="category-chain-item">矩阵理论</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
+      
+        <a href="/tags/%E7%9F%A9%E9%98%B5%EF%BC%8C%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/">#矩阵，线性代数</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>课程笔记-矩阵理论(1)——线性代数知识回顾(上)</div>
+      <div>https://oier99.cn/2021/10/10/课程笔记-矩阵理论1/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>oier99</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年10月10日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/11/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA2/" title="课程笔记-矩阵理论2">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">课程笔记-矩阵理论2</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/10/09/%E9%9A%8F%E7%AC%94-%E5%85%B3%E4%BA%8E%E9%AB%98%E7%BB%B4%E7%A9%BA%E9%97%B4%E6%A0%B7%E6%9C%AC%E5%88%86%E5%B8%83%E7%A8%80%E7%96%8F%E6%80%A7%E7%9A%84%E8%81%94%E6%83%B3/" title="随笔-关于高维空间样本分布稀疏性的联想">
+                        <span class="hidden-mobile">随笔-关于高维空间样本分布稀疏性的联想</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script> var now = new Date();  function createtime() {  var grt= new Date("07/25/2021 17:12:09"); now.setTime(now.getTime()+250);  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}  document.getElementById("timeDate").innerHTML = "本网站已在各种夹缝中安全生存 "+dnum+" 天 ";  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";  }  setInterval("createtime()",250); </script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/qipao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

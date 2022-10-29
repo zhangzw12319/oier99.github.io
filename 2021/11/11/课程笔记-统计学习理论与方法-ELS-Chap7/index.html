@@ -1,0 +1,830 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/github_usericon.png">
+  <link rel="icon" href="/img/github_usericon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="oier99">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="整理了三遍，前前后后大概一共花了20个小时左右吧，虽然离完美还差很多，但形成了一套自己的东西。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课程笔记-统计学习理论与方法-ELS-Chap7">
+<meta property="og:url" content="https://oier99.cn/2021/11/11/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95-ELS-Chap7/index.html">
+<meta property="og:site_name" content="Oier99">
+<meta property="og:description" content="整理了三遍，前前后后大概一共花了20个小时左右吧，虽然离完美还差很多，但形成了一套自己的东西。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/05/24/gj1KrBTkzFVhZ6o.png">
+<meta property="article:published_time" content="2021-11-10T16:32:57.000Z">
+<meta property="article:modified_time" content="2022-10-29T19:05:48.207Z">
+<meta property="article:author" content="zhangzw12319">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="教材笔记">
+<meta property="article:tag" content="统计学习理论与方法">
+<meta property="article:tag" content="ELS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/05/24/gj1KrBTkzFVhZ6o.png">
+  
+  
+  
+  <title>课程笔记-统计学习理论与方法-ELS-Chap7 - Oier99</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css# 滚动条颜色.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                时间轴
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tag-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/music/">
+                <i class="iconfont icon-music"></i>
+                每日音乐
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://s2.loli.net/2022/05/24/gj1KrBTkzFVhZ6o.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="课程笔记-统计学习理论与方法-ELS-Chap7"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        oier99
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-11-11 00:32" pubdate>
+          2021年11月11日 凌晨
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          5k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          42 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">课程笔记-统计学习理论与方法-ELS-Chap7</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="课程笔记：统计学习理论与方法（ELS-Chap7）"><a href="#课程笔记：统计学习理论与方法（ELS-Chap7）" class="headerlink" title="课程笔记：统计学习理论与方法（ELS_Chap7）"></a>课程笔记：统计学习理论与方法（ELS_Chap7）</h1><p>📚书籍：《Elements of Statistical Learning》Chap 7</p>
+<h2 id="两个概念"><a href="#两个概念" class="headerlink" title="两个概念"></a>两个概念</h2><ol>
+<li>模型选择(Model Selection):  模型由参数控制的，模型选择既包括模型类型选择，也包括参数的控制。后面讲贝叶斯信息准则时(BIC)会讲到。</li>
+<li>模型评估(Model Assessment):  给定一个模型，评估其训练误差(In-sample Error)，测试误差(Extra-sample Error)，泛化误差(Generalization Error)。评估训练误差与测试误差之间的差距Bound.</li>
+</ol>
+<p>两者都是侧重对模型的泛化误差进行评估，而非模型的训练误差。泛化误差是整个统计学习中最核心的关注问题。</p>
+<h2 id="训练误差与泛化误差"><a href="#训练误差与泛化误差" class="headerlink" title="训练误差与泛化误差"></a>训练误差与泛化误差</h2><p>训练误差：<br>$$<br>\overline{\text{err}} &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N L(y_i, \hat{f}(x_i))<br>$$<br>泛化误差：<br>$$<br>\text{Err}(y_i, \hat{f}(x_i)) &#x3D; E_{(X,Y) \sim \tau}(L(y_i, \hat{f}(x_i)) |\tau)<br>$$<br>其中损失函数通常是:</p>
+<ul>
+<li>均方误差$$L &#x3D; (y_i - \hat{f}(x_i))^2 $$</li>
+<li>对数极大似然函数【用于多分类】(严格来说这不算损失函数，但是极大似然最大等价于加符号最小，所以可以写成相同形式):$$L &#x3D; -2\cdot[\sum_{k&#x3D;1}^K I(G&#x3D;k)\log(\hat{\Pr}(\hat{G}&#x3D;k)] $$.其中$$I(G&#x3D;k)$$相当于真实标签(Ground Truth).</li>
+<li>对数极大似然的特殊情况【0-1分类】： $$L &#x3D; I(G&#x3D;1)\log(\hat{\Pr}) + (1-I(G&#x3D;1))\log(1-\hat{\Pr})$$</li>
+</ul>
+<div class="note note-primary">
+            <p>📢注意，我们算误差时的Ground Truth(GT) $$y$$并不一定是真实的标签，因为获取数据的过程中无法避免有噪声存在(就比如用精密物理仪器测量的结果总会有无法避免的系统误差)。我们的损失函数是让模型的估计值$$\hat{f}$$和GT算误差，不是和$$f(x)$$算误差。</p>
+          </div>
+
+<h2 id="Bias-variance-分解"><a href="#Bias-variance-分解" class="headerlink" title="Bias-variance 分解"></a>Bias-variance 分解</h2><p>假设：$${(x_i,y_i)}$$ 是从某个数据分布中采样得到的某个数据集$$\tau$$。数据的真实分布是$$y &#x3D; f(x) + \epsilon$$，数据的真实标签是$$f(x)$$，但是我们获取数据集时总会有噪声$$\epsilon$$干扰。通常假设噪声服从均值为0的某个高斯分布。$$\epsilon \sim N(0, \sigma_{\epsilon}^2)$$</p>
+<p>考察在$$X&#x3D;x_0$$一点上的单点泛化误差，其中求期望操作$$E$$是对所有的数据集$$\tau$$求的期望(Expectation over all the dataset $$\tau$$).<a name="t1">也就是说在这里，$\hat{f}(x_0)$也是随机变量，它的随机性来源于可能选取不同的数据集$\tau$ ；而$f(x_0)$的随机性只来源于$\epsilon$，二者独立无关联</a>。<br>$$<br>\begin{align*}<br>E(L(Y, \hat{f}(X))|X&#x3D;x_0, Y&#x3D;y_0 )&amp;&#x3D; (y_0 - f(x_0)) ,,,\text{(这里采用均方误差分析，其他同理)}\<br>&amp;&#x3D; E(f(x_0) - \hat{f}(x_0) + \epsilon)^2 \<br>&amp;&#x3D; E(f(x_0) - \hat{f}(x_0))^2 + E(\epsilon)^2 + 2E(f(x_0) - \hat{f}(x_0))E(\epsilon),,,\text{($\epsilon$ 与 $f(x_0) - \hat{f(x_0)}$ 独立)} \<br>&amp;&#x3D;  E(f(x_0) - \hat{f}(x_0))^2 + \sigma_{\epsilon}^2 + 0 \<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0) + E\hat{f}(x_0) - \hat{f}(x_0))^2 + \sigma_{\epsilon}^2 \<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2 + 2E(f(x_0) - E\hat{f}(x_0))\cdot 0 + \sigma_{\epsilon}^2\<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2  + \sigma_{\epsilon}^2 \<br>&amp;&#x3D; \text{bias}^2 + \text{variance} + \sigma_{\epsilon}^2<br>\end{align*}<br>$$</p>
+<div class="note note-info">
+            <p>关于期望与方差的常用性质，请参见这篇<a target="_blank" rel="noopener" href="https://www.oier99.cn/2021/11/10/%E9%9A%8F%E7%AC%94-%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8/">博客</a>.</p>
+          </div>
+
+
+
+<h3 id="KNN的例子"><a href="#KNN的例子" class="headerlink" title="KNN的例子"></a>KNN的例子</h3><p>KNN的模型是$$\hat{f}(x_0) &#x3D; \frac{1}{K}\sum_{i&#x3D;1}^K y_i,, x_i \in n_K(x_0)$$.<br>$$<br>\begin{align*}<br>\hat{f}(x_0) &amp;&#x3D; \frac{1}{K}\sum_{i&#x3D;1}^K y_i \<br>&amp;&#x3D; \frac{1}{K} \sum_{i&#x3D;1}^K(f(x_i) + \epsilon_i ) \<br>&amp;\approx \frac{1}{K} \sum_{i&#x3D;1}^K(f(x_0) + \epsilon_i ) \<br>&amp;&#x3D; f(x_0) + \frac{1}{K} \sum_{i&#x3D;1}^K \epsilon_i<br>\end{align*}<br>$$<br>为了计算方差方便， 在理论推导这里做了一个重要近似：因为KNN取的是K个近邻点来插值估计，所以假设认为他们的“本源”$$f(x_i) \approx f(x_0)$$.这样，KNN的方差可以如下计算:<br>$$<br>\begin{align*}<br>\text{Var}(\hat{f}(x_0)) &amp;&#x3D; \text{Var} \frac{1}{K} \sum_{i&#x3D;1}^K \epsilon_i \<br>&amp;&#x3D; \frac{1}{K^2} \text{Var}\sum_{i&#x3D;1}^K \epsilon_i \<br>&amp;&#x3D; \frac{1}{K^2} \sum_{i&#x3D;1}^K \text{Var}(\epsilon_i) \<br>&amp;&#x3D; \frac{1}{K^2} \sum_{i&#x3D;1}^K \sigma_{\epsilon}^2 \<br>&amp;&#x3D; \frac{1}{K} \sigma_{\epsilon}^2<br>\end{align*}<br>$$<br>故泛化误差拆分为:<br>$$<br>Err(y_0, \hat{f}(x_0)) \approx \sigma_{\epsilon}^2 + E(f(x_0) - \frac{1}{K}\sum_{i&#x3D;1}^K y_i )^2 + \frac{1}{K} \sigma_{\epsilon}^2<br>$$<br>可以看出$$K$$越小，模型复杂度越大，方差越大，bias应该会越小。</p>
+<h3 id="线性回归的例子"><a href="#线性回归的例子" class="headerlink" title="线性回归的例子"></a>线性回归的例子</h3><p>对于线性回归函数$$\hat{f}(x) &#x3D; \hat{\beta}^T x $$, 解最小二乘误差下的最佳近似参数是$$\hat{\beta} &#x3D; (X^TX)^{-1}X^Ty$$</p>
+<p>故$$\hat{f}(x) &#x3D; y^T X(X^TX)^{-1}x &#x3D; x^T X(X^TX)^-1X^Ty &#x3D; h(x)y$$.可以看出$$\hat{f}(x)$$的随机性来源于y，即来源于$$\epsilon$$ .（这与<a href="#t1">刚才</a>说法不矛盾。因为之前对$$\hat{f}$$的分析是抽象的符号，而这里是对线性回归具体公式分析）<br>$$<br>\text{var}(\hat{f}(x_0)) &#x3D; ||h(x_0)||^2 \sigma_{\epsilon}^2<br>$$<br>故<br>$$<br>Err(y_0, \hat{f}(x_0)) &#x3D; \sigma_{\epsilon}^2 + E(f(x_0) - \hat{\beta}^Tx_0 )^2 + ||h(x_0)||^2 \sigma_{\epsilon}^2<br>$$</p>
+<p>训练误差:<br>$$<br>\frac{1}{N}\sum_{i&#x3D;1}^N Err(y_0, \hat{f}(x_0)) &#x3D; \sigma_{\epsilon}^2 + \sum_{i&#x3D;1}^NE(f(x_0) - \hat{\beta}^Tx_0 )^2 + \frac{p}{N}\sigma_{\epsilon}^2<br>$$<br>可以看出模型复杂度由数据量$$N$$和参数量$$p$$共同控制。</p>
+<div class="note note-primary">
+            <p>（这部分的推导需要用到矩阵的迹的性质）</p><p>$$\text{tr}(ABC) &#x3D; \text{tr}(BCA) &#x3D; \text{tr}(CAB)$$</p><p>$$\sum_{i}(x_i y_i) &#x3D; x^Ty &#x3D; \text{tr} (xy^T)$$</p>
+          </div>
+
+
+
+<h2 id="乐观度"><a href="#乐观度" class="headerlink" title="乐观度"></a>乐观度</h2><p>乐观度(Optimisim)的概念主要是为了比较模型训练误差与泛化误差之间的差距，或者如何用训练误差去估计泛化误差。</p>
+<p>直接计算训练误差和泛化误差的差有困难，因为模型输入$$x$$都不固定。所以可以采用重采样的技术，原先训练集$$(x,y)$$,是训练时采样得到的标签，记为$$y$$；重采样是对相同的$$x$$, 再次采样$$y^{\text{New}}$$。<br>$$<br>\text{Err}<em>{in}(y_i, \hat{f}(x_i)) &#x3D; \frac{1}{N}\sum</em>{i&#x3D;1}^N E_{Y^{\text{new}}}[L(Y_i^{\text{New}}, \hat{f}(x_i))]<br>$$</p>
+<p>$$<br>\overline{err} &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N L(y, \hat{f}(x_i))<br>$$</p>
+<p>结论<br>$$<br>\begin{align*}<br>    w &amp;&#x3D; E_y(op) \<br>    &amp;&#x3D; \frac{2}{N}\text{Cov}(y, \hat{y})<br>\end{align*}<br>$$<br>证明过程后续再补。</p>
+<p>若$$\hat{y}$$是由参数量为$$d$$线性回归得到的估计，那么<br>$$<br>\text{Cov}(y, \hat{y}) &#x3D; d \sigma_{\epsilon}^2<br>$$<br>可得到<br>$$<br>E_y(\text{Err}<em>{in}) &#x3D; E_y(\overline{\text{err}}) + 2\cdot\frac{d}{N} \sigma</em>{\epsilon}^2<br>$$</p>
+<h2 id="有效参数量"><a href="#有效参数量" class="headerlink" title="有效参数量"></a>有效参数量</h2><p>$$<br>\hat{y} &#x3D; Sy<br>$$</p>
+<p>有效参数数量(Effective Number of Parameters):<br>$$<br>\text{df}(S) &#x3D; \text{tr}(S)<br>$$<br>对于线性回归，有如下关系：<br>$$<br>\sum_{i&#x3D;1} ^N \text{Cov}(y_i, \hat{y}<em>i) &#x3D; \text{df}(\hat{y}) \cdot  \sigma</em>{\epsilon}^2<br>$$</p>
+<h2 id="贝叶斯信息量（BIC）"><a href="#贝叶斯信息量（BIC）" class="headerlink" title="贝叶斯信息量（BIC）"></a>贝叶斯信息量（BIC）</h2><p>题外话：前面的部分主要讲述的模型评价(Model Assesment)部分，贝叶斯信息量主要讲述的是模型选择的部分</p>
+<p>BIC for 极大似然回归<br>$$<br>BIC &#x3D; -2 \cdot loglik + (\log N) \cdot d<br>$$<br>BIC under Gaussian Model<br>$$<br>BIC &#x3D; \frac{N}{\sigma_{\epsilon}^2}[\overline{\text{err}}+ (\log N)\cdot \frac{d}{N} \sigma_{\epsilon}^2]<br>$$<br>他的Motivation是源自贝叶斯派的思想(下面手抄草稿，由于过程有点难，整理后还有很多错误比如符号上下标对不上)</p>
+<p><img src="https://i.loli.net/2021/11/10/9qVUZlvD2MgstSo.jpg" srcset="/img/loading.gif" lazyload alt="1"></p>
+<p><img src="https://i.loli.net/2021/11/10/yYAO547q1Nf39cM.jpg" srcset="/img/loading.gif" lazyload alt="2"></p>
+<p><img src="https://i.loli.net/2021/11/10/uskaSvyOilJT8mU.jpg" srcset="/img/loading.gif" lazyload alt="3"></p>
+<h2 id="交叉验证-以后有空再补"><a href="#交叉验证-以后有空再补" class="headerlink" title="交叉验证(以后有空再补)"></a>交叉验证(以后有空再补)</h2>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="category-chain-item">课程笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/" class="category-chain-item">统计学习理论与方法</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/" class="category-chain-item">教材笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/Elements-of-Statistical-Learning/" class="category-chain-item">Elements of Statistical Learning</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
+      
+        <a href="/tags/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/">#教材笔记</a>
+      
+        <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/">#统计学习理论与方法</a>
+      
+        <a href="/tags/ELS/">#ELS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>课程笔记-统计学习理论与方法-ELS-Chap7</div>
+      <div>https://oier99.cn/2021/11/11/课程笔记-统计学习理论与方法-ELS-Chap7/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>oier99</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年11月11日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/11/24/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA3-4/" title="课程笔记：矩阵理论3-4——盖尔圆定理与特征值估计">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">课程笔记：矩阵理论3-4——盖尔圆定理与特征值估计</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/11/10/%E9%9A%8F%E7%AC%94-%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8/" title="随笔-期望与方差的性质">
+                        <span class="hidden-mobile">随笔-期望与方差的性质</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script> var now = new Date();  function createtime() {  var grt= new Date("07/25/2021 17:12:09"); now.setTime(now.getTime()+250);  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}  document.getElementById("timeDate").innerHTML = "本网站已在各种夹缝中安全生存 "+dnum+" 天 ";  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";  }  setInterval("createtime()",250); </script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/qipao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

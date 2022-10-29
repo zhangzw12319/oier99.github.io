@@ -1,0 +1,878 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/github_usericon.png">
+  <link rel="icon" href="/img/github_usericon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="oier99">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="这是我熬夜1:30am-6:00am也未能彻底搞完的笔记。仅做纪念，坚定信念。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课程笔记：统计学习理论与方法(ELS_Chap2)">
+<meta property="og:url" content="https://oier99.cn/2021/09/30/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95-ELS-Chap2/index.html">
+<meta property="og:site_name" content="Oier99">
+<meta property="og:description" content="这是我熬夜1:30am-6:00am也未能彻底搞完的笔记。仅做纪念，坚定信念。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg">
+<meta property="article:published_time" content="2021-09-29T22:09:53.000Z">
+<meta property="article:modified_time" content="2022-10-29T19:05:48.205Z">
+<meta property="article:author" content="zhangzw12319">
+<meta property="article:tag" content="课程笔记">
+<meta property="article:tag" content="教材笔记">
+<meta property="article:tag" content="统计学习理论与方法">
+<meta property="article:tag" content="ELS">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg">
+  
+  
+  
+  <title>课程笔记：统计学习理论与方法(ELS_Chap2) - Oier99</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/toubudaziji.css">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/gh/bynotes/texiao/source/css/gundongtiao.css# 滚动条颜色.css">
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 80vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>Fluid</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                时间轴
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tag-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于我
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/music/">
+                <i class="iconfont icon-music"></i>
+                每日音乐
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="课程笔记：统计学习理论与方法(ELS_Chap2)"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        oier99
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-09-30 06:09" pubdate>
+          2021年9月30日 早上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          7.1k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          59 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+        <div class="scroll-down-bar">
+          <i class="iconfont icon-arrowdown"></i>
+        </div>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">课程笔记：统计学习理论与方法(ELS_Chap2)</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="课程笔记：统计学习理论与方法-ELS-Chap2"><a href="#课程笔记：统计学习理论与方法-ELS-Chap2" class="headerlink" title="课程笔记：统计学习理论与方法(ELS_Chap2)"></a>课程笔记：统计学习理论与方法(ELS_Chap2)</h1><p>📚书籍：《Elements of Statistical Learning》Chap 2 </p>
+<h2 id="符号约定"><a href="#符号约定" class="headerlink" title="符号约定"></a>符号约定</h2><table>
+<thead>
+<tr>
+<th align="center">输入变量(Input Variable)</th>
+<th align="center">$X$, 通常随机变量取值是$$p$$维随机向量($$X\in \mathbb{R}^p$$),其每个分量可用下角标$$X_i$$表示是该维度特征的变量</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">(随机)变量$X$的第i个观测值</td>
+<td align="center">$$x_i$$, 可以是向量或标量</td>
+</tr>
+<tr>
+<td align="center">模型输出</td>
+<td align="center">Quantative Outputs:$$Y$$, Category: $$G$$； 模型预测值$$\hat{Y}$$</td>
+</tr>
+<tr>
+<td align="center">矩阵</td>
+<td align="center">大写加粗正体$$\textbf{X}$$，如$$N$$个维度为$$p$$的向量$$x_1, x_2, \dots, x_N$$组成$$N \times p$$的矩阵$$\textbf{X}$$</td>
+</tr>
+<tr>
+<td align="center">向量</td>
+<td align="center">约定:普通的$$p$$维向量表示成$$x_j$$，不用加粗; 而维度为N时，若加粗为$$\textbf{x}_i$$，代表的是随机变量第$i$个特征分量的所有观测值(N个观测值)组成的向量。E.g. $$x_j^T$$是矩阵$$\textbf{X}$$的第$$j$$行，$$\textbf{x}_i$$是矩阵的第$$i$$列。所有的向量规定为列向量的形式。</td>
+</tr>
+</tbody></table>
+<h2 id="统计学习的重要原则"><a href="#统计学习的重要原则" class="headerlink" title="统计学习的重要原则"></a>统计学习的重要原则</h2><p>Statistical Learning的目标是为了最好的泛化性能(Best Generalization Property)而不是最小的训练误差(Minimum Training Error)</p>
+<h2 id="线性回归"><a href="#线性回归" class="headerlink" title="线性回归"></a>线性回归</h2><ol>
+<li>设输入是一个<strong>列向量</strong>$X$, 其每个维度分量下标是$X_i$<br> $$<br> \begin{align}<br> \hat{f}(x) &amp;&#x3D; \sum_{i&#x3D;1}^{p} \hat{\beta}_iX_i + \hat{\beta}_0 \<br>                  &amp;&#x3D; \hat{\beta}^TX \<br>                  &amp;&#x3D; X^T\hat{\beta}<br> \end{align}<br> $$<br> 写成矩阵形式，其中$$\textbf{X} \in \mathbb{R}^{N \times p} $$</li>
+</ol>
+<p>$$<br>\hat{Y} &#x3D; \textbf{X} \hat{\beta}<br>$$</p>
+<ol start="2">
+<li><p>线性回归的误差函数衡量方式——最小二乘<br> $$<br> \begin{align}<br> L(Y, \hat{f}(x)) &amp;&#x3D; (Y-\hat{f}(x))^T(Y- \hat{f}(x)) \<br> &amp;&#x3D; (Y- \textbf{X}\hat{\beta})(Y- \textbf{X}\hat{\beta}) \<br> &amp;&#x3D; L(\hat{\beta})<br> \end{align}<br> $$</p>
+</li>
+<li><p>从最小化误差函数的方式，对$$\hat{\beta}$$求导，得：<br> $$<br> \begin{align}</p>
+<p> \frac{\partial{L}}{\partial \hat{\beta}} &amp;&#x3D; -2\textbf{X}^T(Y- \textbf{X}\hat{\beta}) &#x3D; 0 \<br> \hat{\beta} &amp;&#x3D; (X^TX)^{-1}X^TY<br> \end{align}<br> $$</p>
+</li>
+<li><p>思考一下两种数据分布情况对线性回归模型影响：</p>
+<ol>
+<li>训练数据中的每一类都是服从高斯分布，而且每一类的方差一样但是均值不同。</li>
+<li>某一类的训练数据是由多个高斯分布合成的，可能高斯分布的方差和均值都不太一样，</li>
+</ol>
+<p> 对于第1种情况线性回归是比较optimal的，但是对于第二种效果比较差。</p>
+<p> 而K近邻算法对于第2中情况相对会更suitable.</p>
+<p> (先占坑，后续补上解释)</p>
+<p> 如下图所示，先从$$N((1,0)^T, \textbf{I})$$和$$N((0,1)^T, \textbf{I})$$ 中分别随机采样10个sample(共计20个)，前十个作为类别1的均值，后十个作为类别2的均值。然后每个类中各生成100个sample，每个sample都是从$$N(\mu, \frac{\textbf{I}}{5})$$采样，而每次$$\mu$$是从该类中的10个中等概率($$\Pr &#x3D; \frac{1}{10}$$)抽样得到。</p>
+ <img src="https://i.loli.net/2021/09/27/4akOVlu9Q8ex6Wc.png" srcset="/img/loading.gif" lazyload alt="image-20210927135914964" style="zoom:50%;" />
+
+<p> 圆点连线代表的K近邻的Error曲线，两个方块代表三元线性回归的Error值。可以看到:</p>
+<ul>
+<li>随着$$k$$值变小，K近邻模型自由度$$N&#x2F;k$$在变大，模型复杂度在上升。模型逐渐由欠拟合转变为过拟合。后面也会讲解</li>
+<li>可以看到在这种多高斯分布混合采样得到的数据集中，K近邻最好的Error要比线性回归好。</li>
+</ul>
+</li>
+</ol>
+<h2 id="K近邻"><a href="#K近邻" class="headerlink" title="K近邻"></a>K近邻</h2><ol>
+<li><p>几何意义：</p>
+<blockquote>
+<p>在特征空间中，对每个训练实例点$x_i$,距离该点比其他点更近的所有点组成一个区域，叫做单元(Cell).每个训练实例点都拥有一个单元，所有训练实例点的单元对特征空间构成一个划分。 <sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="《统计学习方法》第二版 李航">[1]</span></a></sup></p>
+<img src="https://i.loli.net/2021/09/27/bQgTdCXlYJNnRzW.png" srcset="/img/loading.gif" lazyload alt="image-20210927144131480" style="zoom:50%;" />
+</blockquote>
+</li>
+<li><p>具体内容参见李航《统计学习方法》Chap3 课程笔记(先占坑，后面补上笔记后建立链接🔗)</p>
+</li>
+</ol>
+<h2 id="统计决策理论-Statistical-Decision-Theory"><a href="#统计决策理论-Statistical-Decision-Theory" class="headerlink" title="统计决策理论(Statistical Decision Theory)"></a>统计决策理论(Statistical Decision Theory)</h2><p>根据模型选择(Model Selection)的理论，通过最小化<strong>期望预测误差</strong>(Expected Prediction Error, EPE)来确定模型中的参数选择，从而确定模型。<br>$$<br>EPE(f) &#x3D; E(L(Y, \hat{f}(X)))<br>$$</p>
+<h3 id="对于回归问题的EPE"><a href="#对于回归问题的EPE" class="headerlink" title="对于回归问题的EPE"></a>对于回归问题的EPE</h3><p>对于回归问题(不仅仅是线性回归)，<a href="">大多采用最小均方误差的方法计算误差</a>:<br>$$<br>\begin{align}<br>EPE(f) &amp;&#x3D; E(L(Y, \hat{f}(X)) \<br>             &amp;&#x3D; E_{X,Y}((Y - \hat{f}(X))^2) \<br>             &amp;&#x3D; \int\int (Y-f(X)^2)P(x, y) dxdy \<br>             &amp;&#x3D; \int_X {\int_Y(Y- f(X))^2P(y|x)dy}P(x) dx \<br>             &amp;&#x3D; E_X E_{Y|X}(Y - f(X))^2 \<br>\end{align}<br>$$<br>故，若想使得EPE取最小值，只需让对于每个$$X&#x3D;x$$, 使得$$E_{Y|X}$$最小即可(逐点最小化)，可得<br>$$<br>\begin{align*}<br>E_{Y|X}(Y- \hat{f}^2(X)) &amp;&#x3D; E_{Y|X}(Y^2 - 2\hat{f}(X)Y + \hat{f}^2(X)) \<br>&amp;&#x3D;E(Y^2)- 2\hat{f}(X)E(Y) + \hat{f}^2(X) \<br>\end{align*}<br>$$<br>故<br>$$<br>\hat{f}(X) &#x3D; E_{Y|X}(Y) &#x3D; E(Y | X&#x3D;x)<br>$$<br><strong>含义解释</strong>： 理论上期望预测误差最小的回归函数模型，<u>在最小二乘误差意义下</u>，每个训练数据当$$X&#x3D;x$$时，取$$Y$$的平均值($$E(Y)$$)是能够达到的。</p>
+<p>注意，在这里我们认为所有训练数据的$$X$$与$$Y$$是两个独立的随机变量，分别取样自不同的分布中组成了联合概率分布。这是一个重要的assumption，也是统计学习里的基本思路。</p>
+<p>另外$$X&#x3D;x$$可以拓展为$$X \in \epsilon(x)$$,在某个邻域附近的所有样本的$$Y$$值取平均。</p>
+<div class="note note-info">
+            <p>关于期望$E(Y|X)$和$E_X(Y| X&#x3D;x)$，条件期望中的角标，随机变量和事件区别，符号大小写的不同意义等细微区别，参见随笔XXX（先占坑），以帮助理解。</p><hr><p>2021.10.08 简要补充</p><p>首先要区分随机变量和事件，比如对于随机变量$X$, $X&#x3D;x$是一个事件，即$X$取一个固定的值<strong>这件事情</strong>发生了，所以是一个事件。而随机变量$X$自身是有可能取任何一个值的，只不过有不同的概率(所以为什么随机变量会有概率分布这个概念)。</p><p>所以我们说条件期望时，就是指$E(Y|X&#x3D;x)$，即在$X&#x3D;x$事件发生的条件下，$Y$取各种值的可能性的期望。 $E(Y|X&#x3D;x) &#x3D; \sum_{y \in Y} p(Y&#x3D;y|X&#x3D;x)y$。</p><p>此外事件的独立和变量的独立不是一回事。n个事件的独立要求n个事件两两独立，任意三个独立，任意四个独立……任意n个独立。但是随机变量的独立只需要 $$P(X_1, X_2, \dots, X_n ) &#x3D; \prod_i X_i $$一个条件即可。因为每个随机变量可以取很多值，包含了很多$X_i &#x3D; x$的事件，所以显然约束要比事件独立 要强得多。</p><p>在信息论中，信息熵和条件熵，互信息与条件互信息中，条件部分是随机变量$X$还是事件$X&#x3D;x$是大有讲究的。比如见此图：</p><img src="https://i.loli.net/2021/10/08/2Hr4F1ec7hJEKoI.png" srcset="/img/loading.gif" lazyload alt="image-20211008200426280" style="zoom: 33%;" /><p>以互信息$$I(X;Y|Z,V)$$和$I(X;Y|Z&#x3D;z,V)$的关系为例，如下图公式所示<br>$$<br>I(X;Y|Z,V) &#x3D; \sum_Z p(Z&#x3D;z)I(X;y|Z&#x3D;z, V)<br>$$</p><p>对于条件信息熵:<br>$$<br>\begin{align}<br>H(X|Y) &amp;&#x3D; \sum_{y \in Y} p(Y&#x3D;y) H(X|Y&#x3D;y) \<br>&amp;&#x3D; \sum_{y \in Y} p(Y&#x3D;y) \sum_{x \in X} p(X&#x3D;x|Y&#x3D;y) \log\frac{1}{p(X&#x3D;x|Y&#x3D;y)} \<br>&amp;&#x3D; \sum_{X,Y} p(x,y)\log\frac{1}{p(X&#x3D;x|Y&#x3D;y)}</p><p>\end{align}<br>$$</p>
+          </div>
+
+
+
+<h3 id="对于分类问题的EPE"><a href="#对于分类问题的EPE" class="headerlink" title="对于分类问题的EPE"></a>对于分类问题的EPE</h3><p>先做一些符号约定：</p>
+<p>分类问题的输出是离散型(随机)变量，定义其符号为$$G$$ (Group),属于同一类的值在同一个Group里，以此来表示类别信息。<br>$$<br>\begin{align}<br>EPE &amp;&#x3D; E(L(G, \hat{G}(X))) \<br>&amp;&#x3D; E_X E_{Y|X}(L(G, \hat{G}(X))) \<br>&amp;&#x3D; E_X \sum_k  P(Y&#x3D;G_k| X&#x3D;x)L(G_k, \hat{G}(X)) \<br>\end{align}<br>$$<br>同理，通过逐点最小化，只需要<br>$$<br>\hat{G}(X) &#x3D; \underset{g}{\operatorname{arg\min}}, {L(G_k, g)P(Y&#x3D;G_k|X&#x3D;x)}<br>$$<br>原因比较显然，哪个样本属于类的概率大，并且损失函数对于分类错误的惩罚大小共同决定了EPE。对于二分类+ 0-1 Loss来说(分类正确L为0，否则L为1)，那么可得<br>$$<br>\hat{G}(x) &#x3D; \underset{g \in {0,1}}{\operatorname{arg\max}}, P(Y&#x3D;G_g|X&#x3D;x)<br>$$<br>这个分类方式被称为<code>贝叶斯分类器</code>（Bayes classification）: 我们通过$$P(G_k|X)$$把样本分类到最可能的类别中(classify to the most probable class)。贝叶斯分配器得到的Error Rate(Bayes Rate)是所有分类模型中统计学理论上误差最小的。</p>
+<div class="note note-warning">
+            <p>经过刚才的讲解，读者应该能较为清楚的感受到，统计学习中把$$X$$,$$Y$$作为两个独立的随机变量研究他们的联合分布，本质上研究的是数据与Label的**<u>相关性</u>**信息。即几乎目前绝大多数有监督学习的方法(机器学习,深度神经网络等)本质上都是学习数据与Label的分布和相关性信息。所以说这类模型是数据驱动(data-driven)的，机器并没有理解数据，只是学习到数据的分布而已。</p>
+          </div>
+
+<p>k近邻及其Majority Vote选出类别的机制，本质上也是通过训练数据去近似$$P(Y&#x3D;G_g|X&#x3D;x)$$。而当$$k ,N \rightarrow \infty，\frac{k}{N} \rightarrow 0 $$时，K近邻近似得到$$E(Y | X&#x3D;x)$$。通过这个例子，我们也发现EPE的结果在回归和分类问题上本质上是一致的。</p>
+<h2 id="Bias-Variance-Decomposition"><a href="#Bias-Variance-Decomposition" class="headerlink" title="Bias-Variance Decomposition"></a>Bias-Variance Decomposition</h2><p>先考虑在某个点$$ X&#x3D;x_0 $$上的MSE拆分：<br>$$<br>\begin{align}<br>MSE(x_0) &amp;&#x3D; E_\tau[f(x_0) - \hat{y_0}]^2 \<br>&amp;&#x3D; E_\tau [f^2(x_0) - 2f(x_0)\hat{y}_0 + \hat{y_0}^2] \<br>&amp;&#x3D; E_\tau [\hat{y_0}^2 - 2\hat{y_0}E_\tau(\hat{y_0}) + E_\tau^2(\hat{y_0}) + f^2(x_0) - 2f(x_0)\hat{y_0} + 2\hat{y_0}E_\tau(\hat{y_0}) - E_\tau^2(\hat{y_0})] \<br>&amp;&#x3D; E_\tau[(\hat{y_0} - E_\tau(\hat{y_0}))^2] + f^2(x_0) - 2f(x_0)E_\tau(\hat{y_0}) + E_\tau^2(\hat{y_0}) \<br>&amp;&#x3D; E_\tau[(\hat{y_0} - E_\tau(\hat{y_0}))^2] + [f(x_0) - E_\tau(\hat{y_0})]^2<br>\end{align}<br>$$</p>
+<p>设训练集为$$\tau$$, 函数$$f(x)$$为准确的预测模型(has no bias), 计算**$$X&#x3D;x_0$$这一测试点(test point)**上的最小均方误差。由于$$f(x)$$为精准模型，因此其变化只与输入有关，因此在$$\tau$$的期望上可以看做是常数，就有如上变换。</p>
+<p>其中第一项是预测模型$$\hat{y_0}$$自身的方差， 第二项是预测模型与真实模型之间的Bias。对于方差来说，是由于对计算$$y_0$$时带来的数据方差(通常假设是$$N(0,1)$$的高斯噪声，方差由此带来)。对于Bias而言，一方面由于在$$x_0$$的邻域里采样，另一方面由于预测模型总会有误差($$N(0,1)$$高斯噪声的均值)。</p>
+<div class="note note-warning">
+            <p>注意这里算MSE拆分时的$$f(x_0)$$与数据集$$\tau$$中的随机变量$$Y$$的取值不等价的。因为数据集中的标签$$Y$$往往充满噪声的，而我们假设理想数据集是满足某种分布$$f(x)$$，然后再该分布上加上噪声$$\epsilon$$才得到了数据集中的真实的$$Y$$。所以算bias时 $$ f(x_0) - E_\tau(\hat{y_0})$$ 是不能写成$$ Y - E_\tau(\hat{y_0}) $$的。</p><p>后面我们算EPE的拆分时，把数据集中的真实$Y$放了进去，因此拆分中多了关于噪声的方差项。详细见下面介绍。</p>
+          </div>
+
+<h3 id="对于线性回归模型-Y-x3D-X-hat-beta-x3D-X-beta-epsilon"><a href="#对于线性回归模型-Y-x3D-X-hat-beta-x3D-X-beta-epsilon" class="headerlink" title="对于线性回归模型 $$Y &#x3D; X\hat{\beta} &#x3D; X\beta + \epsilon$$"></a>对于线性回归模型 $$Y &#x3D; X\hat{\beta} &#x3D; X\beta + \epsilon$$</h3><p>假设数据集 $$\tau$$中$$Y$$与$$X$$ 成近似线性分布，假设中间差个高斯噪声$$N(0,I_p)$$</p>
+<p>由于<br>$$<br>\begin{align}<br>\hat{\beta} &amp;&#x3D; (X^TX)^{-1}X^Ty \<br>&amp;&#x3D; (X^TX)^{-1}X^T(X \beta + \epsilon) \<br>&amp;&#x3D; \beta + (X^TX)^{-1}X^T \epsilon<br>\end{align}<br>$$</p>
+<p>可得到<br>$$<br>E(\hat{\beta}) &#x3D; \beta \<br>Var(\hat{\beta}) &#x3D; Var((X^TX)^{-1}X^T \epsilon) &#x3D; A^T Var(\epsilon) A &#x3D; A^TA &#x3D; Var(XX^T)^{-1} , ???对吗<br>$$<br>故知道对于$$\beta$$的估计$$\hat{\beta}$$是无偏估计，因而得到在均方误差中线性回归模型满足$$ E(X\beta)-E(X\hat{\beta})&#x3D;0$$即$$f(x_0)-E_\tau(\hat{f}(x_0)) &#x3D; 0$$, bias 为0。</p>
+<p>并且在$$X&#x3D;x_0$$这一测试点(test point)<br>$$<br>\hat{y_0} &#x3D; \hat{x_0}^T\beta + x_0^T\sum_{i&#x3D;1}^N l_i(x_0)\epsilon_i \<br>where,, l_i(x_0) &#x3D; (x_0^T(X^TX)^{-1}X^T)<em>i<br>$$<br>下面，我们对整个数据集(over training set $$\tau$$)的<strong>EPE</strong>进行bias-variance拆分。先考虑固定$$x_0$$,  让$$y_0$$变<br>$$<br>\begin{align}<br>EPE(x_0) &amp;&#x3D; E</em>{y_0 | x_0} E_\tau(y_0 - \hat{y_0})^2 \<br>&amp;&#x3D; Var(y_0|x_0) + E_\tau ((\hat{y_0} - E_\tau(\hat{y_0})^2)) + (E_\tau \hat{y_0} - x_0^T \beta)^2 \<br>&amp;&#x3D; \sigma^2(\epsilon) + E_\tau x_0^T(X^TX)^{-1}x_0 \sigma^2(\epsilon) + 0^2<br>\end{align}<br>$$</p>
+<h2 id="维度灾难-Curse-of-Dimensionality"><a href="#维度灾难-Curse-of-Dimensionality" class="headerlink" title="维度灾难(Curse of Dimensionality)"></a>维度灾难(Curse of Dimensionality)</h2><p>待填坑</p>
+<h2 id="模型选择与误差-Model-Selection-and-Bias"><a href="#模型选择与误差-Model-Selection-and-Bias" class="headerlink" title="模型选择与误差(Model Selection and Bias)"></a>模型选择与误差(Model Selection and Bias)</h2><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>《统计学习方法》第二版 李航
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/" class="category-chain-item">课程笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/" class="category-chain-item">统计学习理论与方法</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/" class="category-chain-item">教材笔记</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/Elements-of-Statistical-Learning/" class="category-chain-item">Elements of Statistical Learning</a>
+  
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/">#课程笔记</a>
+      
+        <a href="/tags/%E6%95%99%E6%9D%90%E7%AC%94%E8%AE%B0/">#教材笔记</a>
+      
+        <a href="/tags/%E7%BB%9F%E8%AE%A1%E5%AD%A6%E4%B9%A0%E7%90%86%E8%AE%BA%E4%B8%8E%E6%96%B9%E6%B3%95/">#统计学习理论与方法</a>
+      
+        <a href="/tags/ELS/">#ELS</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>课程笔记：统计学习理论与方法(ELS_Chap2)</div>
+      <div>https://oier99.cn/2021/09/30/课程笔记-统计学习理论与方法-ELS-Chap2/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>oier99</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年9月30日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/10/09/%E9%9A%8F%E7%AC%94-%E9%82%A3%E4%BA%9B%E5%9C%A8CV%E9%87%8C%E7%94%A8%E8%85%BB%E4%BA%86%E7%9A%84%E8%AF%9D%E6%9C%AF%E4%B8%8E%E8%AF%B4%E8%BE%9E/" title="随笔：那些在CV里用腻了的话术与说辞">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">随笔：那些在CV里用腻了的话术与说辞</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/09/29/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0-%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/" title="课程笔记：强化学习(2)——Bellman方程的动态规划求解">
+                        <span class="hidden-mobile">课程笔记：强化学习(2)——Bellman方程的动态规划求解</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <div style="font-size: 0.85rem"> <span id="timeDate">载入天数...</span> <span id="times">载入时分秒...</span> <script> var now = new Date();  function createtime() {  var grt= new Date("07/25/2021 17:12:09"); now.setTime(now.getTime()+250);  days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);  hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);  if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum);  mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;}  seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);  snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;}  document.getElementById("timeDate").innerHTML = "本网站已在各种夹缝中安全生存 "+dnum+" 天 ";  document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";  }  setInterval("createtime()",250); </script> </div> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+  
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/yinghua.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/qipao.js"></script>
+<script src="//cdn.jsdelivr.net/gh/bynotes/texiao/source/js/jingtaisidai.js"></script>
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>

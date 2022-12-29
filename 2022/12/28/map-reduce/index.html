@@ -15,29 +15,24 @@
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="Yuki.N">
+  <meta name="author" content="zhangzw12319">
   <meta name="keywords" content="">
   
-    <meta name="description" content="巧妙利用地图信息做自动驾驶场景下RV和BeV的融合。">
+    <meta name="description" content="一种优雅的MapReduce手工实现方式(Python语言) 参考链接： https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_45203607&#x2F;article&#x2F;details&#x2F;127369408 Python-多进程(进程,锁,通讯,进程池) https:&#x2F;&#x2F;blog.csdn.net&#x2F;HaidongDU&#x2F;article&#x2F;details&#x2F;112795797 Python 多线程中的">
 <meta property="og:type" content="article">
-<meta property="og:title" content="论文十问:Map-view Transformer(CVPR2022)">
-<meta property="og:url" content="https://oier99.cn/2022/05/24/%E8%AE%BA%E6%96%87%E5%8D%81%E9%97%AE-map-view-transformer-CVPR2022/index.html">
+<meta property="og:title" content="map_reduce">
+<meta property="og:url" content="https://oier99.cn/2022/12/28/map-reduce/index.html">
 <meta property="og:site_name" content="Oier99">
-<meta property="og:description" content="巧妙利用地图信息做自动驾驶场景下RV和BeV的融合。">
+<meta property="og:description" content="一种优雅的MapReduce手工实现方式(Python语言) 参考链接： https:&#x2F;&#x2F;blog.csdn.net&#x2F;weixin_45203607&#x2F;article&#x2F;details&#x2F;127369408 Python-多进程(进程,锁,通讯,进程池) https:&#x2F;&#x2F;blog.csdn.net&#x2F;HaidongDU&#x2F;article&#x2F;details&#x2F;112795797 Python 多线程中的">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://s2.loli.net/2022/05/24/LDeCqp1Rl86HTuz.jpg">
-<meta property="article:published_time" content="2022-05-23T19:05:27.000Z">
-<meta property="article:modified_time" content="2022-10-29T19:05:48.199Z">
+<meta property="article:published_time" content="2022-12-28T10:51:50.000Z">
+<meta property="article:modified_time" content="2022-12-28T10:58:30.114Z">
 <meta property="article:author" content="zhangzw12319">
-<meta property="article:tag" content="一句话读论文系列">
-<meta property="article:tag" content="CVPR2022">
-<meta property="article:tag" content="点云语义分割">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://s2.loli.net/2022/05/24/LDeCqp1Rl86HTuz.jpg">
   
   
   
-  <title>论文十问:Map-view Transformer(CVPR2022) - Oier99</title>
+  <title>map_reduce - Oier99</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -225,13 +220,13 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://s2.loli.net/2022/05/24/LDeCqp1Rl86HTuz.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://i.loli.net/2021/08/14/j5BKhpRcUVb4wzk.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="论文十问:Map-view Transformer(CVPR2022)"></span>
+            <span id="subtitle" data-typed-text="map_reduce"></span>
           
         </div>
 
@@ -241,14 +236,14 @@
     
       <span class="post-meta mr-2">
         <i class="iconfont icon-author" aria-hidden="true"></i>
-        Yuki.N
+        zhangzw12319
       </span>
     
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-05-24 03:05" pubdate>
-          2022年5月24日 凌晨
+        <time datetime="2022-12-28 18:51" pubdate>
+          2022年12月28日 晚上
         </time>
       </span>
     
@@ -259,7 +254,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          195 字
         
       </span>
     
@@ -270,7 +265,7 @@
         
         
         
-          12 分钟
+          2 分钟
         
       </span>
     
@@ -312,63 +307,18 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">论文十问:Map-view Transformer(CVPR2022)</h1>
+            <h1 style="display: none">map_reduce</h1>
             
             
               <div class="markdown-body">
                 
                 <h1
-id="cross-view-transformers-for-real-time-map-view-semantic-segmentationcvpr-20222">Cross-view
-Transformers for real-time Map-view Semantic Segmentation(CVPR
-2022)[2]</h1>
-<blockquote>
-<p>论文标题：Cross-view Transformers for real-time Map-view Semantic
-Segmentation(CVPR 2022)<br> 论文地址：<a
-target="_blank" rel="noopener" href="https://arxiv.org/abs/2205.02833">https://arxiv.org/abs/2205.02833</a><br>
-作者单位：The Chinese University of Hong Kong<br> 代码地址：<a
-target="_blank" rel="noopener" href="https://github.com/bradyz/cross_view_transformers">https://github.com/bradyz/cross_view_transformers</a><br>
-一句话读论文：Our architecture implicitly learns a mapping from
-individual camera views into a canonical map-view representation using a
-camera-aware cross-view attention mechanism.</p>
-</blockquote>
-<h2 id="q1">Q1</h2>
-<p>论文试图解决什么问题？</p>
-<p>做图像特征与地图特征的融合("model geometry and relationships between
-different view and a canonical map representation")</p>
-<h2 id="q2">Q2</h2>
-<p>这是否是一个新的问题？</p>
-<p>利用地图信息作为query，参与语义分割网络的跨视图融合，是一个有新意的做法</p>
-<h2 id="q3">Q3</h2>
-<p>这篇文章要验证一个什么科学假设？</p>
-<h2 id="q4">Q4</h2>
-<p>有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？</p>
-<p>做俯视图语义分割，已有方法大致可归为如下两类(包含其存在的问题)
-Image-based depth estimation are error-prone. Depth-based projections
-are a fairly inflexible and rigid bottleneck to map between views.</p>
-<p>附一份知乎笔记连接：https://zhuanlan.zhihu.com/p/511477453</p>
-<h2 id="q5">Q5</h2>
-<p>论文中提到的解决方案之关键是什么？</p>
-<p>通过cross-view transoformer来做Camera View到Map
-View的融合。相比于已有方法基于显式地几何关系地映射，这种融合的方式是一种隐式函数的映射("learn
-any geometric transformation implicitly and directly from
-data")。此外，transformer需要positional
-embedding来区分不同空间位置的特征。本文因此设计了camera-aware和map-view两类positional
-embedding。</p>
-<h2 id="q6">Q6</h2>
-<p>论文中的实验是如何设计的？</p>
-<h2 id="q7">Q7</h2>
-<p>用于定量评估的数据集是什么？代码有没有开源？</p>
-<p>nuScenes, 已经开源</p>
-<h2 id="q8">Q8</h2>
-<p>论文中的实验及结果有没有很好地支持需要验证的科学假设？</p>
-<p>在俯视图的语义分割中是SOTA(37.5% mIoU),
-和基于深度估计与投影等已有方法相比comaprable。但是整个赛道与图像语义分割与3D语义分割结果相比(70-80mIoU)，整体后面还有挖掘空间</p>
-<h2 id="q9">Q9</h2>
-<p>这篇论文到底有什么贡献？</p>
-<p>1）利用了地图信息，这是一个比较有新意的setting.
-2）注意力系数计算方式比较有新意，可以参考拓展</p>
-<h2 id="q10">Q10</h2>
-<p>下一步呢？有什么工作可以继续深入？</p>
+id="一种优雅的mapreduce手工实现方式python语言">一种优雅的MapReduce手工实现方式(Python语言)</h1>
+<p>参考链接：
+https://blog.csdn.net/weixin_45203607/article/details/127369408
+Python-多进程(进程,锁,通讯,进程池)
+https://blog.csdn.net/HaidongDU/article/details/112795797 Python
+多线程中的join用法</p>
 
                 
               </div>
@@ -377,59 +327,6 @@ embedding。</p>
             <div>
               <div class="post-metas my-3">
   
-    <div class="post-meta mr-3 d-flex align-items-center">
-      <i class="iconfont icon-category"></i>
-      
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/" class="category-chain-item">点云</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/" class="category-chain-item">多模态融合</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/2022/" class="category-chain-item">2022</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-    </div>
-  
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87%E7%B3%BB%E5%88%97/">#一句话读论文系列</a>
-      
-        <a href="/tags/CVPR2022/">#CVPR2022</a>
-      
-        <a href="/tags/%E7%82%B9%E4%BA%91%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">#点云语义分割</a>
-      
-    </div>
   
 </div>
 
@@ -439,20 +336,20 @@ embedding。</p>
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>论文十问:Map-view Transformer(CVPR2022)</div>
-      <div>https://oier99.cn/2022/05/24/论文十问-map-view-transformer-CVPR2022/</div>
+      <div>map_reduce</div>
+      <div>https://oier99.cn/2022/12/28/map-reduce/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>Yuki.N</div>
+          <div>zhangzw12319</div>
         </div>
       
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年5月24日</div>
+          <div>2022年12月28日</div>
         </div>
       
       
@@ -496,18 +393,12 @@ embedding。</p>
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/05/24/LaTEX-math-symbols/" title="LaTeX讲解系列：常用数学符号大全">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">LaTeX讲解系列：常用数学符号大全</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/05/24/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87-map-view-transformer-CVPR2022/" title="一句话读论文:Map-view Transformer(CVPR2022)">
-                        <span class="hidden-mobile">一句话读论文:Map-view Transformer(CVPR2022)</span>
+                      <a href="/2022/12/21/first-encrypted-blog/" title="first_encrypted_blog">
+                        <span class="hidden-mobile">first_encrypted_blog</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -561,12 +452,6 @@ embedding。</p>
 
 
   
-
-
-  
-  
-
-
 
 
 
@@ -760,49 +645,6 @@ embedding。</p>
 
 
   <script>Fluid.plugins.imageCaption();</script>
-
-  
-      <script>
-        if (!window.MathJax) {
-          window.MathJax = {
-            tex    : {
-              inlineMath: { '[+]': [['$', '$']] }
-            },
-            loader : {
-              load: ['ui/lazy']
-            },
-            options: {
-              renderActions: {
-                insertedScript: [200, () => {
-                  document.querySelectorAll('mjx-container').forEach(node => {
-                    let target = node.parentNode;
-                    if (target.nodeName.toLowerCase() === 'li') {
-                      target.parentNode.classList.add('has-jax');
-                    }
-                  });
-                }, '', false]
-              }
-            }
-          };
-        } else {
-          MathJax.startup.document.state(0);
-          MathJax.texReset();
-          MathJax.typeset();
-          MathJax.typesetPromise();
-        }
-
-        Fluid.events.registerRefreshCallback(function() {
-          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
-            MathJax.startup.document.state(0);
-            MathJax.texReset();
-            MathJax.typeset();
-            MathJax.typesetPromise();
-          }
-        });
-      </script>
-    
-
-  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 

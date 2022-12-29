@@ -260,7 +260,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5k 字
+          4.6k 字
         
       </span>
     
@@ -271,7 +271,7 @@
         
         
         
-          42 分钟
+          39 分钟
         
       </span>
     
@@ -318,53 +318,197 @@
             
               <div class="markdown-body">
                 
-                <h1 id="课程笔记：统计学习理论与方法（ELS-Chap7）"><a href="#课程笔记：统计学习理论与方法（ELS-Chap7）" class="headerlink" title="课程笔记：统计学习理论与方法（ELS_Chap7）"></a>课程笔记：统计学习理论与方法（ELS_Chap7）</h1><p>📚书籍：《Elements of Statistical Learning》Chap 7</p>
-<h2 id="两个概念"><a href="#两个概念" class="headerlink" title="两个概念"></a>两个概念</h2><ol>
-<li>模型选择(Model Selection):  模型由参数控制的，模型选择既包括模型类型选择，也包括参数的控制。后面讲贝叶斯信息准则时(BIC)会讲到。</li>
-<li>模型评估(Model Assessment):  给定一个模型，评估其训练误差(In-sample Error)，测试误差(Extra-sample Error)，泛化误差(Generalization Error)。评估训练误差与测试误差之间的差距Bound.</li>
+                <h1
+id="课程笔记统计学习理论与方法els_chap7">课程笔记：统计学习理论与方法（ELS_Chap7）</h1>
+<p>📚书籍：《Elements of Statistical Learning》Chap 7</p>
+<h2 id="两个概念">两个概念</h2>
+<ol type="1">
+<li>模型选择(Model Selection):
+模型由参数控制的，模型选择既包括模型类型选择，也包括参数的控制。后面讲贝叶斯信息准则时(BIC)会讲到。</li>
+<li>模型评估(Model Assessment): 给定一个模型，评估其训练误差(In-sample
+Error)，测试误差(Extra-sample Error)，泛化误差(Generalization
+Error)。评估训练误差与测试误差之间的差距Bound.</li>
 </ol>
 <p>两者都是侧重对模型的泛化误差进行评估，而非模型的训练误差。泛化误差是整个统计学习中最核心的关注问题。</p>
-<h2 id="训练误差与泛化误差"><a href="#训练误差与泛化误差" class="headerlink" title="训练误差与泛化误差"></a>训练误差与泛化误差</h2><p>训练误差：<br>$$<br>\overline{\text{err}} &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N L(y_i, \hat{f}(x_i))<br>$$<br>泛化误差：<br>$$<br>\text{Err}(y_i, \hat{f}(x_i)) &#x3D; E_{(X,Y) \sim \tau}(L(y_i, \hat{f}(x_i)) |\tau)<br>$$<br>其中损失函数通常是:</p>
+<h2 id="训练误差与泛化误差">训练误差与泛化误差</h2>
+<p>训练误差： <span class="math display">\[
+\overline{\text{err}} = \frac{1}{N} \sum_{i=1}^N L(y_i, \hat{f}(x_i))
+\]</span> 泛化误差： <span class="math display">\[
+\text{Err}(y_i, \hat{f}(x_i)) = E_{(X,Y) \sim \tau}(L(y_i, \hat{f}(x_i))
+|\tau)
+\]</span> 其中损失函数通常是:</p>
 <ul>
-<li>均方误差$$L &#x3D; (y_i - \hat{f}(x_i))^2 $$</li>
-<li>对数极大似然函数【用于多分类】(严格来说这不算损失函数，但是极大似然最大等价于加符号最小，所以可以写成相同形式):$$L &#x3D; -2\cdot[\sum_{k&#x3D;1}^K I(G&#x3D;k)\log(\hat{\Pr}(\hat{G}&#x3D;k)] $$.其中$$I(G&#x3D;k)$$相当于真实标签(Ground Truth).</li>
-<li>对数极大似然的特殊情况【0-1分类】： $$L &#x3D; I(G&#x3D;1)\log(\hat{\Pr}) + (1-I(G&#x3D;1))\log(1-\hat{\Pr})$$</li>
+<li>均方误差<span class="math display">\[L = (y_i - \hat{f}(x_i))^2
+\]</span></li>
+<li>对数极大似然函数【用于多分类】(严格来说这不算损失函数，但是极大似然最大等价于加符号最小，所以可以写成相同形式):<span
+class="math display">\[L = -2\cdot[\sum_{k=1}^K
+I(G=k)\log(\hat{\Pr}(\hat{G}=k)] \]</span>.其中<span
+class="math display">\[I(G=k)\]</span>相当于真实标签(Ground Truth).</li>
+<li>对数极大似然的特殊情况【0-1分类】： <span class="math display">\[L =
+I(G=1)\log(\hat{\Pr}) + (1-I(G=1))\log(1-\hat{\Pr})\]</span></li>
 </ul>
 <div class="note note-primary">
-            <p>📢注意，我们算误差时的Ground Truth(GT) $$y$$并不一定是真实的标签，因为获取数据的过程中无法避免有噪声存在(就比如用精密物理仪器测量的结果总会有无法避免的系统误差)。我们的损失函数是让模型的估计值$$\hat{f}$$和GT算误差，不是和$$f(x)$$算误差。</p>
+            <p>📢注意，我们算误差时的Ground Truth(GT) <spanclass="math display">\[y\]</span>并不一定是真实的标签，因为获取数据的过程中无法避免有噪声存在(就比如用精密物理仪器测量的结果总会有无法避免的系统误差)。我们的损失函数是让模型的估计值<spanclass="math display">\[\hat{f}\]</span>和GT算误差，不是和<spanclass="math display">\[f(x)\]</span>算误差。</p>
           </div>
-
-<h2 id="Bias-variance-分解"><a href="#Bias-variance-分解" class="headerlink" title="Bias-variance 分解"></a>Bias-variance 分解</h2><p>假设：$${(x_i,y_i)}$$ 是从某个数据分布中采样得到的某个数据集$$\tau$$。数据的真实分布是$$y &#x3D; f(x) + \epsilon$$，数据的真实标签是$$f(x)$$，但是我们获取数据集时总会有噪声$$\epsilon$$干扰。通常假设噪声服从均值为0的某个高斯分布。$$\epsilon \sim N(0, \sigma_{\epsilon}^2)$$</p>
-<p>考察在$$X&#x3D;x_0$$一点上的单点泛化误差，其中求期望操作$$E$$是对所有的数据集$$\tau$$求的期望(Expectation over all the dataset $$\tau$$).<a name="t1">也就是说在这里，$\hat{f}(x_0)$也是随机变量，它的随机性来源于可能选取不同的数据集$\tau$ ；而$f(x_0)$的随机性只来源于$\epsilon$，二者独立无关联</a>。<br>$$<br>\begin{align*}<br>E(L(Y, \hat{f}(X))|X&#x3D;x_0, Y&#x3D;y_0 )&amp;&#x3D; (y_0 - f(x_0)) ,,,\text{(这里采用均方误差分析，其他同理)}\<br>&amp;&#x3D; E(f(x_0) - \hat{f}(x_0) + \epsilon)^2 \<br>&amp;&#x3D; E(f(x_0) - \hat{f}(x_0))^2 + E(\epsilon)^2 + 2E(f(x_0) - \hat{f}(x_0))E(\epsilon),,,\text{($\epsilon$ 与 $f(x_0) - \hat{f(x_0)}$ 独立)} \<br>&amp;&#x3D;  E(f(x_0) - \hat{f}(x_0))^2 + \sigma_{\epsilon}^2 + 0 \<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0) + E\hat{f}(x_0) - \hat{f}(x_0))^2 + \sigma_{\epsilon}^2 \<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2 + 2E(f(x_0) - E\hat{f}(x_0))\cdot 0 + \sigma_{\epsilon}^2\<br>&amp;&#x3D; E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2  + \sigma_{\epsilon}^2 \<br>&amp;&#x3D; \text{bias}^2 + \text{variance} + \sigma_{\epsilon}^2<br>\end{align*}<br>$$</p>
+<h2 id="bias-variance-分解">Bias-variance 分解</h2>
+<p>假设：<span class="math display">\[\{(x_i,y_i)\}\]</span>
+是从某个数据分布中采样得到的某个数据集<span
+class="math display">\[\tau\]</span>。数据的真实分布是<span
+class="math display">\[y = f(x) +
+\epsilon\]</span>，数据的真实标签是<span
+class="math display">\[f(x)\]</span>，但是我们获取数据集时总会有噪声<span
+class="math display">\[\epsilon\]</span>干扰。通常假设噪声服从均值为0的某个高斯分布。<span
+class="math display">\[\epsilon \sim N(0,
+\sigma_{\epsilon}^2)\]</span></p>
+<p>考察在<span
+class="math display">\[X=x_0\]</span>一点上的单点泛化误差，其中求期望操作<span
+class="math display">\[E\]</span>是对所有的数据集<span
+class="math display">\[\tau\]</span>求的期望(Expectation over all the
+dataset <span
+class="math display">\[\tau\]</span>).<a name="t1">也就是说在这里，<span
+class="math inline">\(\hat{f}(x_0)\)</span>也是随机变量，它的随机性来源于可能选取不同的数据集<span
+class="math inline">\(\tau\)</span> ；而<span
+class="math inline">\(f(x_0)\)</span>的随机性只来源于<span
+class="math inline">\(\epsilon\)</span>，二者独立无关联</a>。 <span
+class="math display">\[
+\begin{align*}
+E(L(Y, \hat{f}(X))|X=x_0, Y=y_0 )&amp;= (y_0 - f(x_0))
+\,\,\,\text{(这里采用均方误差分析，其他同理)}\\
+&amp;= E(f(x_0) - \hat{f}(x_0) + \epsilon)^2 \\
+&amp;= E(f(x_0) - \hat{f}(x_0))^2 + E(\epsilon)^2 + 2E(f(x_0) -
+\hat{f}(x_0))E(\epsilon)\,\,\,\text{($\epsilon$ 与 $f(x_0) -
+\hat{f(x_0)}$ 独立)} \\
+&amp;=  E(f(x_0) - \hat{f}(x_0))^2 + \sigma_{\epsilon}^2 + 0 \\
+&amp;= E(f(x_0) - E\hat{f}(x_0) + E\hat{f}(x_0) - \hat{f}(x_0))^2 +
+\sigma_{\epsilon}^2 \\
+&amp;= E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2 +
+2E(f(x_0) - E\hat{f}(x_0))\cdot 0 + \sigma_{\epsilon}^2\\
+&amp;= E(f(x_0) - E\hat{f}(x_0))^2 + E(\hat{f}(x_0) - \hat{f}(x_0))^2  +
+\sigma_{\epsilon}^2 \\
+&amp;= \text{bias}^2 + \text{variance} + \sigma_{\epsilon}^2
+\end{align*}
+\]</span></p>
 <div class="note note-info">
-            <p>关于期望与方差的常用性质，请参见这篇<a target="_blank" rel="noopener" href="https://www.oier99.cn/2021/11/10/%E9%9A%8F%E7%AC%94-%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE%E7%9A%84%E6%80%A7%E8%B4%A8/">博客</a>.</p>
+            <p>关于期望与方差的常用性质，请参见这篇<atarget="_blank" rel="noopener" href="https://www.oier99.cn/2021/11/10/随笔-期望与方差的性质/">博客</a>.</p>
           </div>
-
-
-
-<h3 id="KNN的例子"><a href="#KNN的例子" class="headerlink" title="KNN的例子"></a>KNN的例子</h3><p>KNN的模型是$$\hat{f}(x_0) &#x3D; \frac{1}{K}\sum_{i&#x3D;1}^K y_i,, x_i \in n_K(x_0)$$.<br>$$<br>\begin{align*}<br>\hat{f}(x_0) &amp;&#x3D; \frac{1}{K}\sum_{i&#x3D;1}^K y_i \<br>&amp;&#x3D; \frac{1}{K} \sum_{i&#x3D;1}^K(f(x_i) + \epsilon_i ) \<br>&amp;\approx \frac{1}{K} \sum_{i&#x3D;1}^K(f(x_0) + \epsilon_i ) \<br>&amp;&#x3D; f(x_0) + \frac{1}{K} \sum_{i&#x3D;1}^K \epsilon_i<br>\end{align*}<br>$$<br>为了计算方差方便， 在理论推导这里做了一个重要近似：因为KNN取的是K个近邻点来插值估计，所以假设认为他们的“本源”$$f(x_i) \approx f(x_0)$$.这样，KNN的方差可以如下计算:<br>$$<br>\begin{align*}<br>\text{Var}(\hat{f}(x_0)) &amp;&#x3D; \text{Var} \frac{1}{K} \sum_{i&#x3D;1}^K \epsilon_i \<br>&amp;&#x3D; \frac{1}{K^2} \text{Var}\sum_{i&#x3D;1}^K \epsilon_i \<br>&amp;&#x3D; \frac{1}{K^2} \sum_{i&#x3D;1}^K \text{Var}(\epsilon_i) \<br>&amp;&#x3D; \frac{1}{K^2} \sum_{i&#x3D;1}^K \sigma_{\epsilon}^2 \<br>&amp;&#x3D; \frac{1}{K} \sigma_{\epsilon}^2<br>\end{align*}<br>$$<br>故泛化误差拆分为:<br>$$<br>Err(y_0, \hat{f}(x_0)) \approx \sigma_{\epsilon}^2 + E(f(x_0) - \frac{1}{K}\sum_{i&#x3D;1}^K y_i )^2 + \frac{1}{K} \sigma_{\epsilon}^2<br>$$<br>可以看出$$K$$越小，模型复杂度越大，方差越大，bias应该会越小。</p>
-<h3 id="线性回归的例子"><a href="#线性回归的例子" class="headerlink" title="线性回归的例子"></a>线性回归的例子</h3><p>对于线性回归函数$$\hat{f}(x) &#x3D; \hat{\beta}^T x $$, 解最小二乘误差下的最佳近似参数是$$\hat{\beta} &#x3D; (X^TX)^{-1}X^Ty$$</p>
-<p>故$$\hat{f}(x) &#x3D; y^T X(X^TX)^{-1}x &#x3D; x^T X(X^TX)^-1X^Ty &#x3D; h(x)y$$.可以看出$$\hat{f}(x)$$的随机性来源于y，即来源于$$\epsilon$$ .（这与<a href="#t1">刚才</a>说法不矛盾。因为之前对$$\hat{f}$$的分析是抽象的符号，而这里是对线性回归具体公式分析）<br>$$<br>\text{var}(\hat{f}(x_0)) &#x3D; ||h(x_0)||^2 \sigma_{\epsilon}^2<br>$$<br>故<br>$$<br>Err(y_0, \hat{f}(x_0)) &#x3D; \sigma_{\epsilon}^2 + E(f(x_0) - \hat{\beta}^Tx_0 )^2 + ||h(x_0)||^2 \sigma_{\epsilon}^2<br>$$</p>
-<p>训练误差:<br>$$<br>\frac{1}{N}\sum_{i&#x3D;1}^N Err(y_0, \hat{f}(x_0)) &#x3D; \sigma_{\epsilon}^2 + \sum_{i&#x3D;1}^NE(f(x_0) - \hat{\beta}^Tx_0 )^2 + \frac{p}{N}\sigma_{\epsilon}^2<br>$$<br>可以看出模型复杂度由数据量$$N$$和参数量$$p$$共同控制。</p>
+<h3 id="knn的例子">KNN的例子</h3>
+<p>KNN的模型是<span class="math display">\[\hat{f}(x_0) =
+\frac{1}{K}\sum_{i=1}^K y_i,\, x_i \in n_K(x_0)\]</span>. <span
+class="math display">\[
+\begin{align*}
+\hat{f}(x_0) &amp;= \frac{1}{K}\sum_{i=1}^K y_i \\
+&amp;= \frac{1}{K} \sum_{i=1}^K(f(x_i) + \epsilon_i ) \\
+&amp;\approx \frac{1}{K} \sum_{i=1}^K(f(x_0) + \epsilon_i ) \\
+&amp;= f(x_0) + \frac{1}{K} \sum_{i=1}^K \epsilon_i
+\end{align*}
+\]</span> 为了计算方差方便，
+在理论推导这里做了一个重要近似：因为KNN取的是K个近邻点来插值估计，所以假设认为他们的“本源”<span
+class="math display">\[f(x_i) \approx
+f(x_0)\]</span>.这样，KNN的方差可以如下计算: <span
+class="math display">\[
+\begin{align*}
+\text{Var}(\hat{f}(x_0)) &amp;= \text{Var} \frac{1}{K} \sum_{i=1}^K
+\epsilon_i \\
+&amp;= \frac{1}{K^2} \text{Var}\sum_{i=1}^K \epsilon_i \\
+&amp;= \frac{1}{K^2} \sum_{i=1}^K \text{Var}(\epsilon_i) \\
+&amp;= \frac{1}{K^2} \sum_{i=1}^K \sigma_{\epsilon}^2 \\
+&amp;= \frac{1}{K} \sigma_{\epsilon}^2
+\end{align*}
+\]</span> 故泛化误差拆分为: <span class="math display">\[
+Err(y_0, \hat{f}(x_0)) \approx \sigma_{\epsilon}^2 + E(f(x_0) -
+\frac{1}{K}\sum_{i=1}^K y_i )^2 + \frac{1}{K} \sigma_{\epsilon}^2
+\]</span> 可以看出<span
+class="math display">\[K\]</span>越小，模型复杂度越大，方差越大，bias应该会越小。</p>
+<h3 id="线性回归的例子">线性回归的例子</h3>
+<p>对于线性回归函数<span class="math display">\[\hat{f}(x) =
+\hat{\beta}^T x \]</span>, 解最小二乘误差下的最佳近似参数是<span
+class="math display">\[\hat{\beta} = (X^TX)^{-1}X^Ty\]</span></p>
+<p>故<span class="math display">\[\hat{f}(x) = y^T X(X^TX)^{-1}x = x^T
+X(X^TX)^-1X^Ty = h(x)y\]</span>.可以看出<span
+class="math display">\[\hat{f}(x)\]</span>的随机性来源于y，即来源于<span
+class="math display">\[\epsilon\]</span> .（这与<a
+href="#t1">刚才</a>说法不矛盾。因为之前对<span
+class="math display">\[\hat{f}\]</span>的分析是抽象的符号，而这里是对线性回归具体公式分析）
+<span class="math display">\[
+\text{var}(\hat{f}(x_0)) = ||h(x_0)||^2 \sigma_{\epsilon}^2
+\]</span> 故 <span class="math display">\[
+Err(y_0, \hat{f}(x_0)) = \sigma_{\epsilon}^2 + E(f(x_0) -
+\hat{\beta}^Tx_0 )^2 + ||h(x_0)||^2 \sigma_{\epsilon}^2
+\]</span></p>
+<p>训练误差: <span class="math display">\[
+\frac{1}{N}\sum_{i=1}^N Err(y_0, \hat{f}(x_0)) = \sigma_{\epsilon}^2 +
+\sum_{i=1}^NE(f(x_0) - \hat{\beta}^Tx_0 )^2 +
+\frac{p}{N}\sigma_{\epsilon}^2
+\]</span> 可以看出模型复杂度由数据量<span
+class="math display">\[N\]</span>和参数量<span
+class="math display">\[p\]</span>共同控制。</p>
 <div class="note note-primary">
-            <p>（这部分的推导需要用到矩阵的迹的性质）</p><p>$$\text{tr}(ABC) &#x3D; \text{tr}(BCA) &#x3D; \text{tr}(CAB)$$</p><p>$$\sum_{i}(x_i y_i) &#x3D; x^Ty &#x3D; \text{tr} (xy^T)$$</p>
+            <p>（这部分的推导需要用到矩阵的迹的性质）</p><p><span class="math display">\[\text{tr}(ABC) = \text{tr}(BCA) =\text{tr}(CAB)\]</span></p><p><span class="math display">\[\sum_{i}(x_i y_i) = x^Ty = \text{tr}(xy^T)\]</span></p>
           </div>
+<h2 id="乐观度">乐观度</h2>
+<p>乐观度(Optimisim)的概念主要是为了比较模型训练误差与泛化误差之间的差距，或者如何用训练误差去估计泛化误差。</p>
+<p>直接计算训练误差和泛化误差的差有困难，因为模型输入<span
+class="math display">\[x\]</span>都不固定。所以可以采用重采样的技术，原先训练集<span
+class="math display">\[(x,y)\]</span>,是训练时采样得到的标签，记为<span
+class="math display">\[y\]</span>；重采样是对相同的<span
+class="math display">\[x\]</span>, 再次采样<span
+class="math display">\[y^{\text{New}}\]</span>。 <span
+class="math display">\[
+\text{Err}_{in}(y_i, \hat{f}(x_i)) = \frac{1}{N}\sum_{i=1}^N
+E_{Y^{\text{new}}}[L(Y_i^{\text{New}}, \hat{f}(x_i))]
+\]</span></p>
+<p><span class="math display">\[
+\overline{err} = \frac{1}{N} \sum_{i=1}^N L(y, \hat{f}(x_i))
+\]</span></p>
+<p>结论 <span class="math display">\[
+\begin{align*}
+    w &amp;= E_y(op) \\
+    &amp;= \frac{2}{N}\text{Cov}(y, \hat{y})
+\end{align*}
+\]</span> 证明过程后续再补。</p>
+<p>若<span class="math display">\[\hat{y}\]</span>是由参数量为<span
+class="math display">\[d\]</span>线性回归得到的估计，那么 <span
+class="math display">\[
+\text{Cov}(y, \hat{y}) = d \sigma_{\epsilon}^2
+\]</span> 可得到 <span class="math display">\[
+E_y(\text{Err}_{in}) = E_y(\overline{\text{err}}) + 2\cdot\frac{d}{N}
+\sigma_{\epsilon}^2
+\]</span></p>
+<h2 id="有效参数量">有效参数量</h2>
+<p><span class="math display">\[
+\hat{y} = Sy
+\]</span></p>
+<p>有效参数数量(Effective Number of Parameters): <span
+class="math display">\[
+\text{df}(S) = \text{tr}(S)
+\]</span> 对于线性回归，有如下关系： <span class="math display">\[
+\sum_{i=1} ^N \text{Cov}(y_i, \hat{y}_i) = \text{df}(\hat{y})
+\cdot  \sigma_{\epsilon}^2
+\]</span></p>
+<h2 id="贝叶斯信息量bic">贝叶斯信息量（BIC）</h2>
+<p>题外话：前面的部分主要讲述的模型评价(Model
+Assesment)部分，贝叶斯信息量主要讲述的是模型选择的部分</p>
+<p>BIC for 极大似然回归 <span class="math display">\[
+BIC = -2 \cdot loglik + (\log N) \cdot d
+\]</span> BIC under Gaussian Model <span class="math display">\[
+BIC = \frac{N}{\sigma_{\epsilon}^2}[\overline{\text{err}}+ (\log N)\cdot
+\frac{d}{N} \sigma_{\epsilon}^2]
+\]</span>
+他的Motivation是源自贝叶斯派的思想(下面手抄草稿，由于过程有点难，整理后还有很多错误比如符号上下标对不上)</p>
+<figure>
+<img src="https://i.loli.net/2021/11/10/9qVUZlvD2MgstSo.jpg" srcset="/img/loading.gif" lazyload alt="1" />
+<figcaption aria-hidden="true">1</figcaption>
+</figure>
+<figure>
+<img src="https://i.loli.net/2021/11/10/yYAO547q1Nf39cM.jpg" srcset="/img/loading.gif" lazyload alt="2" />
+<figcaption aria-hidden="true">2</figcaption>
+</figure>
+<figure>
+<img src="https://i.loli.net/2021/11/10/uskaSvyOilJT8mU.jpg" srcset="/img/loading.gif" lazyload alt="3" />
+<figcaption aria-hidden="true">3</figcaption>
+</figure>
+<h2 id="交叉验证以后有空再补">交叉验证(以后有空再补)</h2>
 
-
-
-<h2 id="乐观度"><a href="#乐观度" class="headerlink" title="乐观度"></a>乐观度</h2><p>乐观度(Optimisim)的概念主要是为了比较模型训练误差与泛化误差之间的差距，或者如何用训练误差去估计泛化误差。</p>
-<p>直接计算训练误差和泛化误差的差有困难，因为模型输入$$x$$都不固定。所以可以采用重采样的技术，原先训练集$$(x,y)$$,是训练时采样得到的标签，记为$$y$$；重采样是对相同的$$x$$, 再次采样$$y^{\text{New}}$$。<br>$$<br>\text{Err}<em>{in}(y_i, \hat{f}(x_i)) &#x3D; \frac{1}{N}\sum</em>{i&#x3D;1}^N E_{Y^{\text{new}}}[L(Y_i^{\text{New}}, \hat{f}(x_i))]<br>$$</p>
-<p>$$<br>\overline{err} &#x3D; \frac{1}{N} \sum_{i&#x3D;1}^N L(y, \hat{f}(x_i))<br>$$</p>
-<p>结论<br>$$<br>\begin{align*}<br>    w &amp;&#x3D; E_y(op) \<br>    &amp;&#x3D; \frac{2}{N}\text{Cov}(y, \hat{y})<br>\end{align*}<br>$$<br>证明过程后续再补。</p>
-<p>若$$\hat{y}$$是由参数量为$$d$$线性回归得到的估计，那么<br>$$<br>\text{Cov}(y, \hat{y}) &#x3D; d \sigma_{\epsilon}^2<br>$$<br>可得到<br>$$<br>E_y(\text{Err}<em>{in}) &#x3D; E_y(\overline{\text{err}}) + 2\cdot\frac{d}{N} \sigma</em>{\epsilon}^2<br>$$</p>
-<h2 id="有效参数量"><a href="#有效参数量" class="headerlink" title="有效参数量"></a>有效参数量</h2><p>$$<br>\hat{y} &#x3D; Sy<br>$$</p>
-<p>有效参数数量(Effective Number of Parameters):<br>$$<br>\text{df}(S) &#x3D; \text{tr}(S)<br>$$<br>对于线性回归，有如下关系：<br>$$<br>\sum_{i&#x3D;1} ^N \text{Cov}(y_i, \hat{y}<em>i) &#x3D; \text{df}(\hat{y}) \cdot  \sigma</em>{\epsilon}^2<br>$$</p>
-<h2 id="贝叶斯信息量（BIC）"><a href="#贝叶斯信息量（BIC）" class="headerlink" title="贝叶斯信息量（BIC）"></a>贝叶斯信息量（BIC）</h2><p>题外话：前面的部分主要讲述的模型评价(Model Assesment)部分，贝叶斯信息量主要讲述的是模型选择的部分</p>
-<p>BIC for 极大似然回归<br>$$<br>BIC &#x3D; -2 \cdot loglik + (\log N) \cdot d<br>$$<br>BIC under Gaussian Model<br>$$<br>BIC &#x3D; \frac{N}{\sigma_{\epsilon}^2}[\overline{\text{err}}+ (\log N)\cdot \frac{d}{N} \sigma_{\epsilon}^2]<br>$$<br>他的Motivation是源自贝叶斯派的思想(下面手抄草稿，由于过程有点难，整理后还有很多错误比如符号上下标对不上)</p>
-<p><img src="https://i.loli.net/2021/11/10/9qVUZlvD2MgstSo.jpg" srcset="/img/loading.gif" lazyload alt="1"></p>
-<p><img src="https://i.loli.net/2021/11/10/yYAO547q1Nf39cM.jpg" srcset="/img/loading.gif" lazyload alt="2"></p>
-<p><img src="https://i.loli.net/2021/11/10/uskaSvyOilJT8mU.jpg" srcset="/img/loading.gif" lazyload alt="3"></p>
-<h2 id="交叉验证-以后有空再补"><a href="#交叉验证-以后有空再补" class="headerlink" title="交叉验证(以后有空再补)"></a>交叉验证(以后有空再补)</h2>
                 
               </div>
             

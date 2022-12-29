@@ -318,32 +318,72 @@
             
               <div class="markdown-body">
                 
-                <h1 id="GASN-ECCV-2022"><a href="#GASN-ECCV-2022" class="headerlink" title="GASN(ECCV 2022)"></a>GASN(ECCV 2022)</h1><blockquote>
-<p>论文标题: Efficient Point Cloud Segmentation with Geometry-aware Sparse Networks<br>论文地址: <a target="_blank" rel="noopener" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136990193.pdf">PDF</a><br>作者单位: HKUST, DeepRoute<br>代码地址: <a target="_blank" rel="noopener" href="https://github.com/ItIsFriday/PcdSeg">https://github.com/ItIsFriday/PcdSeg</a></p>
+                <h1 id="gasneccv-2022">GASN(ECCV 2022)</h1>
+<blockquote>
+<p>论文标题: Efficient Point Cloud Segmentation with Geometry-aware
+Sparse Networks 论文地址: <a
+target="_blank" rel="noopener" href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136990193.pdf">PDF</a>
+作者单位: HKUST, DeepRoute 代码地址:
+https://github.com/ItIsFriday/PcdSeg</p>
 </blockquote>
-<h2 id="Q1-论文试图解决什么问题？"><a href="#Q1-论文试图解决什么问题？" class="headerlink" title="Q1 论文试图解决什么问题？"></a>Q1 论文试图解决什么问题？</h2><p>本文提出一个新的3D稀疏网络框架，可用于室外场景大规模自动驾驶数据集，在满足SOTA精度的前提下，有非常快的速度，更少的内存消耗，满足更好的实时性。</p>
-<h2 id="Q2-这是否是一个新的问题？"><a href="#Q2-这是否是一个新的问题？" class="headerlink" title="Q2 这是否是一个新的问题？"></a>Q2 这是否是一个新的问题？</h2><p>不是，很多工作都在尝试做这个</p>
-<h2 id="Q3-这篇文章要验证一个什么科学假设？"><a href="#Q3-这篇文章要验证一个什么科学假设？" class="headerlink" title="Q3 这篇文章要验证一个什么科学假设？"></a>Q3 这篇文章要验证一个什么科学假设？</h2><ol>
+<h2 id="q1-论文试图解决什么问题">Q1 论文试图解决什么问题？</h2>
+<p>本文提出一个新的3D稀疏网络框架，可用于室外场景大规模自动驾驶数据集，在满足SOTA精度的前提下，有非常快的速度，更少的内存消耗，满足更好的实时性。</p>
+<h2 id="q2-这是否是一个新的问题">Q2 这是否是一个新的问题？</h2>
+<p>不是，很多工作都在尝试做这个</p>
+<h2 id="q3-这篇文章要验证一个什么科学假设">Q3
+这篇文章要验证一个什么科学假设？</h2>
+<ol type="1">
 <li>本文认为保证精度的关键在于对点云multi-scale特征的充分利用</li>
-<li>本文认为保证速度并且降低显存的关键，是放弃基于点级别的操作(pooling), 网络设计全部基于sparse voxel-based representation。比如稀疏卷积，池化，多特征融合，MLP均在该稀疏特征层次上完成。</li>
+<li>本文认为保证速度并且降低显存的关键，是放弃基于点级别的操作(pooling),
+网络设计全部基于sparse voxel-based
+representation。比如稀疏卷积，池化，多特征融合，MLP均在该稀疏特征层次上完成。</li>
 </ol>
-<h2 id="Q4-有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？"><a href="#Q4-有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？" class="headerlink" title="Q4 有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？"></a>Q4 有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？</h2><ol>
-<li>基于Raw Point的网络: PointNet, PointNet++ (maintain and utilize the pointwise geometry).</li>
-<li>通过采样降低点的数量，提高效率: RandLA， KPConv.（但是采样会导致极大的信息损失，这些网络在室外场景精度表现不高）</li>
-<li>划分&#x2F;投影到预先设定的Grids里(如2D, 3D, Sparse 3D)，再进行卷积&#x2F;稀疏卷积操作：AF2S3Net, Cylinder3D, SECOND, PointPillar…4.Point, Voxel, Range等多种representation融合感知的网络: PVCNN, SPVCNN, DRINet, RPVNet</li>
-<li>基于图的(主要室内用得多，大规模室外计算速度&#x2F;显存开销偏大)</li>
+<h2
+id="q4-有哪些相关研究如何归类谁是这一课题在领域内值得关注的研究员">Q4
+有哪些相关研究？如何归类？谁是这一课题在领域内值得关注的研究员？</h2>
+<ol type="1">
+<li>基于Raw Point的网络: PointNet, PointNet++ (maintain and utilize the
+pointwise geometry).</li>
+<li>通过采样降低点的数量，提高效率: RandLA，
+KPConv.（但是采样会导致极大的信息损失，这些网络在室外场景精度表现不高）</li>
+<li>划分/投影到预先设定的Grids里(如2D, 3D, Sparse
+3D)，再进行卷积/稀疏卷积操作：AF2S3Net, Cylinder3D, SECOND,
+PointPillar…4.Point, Voxel, Range等多种representation融合感知的网络:
+PVCNN, SPVCNN, DRINet, RPVNet</li>
+<li>基于图的(主要室内用得多，大规模室外计算速度/显存开销偏大)</li>
 <li>基于transformer的</li>
 </ol>
-<h2 id="Q5-论文中提到的解决方案之关键是什么？"><a href="#Q5-论文中提到的解决方案之关键是什么？" class="headerlink" title="Q5 论文中提到的解决方案之关键是什么？"></a>Q5 论文中提到的解决方案之关键是什么？</h2><ol>
-<li>整体网络由Sparse Feature Encoder(SFE)和Sparse Geometry Feature Enhancement(SGFE)两个模块组成。前者用稀疏卷积提取特征后送入SGFE； SGFE设计了多尺度稀疏特征投影模块(Multi-scale Sparse Projection)来增强对几何信息的提取，将多尺度融合后的特征送到下一层的SFE。</li>
-<li>相比于PVCNN，SPVCNN, DRINet等point+voxel的表征方式，作者只保留了sparse-voxel representation送入SFE和SGFE，不需要point-wise representation，大大减小了计算开销与显存开销。</li>
-<li>point-wise representation 能完整地提取点云的局部几何信息。为了弥补放弃使用point representation带来的几何信息感知缺失， 作者设计了多尺度稀疏特征投影模块(Multi-scale Sparse Projection)来增强对几何信息的提取。认为不同的尺度下提取的特征是对点云结构的先验知识学习，在不同层次上获取并编码点云的几何特征。</li>
+<h2 id="q5-论文中提到的解决方案之关键是什么">Q5
+论文中提到的解决方案之关键是什么？</h2>
+<ol type="1">
+<li>整体网络由Sparse Feature Encoder(SFE)和Sparse Geometry Feature
+Enhancement(SGFE)两个模块组成。前者用稀疏卷积提取特征后送入SGFE；
+SGFE设计了多尺度稀疏特征投影模块(Multi-scale Sparse
+Projection)来增强对几何信息的提取，将多尺度融合后的特征送到下一层的SFE。</li>
+<li>相比于PVCNN，SPVCNN,
+DRINet等point+voxel的表征方式，作者只保留了sparse-voxel
+representation送入SFE和SGFE，不需要point-wise
+representation，大大减小了计算开销与显存开销。</li>
+<li>point-wise representation
+能完整地提取点云的局部几何信息。为了弥补放弃使用point
+representation带来的几何信息感知缺失，
+作者设计了多尺度稀疏特征投影模块(Multi-scale Sparse
+Projection)来增强对几何信息的提取。认为不同的尺度下提取的特征是对点云结构的先验知识学习，在不同层次上获取并编码点云的几何特征。</li>
 </ol>
-<h2 id="Q6-论文中的实验是如何设计的？"><a href="#Q6-论文中的实验是如何设计的？" class="headerlink" title="Q6 论文中的实验是如何设计的？"></a>Q6 论文中的实验是如何设计的？</h2><p>主要做的语义分割实验，比较mIoU, 参数量，显存占用和速度</p>
-<h2 id="Q7-用于定量评估的数据集是什么？代码有没有开源？"><a href="#Q7-用于定量评估的数据集是什么？代码有没有开源？" class="headerlink" title="Q7 用于定量评估的数据集是什么？代码有没有开源？"></a>Q7 用于定量评估的数据集是什么？代码有没有开源？</h2><p>nuScenes, semanticKitti.</p>
-<h2 id="Q8-论文中的实验及结果有没有很好地支持需要验证的科学假设？"><a href="#Q8-论文中的实验及结果有没有很好地支持需要验证的科学假设？" class="headerlink" title="Q8 论文中的实验及结果有没有很好地支持需要验证的科学假设？"></a>Q8 论文中的实验及结果有没有很好地支持需要验证的科学假设？</h2><p>SemanticKitti和nuScenes，在mIoU和Cylinder3D, RPVNet, AF2S3net等SOTA网络基本持平的基础上，速度快2-5倍，显存占用量少2-3倍，参数量少2-10倍，仅一张2080Ti能跑的很好，性能优异</p>
-<h2 id="Q9-这篇论文到底有什么贡献？"><a href="#Q9-这篇论文到底有什么贡献？" class="headerlink" title="Q9 这篇论文到底有什么贡献？"></a>Q9 这篇论文到底有什么贡献？</h2><p>提出了一个性能好，速度快，显存占用少，适用于大规模室外点云数据集的网络</p>
-<h2 id="Q10-下一步呢？有什么工作可以继续深入？"><a href="#Q10-下一步呢？有什么工作可以继续深入？" class="headerlink" title="Q10 下一步呢？有什么工作可以继续深入？"></a>Q10 下一步呢？有什么工作可以继续深入？</h2><p>别卷了，卷不动了，有点强</p>
+<h2 id="q6-论文中的实验是如何设计的">Q6 论文中的实验是如何设计的？</h2>
+<p>主要做的语义分割实验，比较mIoU, 参数量，显存占用和速度</p>
+<h2 id="q7-用于定量评估的数据集是什么代码有没有开源">Q7
+用于定量评估的数据集是什么？代码有没有开源？</h2>
+<p>nuScenes, semanticKitti.</p>
+<h2 id="q8-论文中的实验及结果有没有很好地支持需要验证的科学假设">Q8
+论文中的实验及结果有没有很好地支持需要验证的科学假设？</h2>
+<p>SemanticKitti和nuScenes，在mIoU和Cylinder3D, RPVNet,
+AF2S3net等SOTA网络基本持平的基础上，速度快2-5倍，显存占用量少2-3倍，参数量少2-10倍，仅一张2080Ti能跑的很好，性能优异</p>
+<h2 id="q9-这篇论文到底有什么贡献">Q9 这篇论文到底有什么贡献？</h2>
+<p>提出了一个性能好，速度快，显存占用少，适用于大规模室外点云数据集的网络</p>
+<h2 id="q10-下一步呢有什么工作可以继续深入">Q10
+下一步呢？有什么工作可以继续深入？</h2>
+<p>别卷了，卷不动了，有点强</p>
 
                 
               </div>

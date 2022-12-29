@@ -258,7 +258,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.2k 字
+          4.1k 字
         
       </span>
     
@@ -269,7 +269,7 @@
         
         
         
-          35 分钟
+          34 分钟
         
       </span>
     
@@ -316,41 +316,108 @@
             
               <div class="markdown-body">
                 
-                <h1 id="课程笔记：矩阵理论-1-——线性代数知识回顾-下"><a href="#课程笔记：矩阵理论-1-——线性代数知识回顾-下" class="headerlink" title="课程笔记：矩阵理论(1)——线性代数知识回顾(下)"></a>课程笔记：矩阵理论(1)——线性代数知识回顾(下)</h1><p>📚书籍：《矩阵理论与应用》张跃辉 Chap 1</p>
-<h2 id="相似矩阵"><a href="#相似矩阵" class="headerlink" title="相似矩阵"></a>相似矩阵</h2><p>$$<br>\mathbf{A}x &#x3D; \lambda x<br>$$</p>
-<ol>
-<li>$$\mathbf{A}$$是方阵(所有有关特征值和特征响亮的讨论是对方阵而言的)</li>
-<li>$$x \ne 0$$</li>
+                <h1
+id="课程笔记矩阵理论1线性代数知识回顾下">课程笔记：矩阵理论(1)——线性代数知识回顾(下)</h1>
+<p>📚书籍：《矩阵理论与应用》张跃辉 Chap 1</p>
+<h2 id="相似矩阵">相似矩阵</h2>
+<p><span class="math display">\[
+\mathbf{A}x = \lambda x
+\]</span></p>
+<ol type="1">
+<li><span
+class="math display">\[\mathbf{A}\]</span>是方阵(所有有关特征值和特征响亮的讨论是对方阵而言的)</li>
+<li><span class="math display">\[x \ne 0\]</span></li>
 </ol>
-<p>则称$$x$$是属于特征值$$\lambda$$的$$\mathbf{A}$$上的特征向量</p>
-<h3 id="特征多项式"><a href="#特征多项式" class="headerlink" title="特征多项式"></a>特征多项式</h3><p>$$<br>\begin{align}<br>(\mathbf{A} - \lambda I)x &amp;&#x3D; 0 \<br>\end{align}<br>$$</p>
-<p>由于$$x \ne 0$$,若有满足该等式的$$\lambda$$值，则必为降秩矩阵(奇异矩阵)，故记<br>$$<br>f(\lambda) &#x3D; |\mathbf{A} - \lambda \mathbf{I}| &#x3D; 0<br>$$<br>成为特征多项式。</p>
-<p><strong>谱半径</strong>：数值(复数模长)最大的特征值$$\rho(\mathbf{A}) &#x3D; \max { |\lambda|: \lambda \in \sigma(\mathbf{A})}$$</p>
-<p>从几何上看，所有的特征值都落在以原点为圆心，谱半径$$\rho(\mathbf{A})$$为半径的圆盘内</p>
-<p><strong>矩阵的特征值$$\lambda $$的特征子空间</strong>：给定$$\lambda$$后 $$(\mathbf{A} - \lambda \mathbf{I})x &#x3D; 0$$这个齐次方程的解空间，记为$$V_\lambda $$。该解空间的维度$$\dim(V_\lambda) &#x3D; n - r (\mathbf{A})$$称为特征值$$\lambda$$的<strong>几何重数</strong></p>
-<p><strong>代数重数</strong>：将特征多项式因式分解后， $$f(\lambda) &#x3D;|\mathbf{A}- \lambda \mathbf{I}|&#x3D; \prod_i (\lambda - \lambda_i)^{n_i}&#x3D;0$$，每个特征值的对应的$$n_i$$</p>
+<p>则称<span class="math display">\[x\]</span>是属于特征值<span
+class="math display">\[\lambda\]</span>的<span
+class="math display">\[\mathbf{A}\]</span>上的特征向量</p>
+<h3 id="特征多项式">特征多项式</h3>
+<p><span class="math display">\[
+\begin{align}
+(\mathbf{A} - \lambda I)x &amp;= 0 \\
+\end{align}
+\]</span></p>
+<p>由于<span class="math display">\[x \ne
+0\]</span>,若有满足该等式的<span
+class="math display">\[\lambda\]</span>值，则必为降秩矩阵(奇异矩阵)，故记
+<span class="math display">\[
+f(\lambda) = |\mathbf{A} - \lambda \mathbf{I}| = 0
+\]</span> 成为特征多项式。</p>
+<p><strong>谱半径</strong>：数值(复数模长)最大的特征值<span
+class="math display">\[\rho(\mathbf{A}) = \max \{ |\lambda|: \lambda \in
+\sigma(\mathbf{A})\}\]</span></p>
+<p>从几何上看，所有的特征值都落在以原点为圆心，谱半径<span
+class="math display">\[\rho(\mathbf{A})\]</span>为半径的圆盘内</p>
+<p><strong>矩阵的特征值<span class="math display">\[\lambda
+\]</span>的特征子空间</strong>：给定<span
+class="math display">\[\lambda\]</span>后 <span
+class="math display">\[(\mathbf{A} - \lambda \mathbf{I})x =
+0\]</span>这个齐次方程的解空间，记为<span
+class="math display">\[V_\lambda \]</span>。该解空间的维度<span
+class="math display">\[\dim(V_\lambda) = n - r
+(\mathbf{A})\]</span>称为特征值<span
+class="math display">\[\lambda\]</span>的<strong>几何重数</strong></p>
+<p><strong>代数重数</strong>：将特征多项式因式分解后， <span
+class="math display">\[f(\lambda) =|\mathbf{A}- \lambda \mathbf{I}|=
+\prod_i (\lambda - \lambda_i)^{n_i}=0\]</span>，每个特征值的对应的<span
+class="math display">\[n_i\]</span></p>
 <p><strong><u><em>任何特征值的几何重数不会超过其代数重数</em></u></strong></p>
-<h3 id="特征值的性质"><a href="#特征值的性质" class="headerlink" title="特征值的性质"></a>特征值的性质</h3><ol>
-<li>$$|\mathbf{A}| &#x3D; \prod_i(\lambda_i)^{n_i}$$</li>
-<li>$$\tr(\mathbf{A}) &#x3D; \sum_i n_i \lambda_i $$</li>
-<li>$$\mathbf{A}$$可逆 $$\Leftrightarrow$$ 0不是其特征值</li>
-<li>$$\lambda$$是$$\mathbf{A}$$的特征值，则$$f(\lambda)$$是$$f(\mathbf{A})$$的特征值，特征向量不变</li>
-<li>设$$\mathbf{A}$$可逆，其特征多项式为$$|\mathbf{A}^{-1} - \lambda \mathbf{I}| &#x3D; \prod_{i} (\lambda - \lambda_i^{-1})^{n_i}$$, $$\lambda^{-1}$$也是特征值，而且对应特征向量不变</li>
+<h3 id="特征值的性质">特征值的性质</h3>
+<ol type="1">
+<li><span class="math display">\[|\mathbf{A}| =
+\prod_i(\lambda_i)^{n_i}\]</span></li>
+<li><span class="math display">\[\tr(\mathbf{A}) = \sum_i n_i \lambda_i
+\]</span></li>
+<li><span class="math display">\[\mathbf{A}\]</span>可逆 <span
+class="math display">\[\Leftrightarrow\]</span> 0不是其特征值</li>
+<li><span class="math display">\[\lambda\]</span>是<span
+class="math display">\[\mathbf{A}\]</span>的特征值，则<span
+class="math display">\[f(\lambda)\]</span>是<span
+class="math display">\[f(\mathbf{A})\]</span>的特征值，特征向量不变</li>
+<li>设<span
+class="math display">\[\mathbf{A}\]</span>可逆，其特征多项式为<span
+class="math display">\[|\mathbf{A}^{-1} - \lambda \mathbf{I}| =
+\prod_{i} (\lambda - \lambda_i^{-1})^{n_i}\]</span>, <span
+class="math display">\[\lambda^{-1}\]</span>也是特征值，而且对应特征向量不变</li>
 <li><strong>相似矩阵具有相同的特征多项式，因此具有相同的特征值</strong></li>
 </ol>
-<h3 id="特征向量的性质"><a href="#特征向量的性质" class="headerlink" title="特征向量的性质"></a>特征向量的性质</h3><ol>
+<h3 id="特征向量的性质">特征向量的性质</h3>
+<ol type="1">
 <li>属于不同特征值的特征向量线性无关</li>
-<li>$$\mathbf{A}$$可以对角化 $$\Leftrightarrow$$ $$\mathbf{A}$$有$$n$$个线性无关的<strong>特征向量</strong> $$\Leftrightarrow$$ $$\mathbb{F}^n$$有一组由$$\mathbf{A}$$特征向量组成的基**  <u><strong>(Que?)</strong></u></li>
+<li><span class="math display">\[\mathbf{A}\]</span>可以对角化 <span
+class="math display">\[\Leftrightarrow\]</span> <span
+class="math display">\[\mathbf{A}\]</span>有<span
+class="math display">\[n\]</span>个线性无关的<strong>特征向量</strong>
+<span class="math display">\[\Leftrightarrow\]</span> <span
+class="math display">\[\mathbb{F}^n\]</span>有一组由<span
+class="math display">\[\mathbf{A}\]</span>特征向量组成的基**
+<u><strong>(Que?)</strong></u></li>
 </ol>
-<h3 id="对角化主定理"><a href="#对角化主定理" class="headerlink" title="对角化主定理"></a>对角化主定理</h3><p>一个$$n$$阶矩阵可以对角化 $$\Leftrightarrow$$ 矩阵的每个特征值代数重数与几何重数相等</p>
+<h3 id="对角化主定理">对角化主定理</h3>
+<p>一个<span class="math display">\[n\]</span>阶矩阵可以对角化 <span
+class="math display">\[\Leftrightarrow\]</span>
+矩阵的每个特征值代数重数与几何重数相等</p>
 <div class="note note-info">
-            <p>1.特别地，若矩阵有$$n$$个不同的特征值，则可以对角化</p><p>2.实对称矩阵一定可以正交化。而且对于一个实对称矩阵$$\mathbf{A}$$, 存在正交矩阵$$\mathbf{P}$$，使得$$\mathbf{A} &#x3D; P^{-1}DP &#x3D; P^T $$,即通过正交变换变成对角阵，$$\mathbf{A}$$正交相似于对角阵。</p>
+            <p>1.特别地，若矩阵有<spanclass="math display">\[n\]</span>个不同的特征值，则可以对角化</p><p>2.实对称矩阵一定可以正交化。而且对于一个实对称矩阵<spanclass="math display">\[\mathbf{A}\]</span>, 存在正交矩阵<spanclass="math display">\[\mathbf{P}\]</span>，使得<spanclass="math display">\[\mathbf{A} = P^{-1}DP = P^T\]</span>,即通过正交变换变成对角阵，<spanclass="math display">\[\mathbf{A}\]</span>正交相似于对角阵。</p>
           </div>
-
-<p> Note: 此处要填坑，系统复习一下相似矩阵那一章的证明</p>
-<h2 id="矩阵分解"><a href="#矩阵分解" class="headerlink" title="矩阵分解"></a>矩阵分解</h2><h3 id="满秩分解"><a href="#满秩分解" class="headerlink" title="满秩分解"></a>满秩分解</h3><p>任何一个矩阵都可以被分解为列满秩矩阵$$\times$$行满秩矩阵。</p>
-<p>E.g.<br>$$<br>\mathbf{A}<em>{n \times m} &#x3D; \left[\begin{matrix} \mathbf{P}</em>{n \times r(\mathbf{A})} &amp; 0 \end{matrix} \right] \left[\begin{matrix} \mathbf{Q}_{r(\mathbf{A}) \times m} \ 0  \end{matrix}\right]<br>$$<br>一个比较简单的求解方法是，把$$\mathbf{Q}$$搞成一个Hermitte标准形，这样$$\mathbf{P}$$直接可以得出结果：取矩阵$$\mathbf{A}$$的前$$r(A)$$列</p>
-<h3 id="LU分解"><a href="#LU分解" class="headerlink" title="LU分解"></a>LU分解</h3><h3 id="奇异值-SVD-分解"><a href="#奇异值-SVD-分解" class="headerlink" title="奇异值(SVD)分解"></a>奇异值(SVD)分解</h3><h2 id="线性空间"><a href="#线性空间" class="headerlink" title="线性空间"></a>线性空间</h2><ol>
+<p>Note: 此处要填坑，系统复习一下相似矩阵那一章的证明</p>
+<h2 id="矩阵分解">矩阵分解</h2>
+<h3 id="满秩分解">满秩分解</h3>
+<p>任何一个矩阵都可以被分解为列满秩矩阵<span
+class="math display">\[\times\]</span>行满秩矩阵。</p>
+<p>E.g. <span class="math display">\[
+\mathbf{A}_{n \times m} = \left[\begin{matrix} \mathbf{P}_{n \times
+r(\mathbf{A})} &amp; 0 \end{matrix} \right] \left[\begin{matrix}
+\mathbf{Q}_{r(\mathbf{A}) \times m} \\ 0  \end{matrix}\right]
+\]</span> 一个比较简单的求解方法是，把<span
+class="math display">\[\mathbf{Q}\]</span>搞成一个Hermitte标准形，这样<span
+class="math display">\[\mathbf{P}\]</span>直接可以得出结果：取矩阵<span
+class="math display">\[\mathbf{A}\]</span>的前<span
+class="math display">\[r(A)\]</span>列</p>
+<h3 id="lu分解">LU分解</h3>
+<h3 id="奇异值svd分解">奇异值(SVD)分解</h3>
+<h2 id="线性空间">线性空间</h2>
+<ol type="1">
 <li>回顾加群(Abel群)</li>
 </ol>
 <ul>
@@ -360,56 +427,129 @@
 <li>有单位元(0元)</li>
 <li>有逆元(-a)</li>
 </ul>
-<ol start="2">
-<li><strong>线性空间的直观理解</strong>：$$(V, +)$$是一个加群，定义数域$$\mathbb{F}$$上的数乘运算，则$$（V, + , \cdot）$$是$$\mathbb{F}$$上的一个线性空间。$$\mathbb{F}$$叫做基域。</li>
+<ol start="2" type="1">
+<li><strong>线性空间的直观理解</strong>：<span
+class="math display">\[(V, +)\]</span>是一个加群，定义数域<span
+class="math display">\[\mathbb{F}\]</span>上的数乘运算，则<span
+class="math display">\[（V, + , \cdot）\]</span>是<span
+class="math display">\[\mathbb{F}\]</span>上的一个线性空间。<span
+class="math display">\[\mathbb{F}\]</span>叫做基域。</li>
 </ol>
-<p>$$(\mathbb{R}^3, +, \cdot)$$是$$\mathbb{R}$$的一个线性空间(有限维度的一个线性空间)</p>
-<p>例如，$$f \in c[a,b]$$上的所有连续函数，则$$(c[a, b], + , \cdot)$$ 是一个线性空间(无穷维度)(有泛函的观点了，只要是线性无关的函数就能构成一组基底)。</p>
-<p>例如，矩阵加法和数乘能构成一个线性空间，其一组基为全体基础矩阵$$\mathbb{E}_{ij}$$。特别地，全体$$n$$ 阶方阵组成$$n^2$$维线性空间；全体$$n \times 1$$阶矩阵，即全体$$n$$维向量，构成了$$\mathbb{F}$$上的一个$$n$$维线性空间，其一组基由所有的标准向量组成即$$e_1, e_2, \dots, e_n$$</p>
-<p>3.<strong>线性空间的基向量定义：</strong>若V中存在$$n$$个线性无关的向量，使得V中任意向量都与他们线性相关，则称$$V$$是$$n$$线性空间。</p>
-<p>4.$$V$$中任意向量均能唯一的表为$$\alpha$$的线性组合，$$ \alpha &#x3D; k_1 \alpha_1 + k_2 \alpha_2 + \dots + k_n \alpha_n &#x3D;(\alpha_1, \alpha_2, \dots, \alpha_n) k$$，则称为向量$$\alpha$$关于基的坐标$$(k_1, k_2, \dots, k_n)^T$$。</p>
+<p><span class="math display">\[(\mathbb{R}^3, +, \cdot)\]</span>是<span
+class="math display">\[\mathbb{R}\]</span>的一个线性空间(有限维度的一个线性空间)</p>
+<p>例如，<span class="math display">\[f \in
+c[a,b]\]</span>上的所有连续函数，则<span class="math display">\[(c[a,
+b], + , \cdot)\]</span>
+是一个线性空间(无穷维度)(有泛函的观点了，只要是线性无关的函数就能构成一组基底)。</p>
+<p>例如，矩阵加法和数乘能构成一个线性空间，其一组基为全体基础矩阵<span
+class="math display">\[\mathbb{E}_{ij}\]</span>。特别地，全体<span
+class="math display">\[n\]</span> 阶方阵组成<span
+class="math display">\[n^2\]</span>维线性空间；全体<span
+class="math display">\[n \times 1\]</span>阶矩阵，即全体<span
+class="math display">\[n\]</span>维向量，构成了<span
+class="math display">\[\mathbb{F}\]</span>上的一个<span
+class="math display">\[n\]</span>维线性空间，其一组基由所有的标准向量组成即<span
+class="math display">\[e_1, e_2, \dots, e_n\]</span></p>
+<p>3.<strong>线性空间的基向量定义：</strong>若V中存在<span
+class="math display">\[n\]</span>个线性无关的向量，使得V中任意向量都与他们线性相关，则称<span
+class="math display">\[V\]</span>是<span
+class="math display">\[n\]</span>线性空间。</p>
+<p>4.<span
+class="math display">\[V\]</span>中任意向量均能唯一的表为<span
+class="math display">\[\alpha\]</span>的线性组合，<span
+class="math display">\[ \alpha = k_1 \alpha_1 + k_2 \alpha_2 + \dots +
+k_n \alpha_n =(\alpha_1, \alpha_2, \dots, \alpha_n)
+k\]</span>，则称为向量<span
+class="math display">\[\alpha\]</span>关于基的坐标<span
+class="math display">\[(k_1, k_2, \dots, k_n)^T\]</span>。</p>
 <p>线性空间的基一般不唯一，但线性空间的维数是唯一确定的。所以不同基向量包含的向量个数相同。</p>
-<ol start="5">
+<ol start="5" type="1">
 <li><strong>基扩充定理</strong>:</li>
-<li>过渡矩阵：设$$n$$维线性空间的一组基$$(\alpha_1, \alpha_2, \dots, \alpha_n)$$与另一组基$$(\beta_1, \beta_2, \dots, \beta_n)$$如果存在如下关系:</li>
+<li>过渡矩阵：设<span
+class="math display">\[n\]</span>维线性空间的一组基<span
+class="math display">\[(\alpha_1, \alpha_2, \dots,
+\alpha_n)\]</span>与另一组基<span class="math display">\[(\beta_1,
+\beta_2, \dots, \beta_n)\]</span>如果存在如下关系:</li>
 </ol>
-<p>$$<br>\left[\begin{matrix} \beta_1&amp; \beta_2 &amp; \dots \beta_n \end{matrix} \right] &#x3D; \left[\begin{matrix} \alpha_1&amp; \alpha_2 &amp; \dots \alpha_n \end{matrix} \right] \mathbf{P}<br>$$</p>
-<p>所以可见，每个列向量$$\beta_i$$都是$$\alpha_j$$的线性组合，组合系数由$$P_i$$列向量控制。</p>
-<img src="https://i.loli.net/2021/10/11/UiXGb2vNnJfgFus.jpg" srcset="/img/loading.gif" lazyload style="zoom: 33%;" />
-
-<h2 id="内积空间"><a href="#内积空间" class="headerlink" title="内积空间"></a>内积空间</h2><ol>
-<li><p>背景：内积的引入和“长度“有关。在线性空间中引入内积的概念，衡量两个向量的“远近”。如果内积归一化后，就是通过两个单位向量的夹角来衡量两个向量的距离。</p>
-</li>
-<li><p><strong>内积空间</strong>：设$$V是$$$$\mathbb{F}$$上的线性空间，若对$$V$$中的任意两个向量，都定义了$$\mathbb{F}$$中的一个数$$(\alpha, \beta)$$,使得满足</p>
+<p><span class="math display">\[
+\left[\begin{matrix} \beta_1&amp; \beta_2 &amp; \dots \beta_n
+\end{matrix} \right] = \left[\begin{matrix} \alpha_1&amp; \alpha_2 &amp;
+\dots \alpha_n \end{matrix} \right] \mathbf{P}
+\]</span></p>
+<p>所以可见，每个列向量<span
+class="math display">\[\beta_i\]</span>都是<span
+class="math display">\[\alpha_j\]</span>的线性组合，组合系数由<span
+class="math display">\[P_i\]</span>列向量控制。</p>
+<p><img src="https://i.loli.net/2021/10/11/UiXGb2vNnJfgFus.jpg" srcset="/img/loading.gif" lazyload style="zoom: 33%;" /></p>
+<h2 id="内积空间">内积空间</h2>
+<ol type="1">
+<li><p>背景：内积的引入和“长度“有关。在线性空间中引入内积的概念，衡量两个向量的“远近”。如果内积归一化后，就是通过两个单位向量的夹角来衡量两个向量的距离。</p></li>
+<li><p><strong>内积空间</strong>：设<span
+class="math display">\[V是\]</span><span
+class="math display">\[\mathbb{F}\]</span>上的线性空间，若对<span
+class="math display">\[V\]</span>中的任意两个向量，都定义了<span
+class="math display">\[\mathbb{F}\]</span>中的一个数<span
+class="math display">\[(\alpha, \beta)\]</span>,使得满足</p>
 <ul>
-<li><p>(共轭对称性) $$(\alpha, \beta) &#x3D; \overline{(\beta, \alpha)}$$</p>
-</li>
-<li><p>(正定性）$$(\alpha, \alpha) \ge 0$$</p>
-</li>
-<li><p>(双线性) $$(a \alpha + b \beta， \gamma) &#x3D; a(\alpha, \gamma) + b(\beta, \gamma)$$ (共轭双线性)$$(\alpha, a \beta + b \gamma) &#x3D; a(\alpha, \beta) + \overline{b}(\alpha, \beta)$$</p>
-<p>  则称其为内积空间。</p>
-</li>
-</ul>
-</li>
+<li><p>(共轭对称性) <span class="math display">\[(\alpha, \beta) =
+\overline{(\beta, \alpha)}\]</span></p></li>
+<li><p>(正定性）<span class="math display">\[(\alpha, \alpha) \ge
+0\]</span></p></li>
+<li><p>(双线性) <span class="math display">\[(a \alpha + b \beta，
+\gamma) = a(\alpha, \gamma) + b(\beta, \gamma)\]</span>
+(共轭双线性)<span class="math display">\[(\alpha, a \beta + b \gamma) =
+a(\alpha, \beta) + \overline{b}(\alpha, \beta)\]</span></p>
+<p>则称其为内积空间。</p></li>
+</ul></li>
 <li><p>内积与范数性质</p>
-<p> 比较重要的且容易忘记的，Cauchy-Schwards不等式， 三角不等式</p>
+<p>比较重要的且容易忘记的，Cauchy-Schwards不等式， 三角不等式</p></li>
+<li><p>内积的作用：从代数上，两个向量的角度，两个向量在线性空间中的距离都可以由内积来定义。有了角度和长度，从几何上更好解释向量之间的位置关系。比如两个向量正交是垂直(角度90°)，实数域的线性空间上两个向量线性相关当且仅当夹角为0或<span
+class="math display">\[\pi\]</span>。</p></li>
+<li><p>Gram-Schmidt正交化方法: 已知线性无关组<span
+class="math display">\[\alpha_1 , \dots,
+\alpha_n\]</span>,求标准正交组</p></li>
+</ol>
+<p><span class="math display">\[
+\beta_k = \alpha_k - \sum_i (\alpha_i, \gamma_i)\gamma_i
+\]</span></p>
+<p><span class="math display">\[
+\gamma_k = \frac{\beta_k}{||\beta_k||}
+\]</span></p>
+<p>几何意义：再求第<span
+class="math display">\[k\]</span>个标准正交基时，投影到<span
+class="math display">\[\gamma_1 \dots
+\gamma_{k-1}\]</span>个标准正交基构成的”超平面“上的投影等于其在各个<span
+class="math display">\[\gamma_i\]</span>分量上的投影向量之和。所以减去后自然就与<span
+class="math display">\[\gamma_1 \dots
+\gamma_{k-1}\]</span>正交，最后再单位化。</p>
+<ol start="6" type="1">
+<li>酉矩阵<span class="math display">\[\mathbf{A}^H \mathbf{A} =
+\mathbf{I}\]</span>, 在实数域上就是正交矩阵<span
+class="math display">\[\mathbf{A}^T \mathbf{A} =
+\mathbf{I}\]</span>。该矩阵的每个行(列)向量两两正交，且为单位向量。正交矩阵的集合意义几乎就是旋转变换，利用正交矩阵做旋转变换可以去掉二次型中的交叉项，变成标准形式。
+<img src="https://i.loli.net/2021/10/11/BWxoCmdMzDG9c12.png" srcset="/img/loading.gif" lazyload alt="image-20211011195300299" style="zoom: 67%;" /></li>
+</ol>
+<p><img src="https://i.loli.net/2021/10/11/agG4bAcnJCmlEeW.png" srcset="/img/loading.gif" lazyload alt="image-20211011195358735" style="zoom: 60%;" /></p>
+<h2 id="参考文献">参考文献</h2>
+<section class="footnotes">
+<div class="footnote-list">
+<ol>
+<li>
+<span id="fn:1" class="footnote-text"><span>《线性代数》 第二版 居余马
+清华大学出版社
+<a href="#fnref:1" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
 </li>
-<li><p>内积的作用：从代数上，两个向量的角度，两个向量在线性空间中的距离都可以由内积来定义。有了角度和长度，从几何上更好解释向量之间的位置关系。比如两个向量正交是垂直(角度90°)，实数域的线性空间上两个向量线性相关当且仅当夹角为0或$$\pi$$。</p>
-</li>
-<li><p>Gram-Schmidt正交化方法: 已知线性无关组$$\alpha_1 , \dots, \alpha_n$$,求标准正交组</p>
+<li>
+<span id="fn:2" class="footnote-text"><span>《矩阵理论与应用》 张跃辉
+上海交通大学出版社
+<a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
 </li>
 </ol>
-<p>$$<br>\beta_k &#x3D; \alpha_k - \sum_i (\alpha_i, \gamma_i)\gamma_i<br>$$</p>
-<p>$$<br>\gamma_k &#x3D; \frac{\beta_k}{||\beta_k||}<br>$$</p>
-<p>几何意义：再求第$$k$$个标准正交基时，投影到$$\gamma_1 \dots \gamma_{k-1}$$个标准正交基构成的”超平面“上的投影等于其在各个$$\gamma_i$$分量上的投影向量之和。所以减去后自然就与$$\gamma_1 \dots \gamma_{k-1}$$正交，最后再单位化。</p>
-<ol start="6">
-<li>酉矩阵$$\mathbf{A}^H \mathbf{A} &#x3D; \mathbf{I}$$, 在实数域上就是正交矩阵$$\mathbf{A}^T \mathbf{A} &#x3D; \mathbf{I}$$。该矩阵的每个行(列)向量两两正交，且为单位向量。正交矩阵的集合意义几乎就是旋转变换，利用正交矩阵做旋转变换可以去掉二次型中的交叉项，变成标准形式。 <img src="https://i.loli.net/2021/10/11/BWxoCmdMzDG9c12.png" srcset="/img/loading.gif" lazyload alt="image-20211011195300299" style="zoom: 67%;" /></li>
-</ol>
-<img src="https://i.loli.net/2021/10/11/agG4bAcnJCmlEeW.png" srcset="/img/loading.gif" lazyload alt="image-20211011195358735" style="zoom: 60%;" />
+</div>
+</section>
 
-<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>《线性代数》 第二版 居余马 清华大学出版社
-<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>《矩阵理论与应用》 张跃辉  上海交通大学出版社
-<a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             

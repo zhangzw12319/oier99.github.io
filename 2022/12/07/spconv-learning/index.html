@@ -315,167 +315,222 @@
             
               <div class="markdown-body">
                 
-                <h1 id="Spconv-编程学习"><a href="#Spconv-编程学习" class="headerlink" title="Spconv 编程学习"></a>Spconv 编程学习</h1><p>spconv版本：2.x</p>
-<p>参考链接: <a target="_blank" rel="noopener" href="https://github.com/traveller59/spconv/blob/master/docs/USAGE.md">https://github.com/traveller59/spconv/blob/master/docs/USAGE.md</a> 官方repo给的教程</p>
+                <h1 id="spconv-编程学习">Spconv 编程学习</h1>
+<p>spconv版本：2.x</p>
+<p>参考链接:
+https://github.com/traveller59/spconv/blob/master/docs/USAGE.md
+官方repo给的教程</p>
 <p>下文大部分直接粘贴，然后加上自己实验后修改补充的一些中文讲解内容。</p>
-<h2 id="Short-API-description"><a href="#Short-API-description" class="headerlink" title="Short API description"></a>Short API description</h2><figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-keyword">import</span> spconv.pytorch <span class="hljs-keyword">as</span> spconv<br><span class="hljs-title">from</span> spconv.pytorch <span class="hljs-keyword">import</span> functional <span class="hljs-keyword">as</span> Fsp<br><span class="hljs-title">from</span> torch <span class="hljs-keyword">import</span> nn<br><span class="hljs-title">from</span> spconv.pytorch.utils <span class="hljs-keyword">import</span> PointToVoxel<br><span class="hljs-title">from</span> spconv.pytorch.hash <span class="hljs-keyword">import</span> HashTable<br></code></pre></td></tr></table></figure>
-
+<h2 id="short-api-description">Short API description</h2>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs elm"><span class="hljs-keyword">import</span> spconv.pytorch <span class="hljs-keyword">as</span> spconv<br><span class="hljs-title">from</span> spconv.pytorch <span class="hljs-keyword">import</span> functional <span class="hljs-keyword">as</span> Fsp<br><span class="hljs-title">from</span> torch <span class="hljs-keyword">import</span> nn<br><span class="hljs-title">from</span> spconv.pytorch.utils <span class="hljs-keyword">import</span> PointToVoxel<br><span class="hljs-title">from</span> spconv.pytorch.hash <span class="hljs-keyword">import</span> HashTable<br></code></pre></td></tr></table></figure>
 <table>
+
 <thead>
-<tr>
+<tr class="header">
 <th>Layer APIs</th>
 <th>Common Usage</th>
 <th>Dense Version</th>
 <th>Note</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>spconv.SparseConv3d</code></td>
 <td>Downsample</td>
 <td><code>nn.Conv3d</code></td>
 <td>Use <code>indice_key</code> to save data for inverse</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>spconv.SubMConv3d</code></td>
 <td>Convolution</td>
-<td>N&#x2F;A</td>
+<td>N/A</td>
 <td>Use <code>indice_key</code> to save data for reuse</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>spconv.SparseInverseConv3d</code></td>
 <td>Upsample</td>
-<td>N&#x2F;A</td>
+<td>N/A</td>
 <td>Use pre-saved <code>indice_key</code> to upsample</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>spconv.SparseConvTranspose3d</code></td>
-<td>Upsample (don’t use this)</td>
+<td>Upsample (don't use this)</td>
 <td><code>nn.ConvTranspose3d</code></td>
-<td>VERY SLOW and CAN’T RECOVER ORIGIN POINT CLOUD</td>
+<td>VERY SLOW and CAN'T RECOVER ORIGIN POINT CLOUD</td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>spconv.SparseMaxPool3d</code></td>
 <td>Downsample</td>
 <td><code>nn.MaxPool3d</code></td>
 <td>Use <code>indice_key</code> to save data for inverse</td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>spconv.SparseSequential</code></td>
 <td>Container</td>
 <td><code>nn.Sequential</code></td>
-<td>support layers above and <code>nn.ReLU, nn.BatchNorm, ...</code></td>
+<td>support layers above and
+<code>nn.ReLU, nn.BatchNorm, ...</code></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
+
 <thead>
-<tr>
+<tr class="header">
 <th>Functional APIs</th>
 <th>Usage</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>Fsp.sparse_add</code></td>
 <td>Add sparse tensors with same shape and different indices</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Input APIs</th>
 <th>Usage</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>PointToVoxel</code></td>
 <td>point cloud to voxels</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>Misc APIs</th>
 <th>Usage</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>HashTable</code></td>
 <td>hash table, one-slot</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <table>
+
 <thead>
-<tr>
+<tr class="header">
 <th>Layer APIs</th>
-<th><a target="_blank" rel="noopener" href="https://github.com/mit-han-lab/torchsparse">torchsparse</a></th>
-<th><a target="_blank" rel="noopener" href="https://github.com/NVIDIA/MinkowskiEngine">MinkowskiEngine</a></th>
+<th><a
+target="_blank" rel="noopener" href="https://github.com/mit-han-lab/torchsparse">torchsparse</a></th>
+<th><a
+target="_blank" rel="noopener" href="https://github.com/NVIDIA/MinkowskiEngine">MinkowskiEngine</a></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr class="odd">
 <td><code>spconv.SparseConv3d</code></td>
 <td><code>Conv3d(stride!=1, transpose=False)</code></td>
 <td><code>MinkowskiConvolution(stride!=1)</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>spconv.SubMConv3d</code></td>
 <td><code>Conv3d(stride=1, transpose=False)</code></td>
 <td><code>MinkowskiConvolution(stride=1)</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>spconv.SparseInverseConv3d</code></td>
 <td><code>Conv3d(stride!=1, transpose=True)</code></td>
 <td><code>MinkowskiConvolutionTranspose</code></td>
 </tr>
-<tr>
+<tr class="even">
 <td><code>spconv.SparseConvTranspose3d</code></td>
-<td>N&#x2F;A</td>
+<td>N/A</td>
 <td><code>MinkowskiConvolutionTranspose</code></td>
 </tr>
-<tr>
+<tr class="odd">
 <td><code>spconv.SparseMaxPool3d</code></td>
-<td>N&#x2F;A</td>
+<td>N/A</td>
 <td><code>MinkowskiMaxPooling</code></td>
 </tr>
-</tbody></table>
-<h2 id="Concept"><a href="#Concept" class="headerlink" title="Concept"></a>Concept</h2><ul>
-<li>Sparse Conv Tensor: like hybird <a target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/sparse.html#sparse-coo-docs">torch.sparse_coo_tensor</a> but only have two difference: 1. SparseConvTensor only have one dense dim, 2. indice of SparseConvTensor is transposed. see torch doc for more details.</li>
-<li>Sparse Convolution: equivalent to perform dense convolution when you convert SparseConvTensor to dense. Sparse Convolution only run calculation on valid data.</li>
-<li>Submanifold Convolution (SubMConv): like Sparse Convolution but indices keeps same. imagine that you copy same spatial structure to output, then iterate them, get input coordinates by conv rule, finally apply convolution <strong>ONLY</strong> in these output coordinates.</li>
+</tbody>
+</table>
+<h2 id="concept">Concept</h2>
+<ul>
+<li>Sparse Conv Tensor: like hybird <a
+target="_blank" rel="noopener" href="https://pytorch.org/docs/stable/sparse.html#sparse-coo-docs">torch.sparse_coo_tensor</a>
+but only have two difference: 1. SparseConvTensor only have one dense
+dim, 2. indice of SparseConvTensor is transposed. see torch doc for more
+details.</li>
+<li>Sparse Convolution: equivalent to perform dense convolution when you
+convert SparseConvTensor to dense. Sparse Convolution only run
+calculation on valid data.</li>
+<li>Submanifold Convolution (SubMConv): like Sparse Convolution but
+indices keeps same. imagine that you copy same spatial structure to
+output, then iterate them, get input coordinates by conv rule, finally
+apply convolution <strong>ONLY</strong> in these output
+coordinates.</li>
 </ul>
-<h2 id="SparseConvTensor"><a href="#SparseConvTensor" class="headerlink" title="SparseConvTensor"></a>SparseConvTensor</h2><ul>
+<h2 id="sparseconvtensor">SparseConvTensor</h2>
+<ul>
 <li>features: <code>[N, num_channels]</code> tensor.</li>
-<li>indices: <code>[N, (batch_idx + x + y + z)]</code> coordinate tensor with batch axis. note that the coordinates xyz order MUST match spatial shape and conv params such as kernel size</li>
+<li>indices: <code>[N, (batch_idx + x + y + z)]</code> coordinate tensor
+with batch axis. note that the coordinates xyz order MUST match spatial
+shape and conv params such as kernel size</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> spconv.pytorch <span class="hljs-keyword">as</span> spconv<br>features = <span class="hljs-comment"># your features with shape [N, num_channels]</span><br>indices = <span class="hljs-comment"># your indices/coordinates with shape [N, ndim + 1], batch index must be put in indices[:, 0]</span><br>spatial_shape = <span class="hljs-comment"># spatial shape of your sparse tensor, spatial_shape[i] is shape of indices[:, 1 + i].</span><br>batch_size = <span class="hljs-comment"># batch size of your sparse tensor.</span><br>x = spconv.SparseConvTensor(features, indices, spatial_shape, batch_size)<br>x_dense_NCHW = x.dense() <span class="hljs-comment"># convert sparse tensor to dense NCHW tensor.</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="Sparse-Convolution"><a href="#Sparse-Convolution" class="headerlink" title="Sparse Convolution"></a>Sparse Convolution</h3><p>注：此处代码有改动</p>
+<h3 id="sparse-convolution">Sparse Convolution</h3>
+<p>注：此处代码有改动</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br>os.environ[<span class="hljs-string">&#x27;SPCONV_DEBUG_SAVE_PATH&#x27;</span>]=<span class="hljs-string">&quot;./spconv.log&quot;</span><br><span class="hljs-keyword">import</span> torch<br><span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np<br><span class="hljs-keyword">import</span> spconv.pytorch <span class="hljs-keyword">as</span> spconv<br><span class="hljs-keyword">from</span> torch <span class="hljs-keyword">import</span> nn<br><span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleNet</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, shape</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.net = spconv.SparseSequential(<br>        <span class="hljs-comment"># API Paramemter: in_channels, out_channels, kernel_size, stride=1, padding=0, dilation=1, </span><br>        <span class="hljs-comment"># groups=1, bias=True, padding_mode=&#x27;zeros&#x27;, device=None, dtype=None</span><br>            spconv.SparseConv3d(<span class="hljs-number">32</span>, <span class="hljs-number">64</span>, <span class="hljs-number">3</span>, padding=(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>)), <span class="hljs-comment"># just like nn.Conv3d but don&#x27;t support group</span><br>            nn.BatchNorm1d(<span class="hljs-number">64</span>), <span class="hljs-comment"># non-spatial layers can be used directly in SparseSequential.</span><br>            nn.ReLU(),<br>            <span class="hljs-comment"># Kerner是3的时候，注意设置Padding为1，才能保持尺寸一致</span><br>            spconv.SubMConv3d(<span class="hljs-number">64</span>, <span class="hljs-number">64</span>, <span class="hljs-number">3</span>, padding=(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>),indice_key=<span class="hljs-string">&quot;subm0&quot;</span>),<br>            nn.BatchNorm1d(<span class="hljs-number">64</span>),<br>            nn.ReLU(),<br>        <span class="hljs-comment"># when use submanifold convolutions, their indices can be shared to save indices generation time.</span><br>            spconv.SubMConv3d(<span class="hljs-number">64</span>, <span class="hljs-number">64</span>, <span class="hljs-number">3</span>, indice_key=<span class="hljs-string">&quot;subm0&quot;</span>),<br>            nn.BatchNorm1d(<span class="hljs-number">64</span>),<br>            nn.ReLU(),<br>        )<br>        self.conv1 = spconv.SparseConv3d(<span class="hljs-number">32</span>, <span class="hljs-number">64</span>, <span class="hljs-number">3</span>)<br>        self.bn1 = nn.BatchNorm1d(<span class="hljs-number">64</span>)<br>        self.relu1 = nn.ReLU()<br>        self.shape = shape<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, features, coors, batch_size</span>):<br>        coors = coors.<span class="hljs-built_in">int</span>() <span class="hljs-comment"># unlike torch, this library only accept int coordinates.</span><br>        x = spconv.SparseConvTensor(features, coors, self.shape, batch_size)<br>        <span class="hljs-keyword">return</span> self.net(x)<br>    <br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>    points_feature_np = np.array(np.random.random(size=<span class="hljs-number">1000</span>))<br>    points_feature_np = points_feature_np[:, np.newaxis]<br>    <span class="hljs-comment"># 目前Spconv版本要求 变量类型是float32</span><br>    points_feature = torch.from_numpy(points_feature_np).to(torch.float32)<br>    points_feature = points_feature.expand_as(torch.zeros((<span class="hljs-number">1000</span>, <span class="hljs-number">32</span>)))<br>    points_indices_np = np.array([np.zeros(<span class="hljs-number">1000</span>), np.random.randint(<span class="hljs-number">360</span>, size=<span class="hljs-number">1000</span>), np.random.randint(<span class="hljs-number">480</span>, size=<span class="hljs-number">1000</span>), np.random.randint(<span class="hljs-number">32</span>, size=<span class="hljs-number">1000</span>)]).transpose()<br>    points_indices = torch.from_numpy(points_indices_np).to(torch.int32)<br>    <br>    model = ExampleNet(shape=[<span class="hljs-number">360</span>, <span class="hljs-number">480</span>, <span class="hljs-number">32</span>]).cuda()<br>    <span class="hljs-comment"># 注意此处向量需要连续化.contiguous()</span><br>    output_points_feature = model(points_feature.cuda().contiguous(), points_indices.cuda().contiguous(), <span class="hljs-number">1</span>)<br>    <span class="hljs-built_in">print</span>(output_points_feature.features.shape)<br>        <br>        <br></code></pre></td></tr></table></figure>
-
-<h3 id="Inverse-Convolution"><a href="#Inverse-Convolution" class="headerlink" title="Inverse Convolution"></a>Inverse Convolution</h3><p>Inverse sparse convolution means “inv” of sparse convolution. the output of inverse convolution contains same indices as input of sparse convolution.</p>
-<p><strong>WARNING</strong> <code>SparseInverseConv</code> isn’t equivalent to <code>SparseConvTranspose</code>. SparseConvTranspose is equivalent to <code>ConvTranspose</code> in pytorch, but SparseInverseConv isn’t.</p>
+<h3 id="inverse-convolution">Inverse Convolution</h3>
+<p>Inverse sparse convolution means "inv" of sparse convolution. the
+output of inverse convolution contains same indices as input of sparse
+convolution.</p>
+<p><strong>WARNING</strong> <code>SparseInverseConv</code> isn't
+equivalent to <code>SparseConvTranspose</code>. SparseConvTranspose is
+equivalent to <code>ConvTranspose</code> in pytorch, but
+SparseInverseConv isn't.</p>
 <p>Inverse convolution usually used in semantic segmentation.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">ExampleNet</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, shape</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.net = spconv.SparseSequential(<br>            spconv.SparseConv3d(<span class="hljs-number">32</span>, <span class="hljs-number">64</span>, <span class="hljs-number">3</span>, <span class="hljs-number">2</span>, indice_key=<span class="hljs-string">&quot;cp0&quot;</span>),<br>            spconv.SparseInverseConv3d(<span class="hljs-number">64</span>, <span class="hljs-number">32</span>, <span class="hljs-number">3</span>, indice_key=<span class="hljs-string">&quot;cp0&quot;</span>), <span class="hljs-comment"># need provide kernel size to create weight</span><br>        )<br>        self.shape = shape<br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, features, coors, batch_size</span>):<br>        coors = coors.<span class="hljs-built_in">int</span>()<br>        x = spconv.SparseConvTensor(features, coors, self.shape, batch_size)<br>        <span class="hljs-keyword">return</span> self.net(x)<br></code></pre></td></tr></table></figure>
-
-<h4 id="Common-Mistake"><a href="#Common-Mistake" class="headerlink" title="Common Mistake"></a>Common Mistake</h4><ul>
-<li>issue <a target="_blank" rel="noopener" href="https://github.com/traveller59/spconv/issues/467">#467</a></li>
+<h4 id="common-mistake">Common Mistake</h4>
+<ul>
+<li>issue <a
+target="_blank" rel="noopener" href="https://github.com/traveller59/spconv/issues/467">#467</a></li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">class</span> <span class="hljs-title class_">WrongNet</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, shape</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.Encoder = spconv.SparseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">2</span>, indice_key=<span class="hljs-string">&quot;cp1&quot;</span>,algo=algo)<br>        self.Sparse_Conv = spconv.SparseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>,algo=algo)<br>        self.Decoder = spconv.SparseInverseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, indice_key=<span class="hljs-string">&quot;cp1&quot;</span>,algo=algo)   <br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, sparse_tensor</span>):<br>        encoded = self.Encoder(sparse_tensor)<br>        s_conv = self.Sparse_Conv(encoded)<br>        <span class="hljs-keyword">return</span> self.Decoder(s_conv).features<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">CorrectNet</span>(nn.Module):<br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self, shape</span>):<br>        <span class="hljs-built_in">super</span>().__init__()<br>        self.Encoder = spconv.SparseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">2</span>, indice_key=<span class="hljs-string">&quot;cp1&quot;</span>,algo=algo)<br>        self.Sparse_Conv = spconv.SparseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, stride=<span class="hljs-number">1</span>, indice_key=<span class="hljs-string">&quot;cp2&quot;</span>,algo=algo)<br>        self.Sparse_Conv_Decoder = spconv.SparseInverseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, indice_key=<span class="hljs-string">&quot;cp2&quot;</span>,algo=algo)   <br>        self.Decoder = spconv.SparseInverseConv3d(channels, channels, kernel_size=<span class="hljs-number">3</span>, indice_key=<span class="hljs-string">&quot;cp1&quot;</span>,algo=algo)   <br><br>    <span class="hljs-keyword">def</span> <span class="hljs-title function_">forward</span>(<span class="hljs-params">self, sparse_tensor</span>):<br>        encoded = self.Encoder(sparse_tensor)<br>        s_conv = self.Sparse_Conv(encoded)<br>        <span class="hljs-keyword">return</span> self.Decoder(self.Sparse_Conv_Decoder(s_conv)).features<br></code></pre></td></tr></table></figure>
-
-<p>The <code>Sparse_Conv</code> in <code>ExampleNet</code> Change spatial structure of output of <code>Encoder</code>, so we can’t inverse back to input of <code>Encoder</code> via <code>Decoder</code>, we need to inverse from <code>Sparse_Conv.output</code> to <code>Encoder.output</code> via <code>Sparse_Conv_Decoder</code>, then inverse from <code>Encoder.output</code> to <code>Encoder.input</code> via <code>Decoder</code>.</p>
-<h3 id="Sparse-Add"><a href="#Sparse-Add" class="headerlink" title="Sparse Add"></a>Sparse Add</h3><p>In sematic segmentation network, we may use conv1x3, 3x1 and 3x3 in a block, but it’s impossible to sum result from these layers because regular add requires same indices.</p>
-<p>spconv &gt;&#x3D; 2.1.17 provide a operation to add sparse tensors with different indices (shape must same), but with limits:</p>
+<p>The <code>Sparse_Conv</code> in <code>ExampleNet</code> Change
+spatial structure of output of <code>Encoder</code>, so we can't inverse
+back to input of <code>Encoder</code> via <code>Decoder</code>, we need
+to inverse from <code>Sparse_Conv.output</code> to
+<code>Encoder.output</code> via <code>Sparse_Conv_Decoder</code>, then
+inverse from <code>Encoder.output</code> to <code>Encoder.input</code>
+via <code>Decoder</code>.</p>
+<h3 id="sparse-add">Sparse Add</h3>
+<p>In sematic segmentation network, we may use conv1x3, 3x1 and 3x3 in a
+block, but it's impossible to sum result from these layers because
+regular add requires same indices.</p>
+<p>spconv &gt;= 2.1.17 provide a operation to add sparse tensors with
+different indices (shape must same), but with limits:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> spconv.pytorch <span class="hljs-keyword">import</span> functional <span class="hljs-keyword">as</span> Fsp<br>res_1x3 = conv1x3(x)<br>res_3x1 = conv3x1(x)<br><span class="hljs-comment"># WRONG</span><br><span class="hljs-comment"># because we can&#x27;t &quot;inverse&quot; this operation</span><br>wrong_usage_cant_inverse = Fsp.sparse_add(res_1x3, res_3x1)<br><br><span class="hljs-comment"># CORRECT</span><br><span class="hljs-comment"># res_3x3 already contains all indices of res_1x3 and res_3x1, </span><br><span class="hljs-comment"># so output spatial structure isn&#x27;t changed, we can &quot;inverse&quot; back.</span><br>res_3x3 = conv3x3(x)<br>correct = Fsp.sparse_add(res_1x3, res_3x1, res_3x3)<br></code></pre></td></tr></table></figure>
-
-<p>If you use a network without <code>SparseInverseConv</code>, limits above aren’t exists, the only drawback of <code>sparse_add</code> is that it run slower than simple aligned add.</p>
-<h3 id="Fast-Mixed-Percision-Training"><a href="#Fast-Mixed-Percision-Training" class="headerlink" title="Fast Mixed Percision Training"></a>Fast Mixed Percision Training</h3><p>see example&#x2F;mnist_sparse. we support <code>torch.cuda.amp</code>.</p>
-<h3 id="Utility-functions"><a href="#Utility-functions" class="headerlink" title="Utility functions"></a>Utility functions</h3><ul>
+<p>If you use a network without <code>SparseInverseConv</code>, limits
+above aren't exists, the only drawback of <code>sparse_add</code> is
+that it run slower than simple aligned add.</p>
+<h3 id="fast-mixed-percision-training">Fast Mixed Percision
+Training</h3>
+<p>see example/mnist_sparse. we support <code>torch.cuda.amp</code>.</p>
+<h3 id="utility-functions">Utility functions</h3>
+<ul>
 <li>convert point cloud to voxel</li>
 </ul>
-<p>voxel generator in spconv generate indices in <strong>ZYX</strong> order, the params format are <strong>XYZ</strong>.</p>
-<p>generated indices don’t include batch axis, you need to add it by yourself.</p>
-<p>see examples&#x2F;voxel_gen.py for examples.</p>
+<p>voxel generator in spconv generate indices in <strong>ZYX</strong>
+order, the params format are <strong>XYZ</strong>.</p>
+<p>generated indices don't include batch axis, you need to add it by
+yourself.</p>
+<p>see examples/voxel_gen.py for examples.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> spconv.pytorch.utils <span class="hljs-keyword">import</span> PointToVoxel, gather_features_by_pc_voxel_id<br><span class="hljs-comment"># this generator generate ZYX indices.</span><br>gen = PointToVoxel(<br>    vsize_xyz=[<span class="hljs-number">0.1</span>, <span class="hljs-number">0.1</span>, <span class="hljs-number">0.1</span>], <br>    coors_range_xyz=[-<span class="hljs-number">80</span>, -<span class="hljs-number">80</span>, -<span class="hljs-number">2</span>, <span class="hljs-number">80</span>, <span class="hljs-number">80</span>, <span class="hljs-number">6</span>], <br>    num_point_features=<span class="hljs-number">3</span>, <br>    max_num_voxels=<span class="hljs-number">5000</span>, <br>    max_num_points_per_voxel=<span class="hljs-number">5</span>)<br>pc = np.random.uniform(-<span class="hljs-number">10</span>, <span class="hljs-number">10</span>, size=[<span class="hljs-number">1000</span>, <span class="hljs-number">3</span>])<br>pc_th = torch.from_numpy(pc)<br>voxels, coords, num_points_per_voxel = gen(pc_th, empty_mean=<span class="hljs-literal">True</span>)<br></code></pre></td></tr></table></figure>
-
-<p>If you want to get label for every point of your pc, you need to use another function to get pc_voxel_id and gather features from sematic segmentation result:</p>
+<p>If you want to get label for every point of your pc, you need to use
+another function to get pc_voxel_id and gather features from sematic
+segmentation result:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs python">voxels, coords, num_points_per_voxel, pc_voxel_id = gen.generate_voxel_with_id(pc_th, empty_mean=<span class="hljs-literal">True</span>)<br>seg_features = YourSegNet(...)<br><span class="hljs-comment"># if voxel id is invalid (point out of range, or no space left in a voxel)</span><br><span class="hljs-comment"># features will be zero.</span><br>point_features = gather_features_by_pc_voxel_id(seg_features, pc_voxel_id)<br></code></pre></td></tr></table></figure>
 
                 

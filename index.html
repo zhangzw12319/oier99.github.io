@@ -65,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -111,7 +111,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -123,7 +123,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                时间轴
+                <span>时间轴</span>
               </a>
             </li>
           
@@ -135,7 +135,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -147,7 +147,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tag-fill"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -159,7 +159,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于我
+                <span>关于我</span>
               </a>
             </li>
           
@@ -171,7 +171,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -183,7 +183,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/music/">
                 <i class="iconfont icon-music"></i>
-                每日音乐
+                <span>每日音乐</span>
               </a>
             </li>
           
@@ -191,15 +191,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -358,6 +359,119 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/Model-Parallel/">#Model Parallel</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/12/29/LaTex-figure-table/" target="_blank">
+          <img src="https://s2.loli.net/2022/12/29/rmyPt2Sn5dFEB3Z.jpg" srcset="/img/loading.gif" lazyload alt="LaTex 讲解系列：如何优雅地插入图表">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/29/LaTex-figure-table/" target="_blank">
+          LaTex 讲解系列：如何优雅地插入图表
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/12/29/LaTex-figure-table/" target="_blank">
+        <div>
+          LaTex 讲解系列： 如何优雅地插入图表   包括插入子图，多图排列，画模型图等等 具体代码以会议/期刊所给的模板格式为准 插入图片 插入一张图片 12345678%\begin&#123;center&#125; % 外部剧中 \begin&#123;figure&#125;[!htbp] \centering % 内部居中 \includegraphics[width=0.4
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-29 12:23" pubdate>
+              2022-12-29
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LaTex/">#LaTex</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2022/12/29/Latex-codeblock/" target="_blank">
+          <img src="https://s2.loli.net/2022/12/29/XwSe2x86yNmkTfr.jpg" srcset="/img/loading.gif" lazyload alt="LaTex讲解系列：如何插入代码块/伪代码">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/29/Latex-codeblock/" target="_blank">
+          LaTex讲解系列：如何插入代码块/伪代码
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt " href="/2022/12/29/Latex-codeblock/" target="_blank">
+        <div>
+          LaTex常用代码插入/伪代码描述使用方法在这里！
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-29 10:17" pubdate>
+              2022-12-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LaTex/">#LaTex</a>
             
           </div>
         
@@ -752,190 +866,6 @@
             <i class="iconfont icon-tags"></i>
             
               <a href="/tags/LaTex/">#LaTex</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022/05/24/%E8%AE%BA%E6%96%87%E5%8D%81%E9%97%AE-map-view-transformer-CVPR2022/" target="_blank">
-          <img src="https://s2.loli.net/2022/05/24/LDeCqp1Rl86HTuz.jpg" srcset="/img/loading.gif" lazyload alt="论文十问:Map-view Transformer(CVPR2022)">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/05/24/%E8%AE%BA%E6%96%87%E5%8D%81%E9%97%AE-map-view-transformer-CVPR2022/" target="_blank">
-          论文十问:Map-view Transformer(CVPR2022)
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/2022/05/24/%E8%AE%BA%E6%96%87%E5%8D%81%E9%97%AE-map-view-transformer-CVPR2022/" target="_blank">
-        <div>
-          巧妙利用地图信息做自动驾驶场景下RV和BeV的融合。
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-24 03:05" pubdate>
-              2022-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/" class="category-chain-item">点云</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/" class="category-chain-item">多模态融合</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/2022/" class="category-chain-item">2022</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87%E7%B3%BB%E5%88%97/">#一句话读论文系列</a>
-            
-              <a href="/tags/CVPR2022/">#CVPR2022</a>
-            
-              <a href="/tags/%E7%82%B9%E4%BA%91%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">#点云语义分割</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2022/05/24/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87-map-view-transformer-CVPR2022/" target="_blank">
-          <img src="https://s2.loli.net/2022/05/24/RPvkg6bLVEoyd2h.jpg" srcset="/img/loading.gif" lazyload alt="一句话读论文:Map-view Transformer(CVPR2022)">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/05/24/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87-map-view-transformer-CVPR2022/" target="_blank">
-          一句话读论文:Map-view Transformer(CVPR2022)
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/2022/05/24/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87-map-view-transformer-CVPR2022/" target="_blank">
-        <div>
-          巧妙利用地图信息做自动驾驶场景下RV和BeV的融合
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-05-24 02:55" pubdate>
-              2022-05-24
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/" class="category-chain-item">点云</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/" class="category-chain-item">多模态融合</a>
-  
-  
-    <span>></span>
-    
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%A4%9A%E6%A8%A1%E6%80%81%E8%9E%8D%E5%90%88/2022/" class="category-chain-item">2022</a>
-  
-  
-
-  
-
-  
-
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87%E7%B3%BB%E5%88%97/">#一句话读论文系列</a>
-            
-              <a href="/tags/CVPR2022/">#CVPR2022</a>
-            
-              <a href="/tags/%E7%82%B9%E4%BA%91%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">#点云语义分割</a>
             
           </div>
         

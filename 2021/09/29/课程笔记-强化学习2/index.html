@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://i.loli.net/2021/09/30/c6T4CF1OPVjt2Hf.jpg">
 <meta property="article:published_time" content="2021-09-29T15:10:37.000Z">
-<meta property="article:modified_time" content="2022-10-29T19:05:48.200Z">
+<meta property="article:modified_time" content="2023-01-03T02:30:57.000Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="课程笔记">
 <meta property="article:tag" content="强化学习">
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.3","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -125,7 +125,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/">
                 <i class="iconfont icon-home-fill"></i>
-                首页
+                <span>首页</span>
               </a>
             </li>
           
@@ -137,7 +137,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
-                时间轴
+                <span>时间轴</span>
               </a>
             </li>
           
@@ -149,7 +149,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/categories/">
                 <i class="iconfont icon-category-fill"></i>
-                分类
+                <span>分类</span>
               </a>
             </li>
           
@@ -161,7 +161,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/tags/">
                 <i class="iconfont icon-tag-fill"></i>
-                标签
+                <span>标签</span>
               </a>
             </li>
           
@@ -173,7 +173,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/about/">
                 <i class="iconfont icon-user-fill"></i>
-                关于我
+                <span>关于我</span>
               </a>
             </li>
           
@@ -185,7 +185,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/links/">
                 <i class="iconfont icon-link-fill"></i>
-                友链
+                <span>友链</span>
               </a>
             </li>
           
@@ -197,7 +197,7 @@
             <li class="nav-item">
               <a class="nav-link" href="/music/">
                 <i class="iconfont icon-music"></i>
-                每日音乐
+                <span>每日音乐</span>
               </a>
             </li>
           
@@ -205,15 +205,16 @@
         
           <li class="nav-item" id="search-btn">
             <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
-              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+              <i class="iconfont icon-search"></i>
             </a>
           </li>
           
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
-                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
           </li>
         
       </ul>
@@ -324,60 +325,66 @@ id="课程笔记强化学习2bellman方程的动态规划求解">课程笔记：
           </div>
 <ol type="1">
 <li><p>动态规划需要满足的条件：</p>
-<ol type="1">
-<li><p>最优子结构(Optimal substructure):</p>
+<ol type="i">
+<li>最优子结构(Optimal substructure):</li>
+</ol>
 <ul>
 <li><p>原问题的最优解一定也是子问题的最优解。例如，一个输入长度为N的序列的某个Scheduling问题（记为T(1，N)
 ) 的最优解，拆分后一定也是其子问题T(1,N/2-1), T(N/2,
 N)的最优解。</p></li>
-<li><p>子问题的最优解可以通过某种形式组合和计算，得到原问题的最优解</p></li>
-</ul></li>
-<li><p>重叠子问题</p>
+<li><p>问题的最优解可以通过某种形式组合和计算，得到原问题的最优解</p></li>
+</ul>
+<ol start="2" type="i">
+<li>重叠子问题</li>
+</ol>
 <ul>
 <li>子问题与原问题有同样的format和structure</li>
-</ul></li>
-<li><p>无后效性</p>
+</ul>
+<ol start="3" type="i">
+<li>无后效性</li>
+</ol>
 <ul>
 <li>计算原问题最优解时，不会对子问题最优解产生影响。</li>
 </ul></li>
 </ol>
 <p><div class="note note-success">
-            <p>马尔科夫链和马尔科夫决策过程满足上述三个条件的，因为:</p><ul><li>Bellman方程将原问题递归的分解为规模更小的子问题</li><li>子问题拥有同样的format和structure</li><li>Que？有疑问，虽然马尔科夫过程强调每个state只与上一个state有关，与其他state无关(<spanclass="math display">\[P(x_n|x_1,x_2,\dots,x_{n-1}) = P(x_n|x_{n-1})\]</span>)，但这是保证MDP无后效性的原因嘛？因为通过迭代的方式求解贝尔曼方程，value早晚会传播到很多时间段以后的。</li></ul>
-          </div></p></li>
+            <p>马尔科夫链和马尔科夫决策过程满足上述三个条件的，因为:</p><ul><li>Bellman方程将原问题递归的分解为规模更小的子问题</li><li>子问题拥有同样的format和structure</li><li>Que？有疑问，虽然马尔科夫过程强调每个state只与上一个state有关，与其他state无关($P(x_n|x_1,x_2,,x_{n-1}) = P(x_n| x_{n-1})$)，但这是保证MDP无后效性的原因嘛？因为通过迭代的方式求解贝尔曼方程，value早晚会传播到很多时间段以后的。</li></ul>
+          </div></p>
+<ol start="2" type="1">
 <li><p>Dynamic Planning in MDP:</p>
-<ol type="1">
-<li>For prediction(Policy Evaluation): Input: MDP <span
-class="math display">\[&lt;S,A,P,R,\gamma&gt;\]</span> 和策略 $ $ or
-MRP<span class="math display">\[&lt;S, P^\pi, R^\pi,
-\gamma&gt;\]</span>(没有显示的策略表示，是Implicit Policy) Output: value
-function <span class="math display">\[v_\pi\]</span> 对Policy
+<ol type="i">
+<li>For prediction(Policy Evaluation):</li>
+</ol>
+<p>Input: MDP $ &lt;S,A,P,R,&gt; $ 和策略 <span
+class="math inline">\(\pi\)</span> or MRP <span
+class="math inline">\(&lt;S, P^\pi, R^\pi, \gamma&gt;\)</span>
+(没有显示的策略表示，是Implicit Policy) Output: value function <span
+class="math inline">\(v_\pi\)</span> 对Policy
 Evaluation的理解：给定一个策略，通过贝尔曼方程迭代求出所有状态的价值
-<span class="math display">\[v_\pi(s)\]</span></li>
-<li>For control: Input: MDP <span
-class="math display">\[&lt;S,A,P,R,\gamma&gt;\]</span> Output:
-最优价值函数<span class="math display">\[v_*\]</span>和最优策略<span
-class="math display">\[\pi_*\]</span></li>
-</ol></li>
+<span class="math inline">\(v_\pi(s)\)</span></p>
+<p>ii.For control:</p>
+<p>Input: MDP $ &lt;S,A,P,R,&gt; $</p>
+<p>Output: 最优价值函数 $ v_* $ 和最优策略 $ _* $</p></li>
 <li><p>Bellman方程:</p></li>
 </ol>
 <p><strong>(State-) Value Function:</strong></p>
 <p><img src="https://i.loli.net/2021/09/29/7yIKAVjkGHTbXeU.png" srcset="/img/loading.gif" lazyload alt="image-20210929174143894" style="zoom:80%;" />
 <span class="math display">\[
-  \begin{align}
+\begin{align}
   v_\pi(s) &amp;= \sum_{a}\pi(a|s)q_\pi(s,a)\\
   &amp;= \sum_a\,\pi(a|s)(R_s^a+\gamma
 \sum_{s&#39;}(P_{ss&#39;}^a\,v_\pi(s&#39;)))(代入q_\pi(s&#39;,a)公式)
   \end{align}
 \]</span></p>
 <p>求Optimal <span
-class="math display">\[v_*(s)\]</span>(把求期望操作<span
+class="math inline">\(v_*(s)\)</span>(把求期望操作<span
 class="math inline">\(\rightarrow\)</span>找<span
 class="math inline">\(\operatorname {arg\,max}\)</span>操作)：</p>
-<p><img src="https://i.loli.net/2021/09/29/x9D7TQga6GShrsi.png" srcset="/img/loading.gif" lazyload alt="image-20210929203919230" style="zoom:80%;" />
-$$ <span class="math display">\[\begin{align}
+<p><img src="https://i.loli.net/2021/09/29/x9D7TQga6GShrsi.png" srcset="/img/loading.gif" lazyload alt="image-20210929203919230" style="zoom:80%;" /></p>
+<p>$$ <span class="math display">\[\begin{align}
   v_*(s) &amp;= \underset{a}\max\{R_s^a+\gamma
 \sum_{s&#39;}P_{ss&#39;}^a\,v_\pi(s&#39;)\}
-  
+
   \end{align}\]</span> $$</p>
 <p><strong>Action Function:</strong></p>
 <p><img src="https://i.loli.net/2021/09/29/VMlc1N2g4DPJo5I.png" srcset="/img/loading.gif" lazyload alt="image-20210929174301352" style="zoom: 80%;" />
@@ -391,8 +398,7 @@ v_\pi(s&#39;)) ) (考虑奖励R_s^a是否与s&#39;有关)\\
 \gamma\sum_{s&#39;}\,P_{ss&#39;}^a\sum_{a&#39;}\pi(a&#39;|s&#39;)q_\pi(s&#39;,
 a&#39;) (代入v_\pi(s&#39;)公式)\\
   \end{align}
-\]</span> 求Optimal <span class="math display">\[q_*(s,
-a)\]</span>时(把求期望操作<span
+\]</span> 求Optimal $ q_*(s, a) $ 时(把求期望操作<span
 class="math inline">\(\rightarrow\)</span>找<span
 class="math inline">\(\operatorname {arg\,max}\)</span>操作)：</p>
 <p><img src="https://i.loli.net/2021/09/29/xIVUrmEWBt4Nlzf.png" srcset="/img/loading.gif" lazyload alt="image-20210929204248905" style="zoom:80%;" />
@@ -407,9 +413,8 @@ a&#39;))
 alt="image-20210929211939079" />
 <figcaption aria-hidden="true">image-20210929211939079</figcaption>
 </figure>
-<p>给定一个policy <span class="math display">\[ \pi
-\]</span>，评估/衡量在<span class="math display">\[
-\pi\]</span>下每个状态的value function.</p>
+<p>给定一个policy $ $，评估/衡量在 <span
+class="math inline">\(\pi\)</span> 下每个状态的value function.</p>
 <h2 id="policy-iteration">Policy Iteration</h2>
 <figure>
 <img src="https://i.loli.net/2021/09/29/2THt83175YAOZRJ.png" srcset="/img/loading.gif" lazyload
@@ -417,8 +422,8 @@ alt="image-20210929212427612" />
 <figcaption aria-hidden="true">image-20210929212427612</figcaption>
 </figure>
 <p>这个是通过贪心的策略来迭代得到最好的policy。基本思想是<span
-class="math display">\[ \pi(s) = \underset{a}{\operatorname{arg\,max}}\,
-q(s, a)\]</span>，即在state function
+class="math inline">\(\pi(s) = \underset{a}{\operatorname{arg\,max}}\,
+q(s, a)\)</span>，即在state function
 固定情况下，通过贪心的选择给自己带来最大受益的action a
 来作为自己的策略。可以证明经过多次迭代后，策略能收敛到贪心策略下的最优解上。</p>
 <h2 id="value-iteration">Value Iteration</h2>
@@ -428,12 +433,12 @@ alt="image-20210929213203328" />
 <figcaption aria-hidden="true">image-20210929213203328</figcaption>
 </figure>
 <p>这个的特点是没有给定任何显示的(explicit)策略<span
-class="math display">\[ \pi \]</span>, 而是只求解state function。</p>
+class="math inline">\(\pi\)</span>, 而是只求解state function。</p>
 <p>与Policy Evaluation 和Policy Iteration 不同， 前两者都出现了<span
-class="math display">\[\pi(a|s)\]</span>这个东西，也就是说每个状态下选择某个动作的概率是被记录的，并且可能随着算法也会迭代更新；而Value
+class="math inline">\(\pi(a|s)\)</span>这个东西，也就是说每个状态下选择某个动作的概率是被记录的，并且可能随着算法也会迭代更新；而Value
 Iteration 每次选择受益最大的动作来更新value。</p>
 <p>等迭代结束，value全部求出来后，最后一遍求解<span
-class="math display">\[\pi\]</span>。</p>
+class="math inline">\(\pi\)</span>。</p>
 <h2 id="summary">Summary</h2>
 <figure>
 <img src="https://i.loli.net/2021/09/29/pNR9Q8biXWH2GOq.png" srcset="/img/loading.gif" lazyload
@@ -582,7 +587,10 @@ alt="image-20210929213757669" />
       
   <aside class="sidebar" style="margin-left: -1rem">
     <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
   <div class="toc-body" id="toc-body"></div>
 </div>
 

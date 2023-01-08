@@ -18,16 +18,16 @@
   <meta name="author" content="Oier99">
   <meta name="keywords" content="">
   
-    <meta name="description" content="LaTex 讲解系列： 如何优雅地插入图表   包括插入子图，多图排列，画模型图等等 具体代码以会议&#x2F;期刊所给的模板格式为准 插入图片 插入一张图片 12345678%\begin&amp;#123;center&amp;#125; % 外部剧中 \begin&amp;#123;figure&amp;#125;[!htbp] \centering % 内部居中 \includegraphics[width&#x3D;0.4">
+    <meta name="description" content="学习一下如何优雅地在LaTex里插入图表吧~(●&#39;◡&#39;●)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LaTex 讲解系列：如何优雅地插入图表">
 <meta property="og:url" content="https://oier99.cn/posts/b2b25956/index.html">
 <meta property="og:site_name" content="Oier99">
-<meta property="og:description" content="LaTex 讲解系列： 如何优雅地插入图表   包括插入子图，多图排列，画模型图等等 具体代码以会议&#x2F;期刊所给的模板格式为准 插入图片 插入一张图片 12345678%\begin&amp;#123;center&amp;#125; % 外部剧中 \begin&amp;#123;figure&amp;#125;[!htbp] \centering % 内部居中 \includegraphics[width&#x3D;0.4">
+<meta property="og:description" content="学习一下如何优雅地在LaTex里插入图表吧~(●&#39;◡&#39;●)">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/29/rmyPt2Sn5dFEB3Z.jpg">
 <meta property="article:published_time" content="2022-12-29T04:23:41.000Z">
-<meta property="article:modified_time" content="2023-01-03T03:56:52.500Z">
+<meta property="article:modified_time" content="2023-01-06T03:30:03.120Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
@@ -355,13 +355,13 @@
                 
                 <h1 id="latex-讲解系列-如何优雅地插入图表">LaTex 讲解系列：
 如何优雅地插入图表</h1>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=761349&amp;auto=0&amp;height=66">
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="520" height="86" src="//music.163.com/outchain/player?type=2&amp;id=761349&amp;auto=0&amp;height=66">
 </iframe>
 <p>包括插入子图，多图排列，画模型图等等</p>
 <p>具体代码以会议/期刊所给的模板格式为准</p>
 <h2 id="插入图片">插入图片</h2>
 <p><strong>插入一张图片</strong></p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">%\begin&#123;center&#125; % 外部剧中</span><br> <span class="hljs-keyword">\begin</span>&#123;figure&#125;[!htbp]<br> <span class="hljs-keyword">\centering</span> <span class="hljs-comment">% 内部居中</span><br> <span class="hljs-keyword">\includegraphics</span>[width=0.4<span class="hljs-keyword">\textwidth</span>]&#123;introduction<span class="hljs-built_in">_</span>3<span class="hljs-built_in">_</span>cases.pdf&#125; <span class="hljs-comment">% Reduce the figure size so that it is slightly narrower than the column.</span><br> <span class="hljs-keyword">\caption</span>&#123;XXXXXX&#125;<br> <span class="hljs-keyword">\label</span>&#123;fig1:three<span class="hljs-built_in">_</span>cases&#125;<br> <span class="hljs-keyword">\end</span>&#123;figure&#125;<br> <span class="hljs-comment">%\end&#123;center&#125;</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-comment">%\begin&#123;center&#125; % 外部居中</span><br> <span class="hljs-keyword">\begin</span>&#123;figure&#125;[!htbp]<br> <span class="hljs-keyword">\centering</span> <span class="hljs-comment">% 内部居中</span><br> <span class="hljs-keyword">\includegraphics</span>[width=0.4<span class="hljs-keyword">\textwidth</span>]&#123;introduction<span class="hljs-built_in">_</span>3<span class="hljs-built_in">_</span>cases.pdf&#125; <span class="hljs-comment">% Reduce the figure size so that it is slightly narrower than the column.</span><br> <span class="hljs-keyword">\caption</span>&#123;XXXXXX&#125;<br> <span class="hljs-keyword">\label</span>&#123;fig1:three<span class="hljs-built_in">_</span>cases&#125;<br> <span class="hljs-keyword">\end</span>&#123;figure&#125;<br> <span class="hljs-comment">%\end&#123;center&#125;</span><br></code></pre></td></tr></table></figure>
 <p><strong>插入多张图片</strong></p>
 <ol type="1">
 <li><p>对于插入多张子图的组图，如果数量$$4的，建议在PPT或者<code>draw.io</code>中手动排版一下，调整间距大小截图角度等组合成一个整体，作为单张图片来插入。</p></li>
@@ -388,6 +388,27 @@
             <hr/>
             <div>
               <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
   
   
     <div class="post-meta">

@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/12/29/rmyPt2Sn5dFEB3Z.jpg">
 <meta property="article:published_time" content="2022-12-29T04:23:41.000Z">
-<meta property="article:modified_time" content="2023-02-20T23:04:28.549Z">
+<meta property="article:modified_time" content="2023-03-01T17:33:57.189Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
@@ -295,7 +295,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          8.7k 字
+          9.6k 字
         
       </span>
     
@@ -306,7 +306,7 @@
         
         
         
-          73 分钟
+          81 分钟
         
       </span>
     
@@ -385,7 +385,32 @@
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs LaTex"><span class="hljs-keyword">\begin</span>&#123;table*&#125;[htbp] <span class="hljs-comment">% 注意在双栏模板中，带*表示跨栏排版，不带星号表示单栏排版；</span><br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\resizebox</span>&#123;1.0<span class="hljs-keyword">\textwidth</span>&#125;&#123;!&#125;&#123;	<span class="hljs-comment">% 注意使用resizebox需要\usepackage&#123;graphicx&#125;，\textwidth是设定好的标准的一行的长度数值。如果要被双栏装下，需改成0.5\textwidth,以此类推。</span><br><span class="hljs-keyword">\begin</span>&#123;tabular&#125;&#123;l|cccc|ccc|ccc|c|c&#125; <span class="hljs-comment">% 需要12列,l,c,r分别代表居左中右对齐，|代表竖杠分割线</span><br><span class="hljs-keyword">\toprule</span> <span class="hljs-comment">%添加表格头部粗线,toptule, midrule和bottomrule 都需要\usepackage&#123;booktabs&#125;宏包</span><br>Method <span class="hljs-built_in">&amp;</span> PPP <span class="hljs-built_in">&amp;</span> PPPP <span class="hljs-built_in">&amp;</span> QQ <span class="hljs-built_in">&amp;</span> QQQ <span class="hljs-built_in">&amp;</span> QQQQ <span class="hljs-built_in">&amp;</span> RRR <span class="hljs-built_in">&amp;</span> RRRR <span class="hljs-built_in">&amp;</span> TTTT <span class="hljs-built_in">&amp;</span> TTTTT <span class="hljs-built_in">&amp;</span> ZZZZZZ <span class="hljs-built_in">&amp;</span> mIoU <span class="hljs-built_in">&amp;</span> FPS <span class="hljs-keyword">\\</span><br> <span class="hljs-comment">%有n个&amp;，就表示该行有n+1列</span><br><span class="hljs-keyword">\hline</span> <span class="hljs-comment">%绘制一条水平横线</span><br> Method-A <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> - <span class="hljs-keyword">\\</span><br><br> Method-B <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> - <span class="hljs-keyword">\\</span><br><br> Method-C <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> - <span class="hljs-keyword">\\</span><br><span class="hljs-keyword">\bottomrule</span> <span class="hljs-comment">%添加表格底部粗线</span><br><span class="hljs-keyword">\end</span>&#123;tabular&#125;<br>&#125;<br><br><span class="hljs-keyword">\caption</span>&#123;XXXXXX Performance.&#125;<br><span class="hljs-keyword">\label</span>&#123;tab1:performance&#125; <span class="hljs-comment">% 添加作为引用的锚点label</span><br><span class="hljs-keyword">\end</span>&#123;table*&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="三线表">三线表</h2>
 <p><img src="https://s2.loli.net/2023/01/08/OLaECYzh54Zd3R6.png" srcset="/img/loading.gif" lazyload alt="Table2" style="zoom:67%;" /></p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs Latex"><span class="hljs-keyword">\begin</span>&#123;table&#125;[htbp] <span class="hljs-comment">% 注意在双栏模板中，带*表示跨栏排版，不带星号表示单栏排版；</span><br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\resizebox</span>&#123;0.6<span class="hljs-keyword">\textwidth</span>&#125;&#123;!&#125;&#123;	<span class="hljs-comment">% 注意使用resizebox需要\usepackage&#123;graphicx&#125;，\textwidth是设定好的标准的一行的长度数值。如果要被双栏装下，需改成0.5\textwidth,以此类推。</span><br><span class="hljs-keyword">\begin</span>&#123;tabular&#125;&#123;ccccc&#125; <span class="hljs-comment">% 需要5列,l,c,r分别代表居左中右对齐，|代表竖杠分割线</span><br><span class="hljs-keyword">\toprule</span> <span class="hljs-comment">%添加表格头部粗线</span><br>Method <span class="hljs-built_in">&amp;</span> PPP <span class="hljs-built_in">&amp;</span> PPPP <span class="hljs-built_in">&amp;</span> QQ <span class="hljs-built_in">&amp;</span> QQQ <span class="hljs-keyword">\\</span><br> <span class="hljs-comment">%有n个&amp;，就表示该行有n+1列</span><br><span class="hljs-keyword">\midrule</span>  <span class="hljs-comment">% 三线表中的顶格线</span><br> Method-A <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0  <span class="hljs-keyword">\\</span><br><br> Method-B <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0  <span class="hljs-keyword">\\</span><br><br> Method-C <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0  <span class="hljs-keyword">\\</span><br><span class="hljs-keyword">\bottomrule</span> <span class="hljs-comment">%添加表格底部粗线</span><br><span class="hljs-keyword">\end</span>&#123;tabular&#125;<br>&#125;<br><br><span class="hljs-keyword">\caption</span>&#123;XXXXXX Performance.&#125;<br><span class="hljs-keyword">\label</span>&#123;tab2:three<span class="hljs-built_in">_</span>line&#125; <span class="hljs-comment">% 添加作为引用的锚点label</span><br><span class="hljs-keyword">\end</span>&#123;table&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs Latex"><span class="hljs-keyword">\begin</span>&#123;table&#125;[htbp] <span class="hljs-comment">% 注意在双栏模板中，带*表示跨栏排版，不带星号表示单栏排版；</span><br><span class="hljs-keyword">\small</span> <span class="hljs-comment">% 设置字号</span><br><span class="hljs-keyword">\centering</span><br><span class="hljs-keyword">\resizebox</span>&#123;0.6<span class="hljs-keyword">\textwidth</span>&#125;&#123;!&#125;&#123;	<span class="hljs-comment">% 注意使用resizebox需要\usepackage&#123;graphicx&#125;，\textwidth是设定好的标准的一行的长度数值。如果要被双栏装下，需改成0.5\textwidth,以此类推。</span><br><span class="hljs-keyword">\begin</span>&#123;tabular&#125;&#123;ccccc&#125; <span class="hljs-comment">% 需要5列,l,c,r分别代表居左中右对齐，|代表竖杠分割线</span><br><span class="hljs-keyword">\toprule</span> <span class="hljs-comment">%添加表格头部粗线</span><br>Method <span class="hljs-built_in">&amp;</span> PPP <span class="hljs-built_in">&amp;</span> PPPP <span class="hljs-built_in">&amp;</span> QQ <span class="hljs-built_in">&amp;</span> QQQ <span class="hljs-keyword">\\</span><br> <span class="hljs-comment">%有n个&amp;，就表示该行有n+1列</span><br><span class="hljs-keyword">\midrule</span>  <span class="hljs-comment">% 三线表中的顶格线</span><br> Method-A <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0 <span class="hljs-built_in">&amp;</span> 100.0  <span class="hljs-keyword">\\</span><br><br> Method-B <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0 <span class="hljs-built_in">&amp;</span> 90.0  <span class="hljs-keyword">\\</span><br><br> Method-C <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0 <span class="hljs-built_in">&amp;</span> 85.0  <span class="hljs-keyword">\\</span><br><span class="hljs-keyword">\bottomrule</span> <span class="hljs-comment">%添加表格底部粗线</span><br><span class="hljs-keyword">\end</span>&#123;tabular&#125;<br>&#125;<br><br><span class="hljs-comment">% \setlength&#123;\abovecaptionskip&#125;&#123;5pt&#125; 设置标题与上方/下方的距离间隔，一定要紧贴`\caption`命令</span><br><span class="hljs-comment">% \setlength&#123;\belowcaptionskip&#125;&#123;6pt&#125;</span><br><span class="hljs-keyword">\caption</span>&#123;XXXXXX Performance.&#125;<br><br><span class="hljs-keyword">\label</span>&#123;tab2:three<span class="hljs-built_in">_</span>line&#125; <span class="hljs-comment">% 添加作为引用的锚点label</span><br><span class="hljs-keyword">\end</span>&#123;table&#125;<br></code></pre></td></tr></table></figure>
+<p>补充：</p>
+<ol type="1">
+<li><p>Latex字号大小<code>\tiny &lt; \scriptsize &lt; \footnotesize &lt; \small &lt; \normalsize &lt; \large &lt; Large &lt; LARGE &lt; huge &lt; Huge</code>
+，
+一般默认是<code>\normalsize</code>。此外，在正文里若想只对一部分文字改变字号，可以<code>&#123;\Large Input your text here&#125;</code></p></li>
+<li><p><code>\resizebox&#123;宽度&#125;&#123;高度&#125;&#123;&#125;</code> 和
+<code>\scalebox&#123;0.65&#125;</code>区别在于高度控制的不同。
+“两者的区别在于高度的控制，前者控制相对高度，后者控制总高度，如果命令中的宽度或高度使用了感叹号代替，表示按照高度或宽度保持宽高比进行缩放”<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="https://www.cnblogs.com/ybl20000418/p/11478324.html">[3]</span></a></sup></p></li>
+<li><p>列宽调整<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="https://www.cnblogs.com/ybl20000418/p/11478324.html">[3]</span></a></sup></p>
+<blockquote>
+<p>将代码中的
+<code>\begin&#123;tabular&#125;&#123;c|ccc&#125;</code>中的每个c改成<code>\begin&#123;tabular&#125;&#123; p&#123;5pt&#125; &lt;&lt;span class="hljs-cell"&gt;&#123;\centering&#125; | ccc&#125;</code>，
+其中花括号里面填写宽度数值，如果需要该列居中则加入
+<code>&lt;&lt;span class="hljs-cell"&gt;&#123;\centering&#125;</code></p>
+</blockquote></li>
+<li><p>好像三线表中<code>\toprule</code>,
+<code>\bottomrule</code>,如果要用竖线分割时会导致竖线在顶线和底线处断开。目前暂时没找到好的解决方法。如果均换成
+<code>\hline</code>，虽然竖线不会断开但是也没有粗细区别了<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span
+class="hint--top hint--rounded"
+aria-label="https://zhuanlan.zhihu.com/p/580123090">[4]</span></a></sup>。</p></li>
+</ol>
 <h2 id="多个子列合并">多个子列合并</h2>
 <p>首先<code>\usepackage&#123;multirow&#125;</code></p>
 <p>下面两个博客讲解的都特别好，因此推荐看原文，就不再赘述。源代码中做了一些小改进，附文在下：</p>
@@ -454,6 +479,18 @@ class="footnote-text"><span>https://instruct.math.lsa.umich.edu/support/latex/ta
 <span id="fn:2"
 class="footnote-text"><span>https://tex.stackexchange.com/questions/132783/how-to-write-checkmark-in-latex
 <a href="#fnref:2" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:3"
+class="footnote-text"><span>https://www.cnblogs.com/ybl20000418/p/11478324.html
+<a href="#fnref:3" rev="footnote" class="footnote-backref">
+↩︎</a></span></span>
+</li>
+<li>
+<span id="fn:4"
+class="footnote-text"><span>https://zhuanlan.zhihu.com/p/580123090
+<a href="#fnref:4" rev="footnote" class="footnote-backref">
 ↩︎</a></span></span>
 </li>
 </ol>

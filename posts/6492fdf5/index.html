@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
 <meta property="article:published_time" content="2023-02-11T22:58:48.000Z">
-<meta property="article:modified_time" content="2023-02-22T17:38:05.027Z">
+<meta property="article:modified_time" content="2023-05-24T19:39:48.551Z">
 <meta property="article:author" content="zhangzw12319">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
@@ -294,7 +294,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          7.5k 字
+          8k 字
         
       </span>
     
@@ -305,7 +305,7 @@
         
         
         
-          63 分钟
+          67 分钟
         
       </span>
     
@@ -513,7 +513,8 @@ https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html.</p></li>
 <h2 id="四.-pytoch-中节约显存开销的一些方法持续汇总">四. Pytoch
 中节约显存开销的一些方法(持续汇总)</h2>
 <ol type="1">
-<li><p><code>torch.cuda.empty_cache()</code>,每跑完一个Epoch用一下,防止显存占用一直增长</p></li>
+<li><p><code>torch.cuda.empty_cache()</code>,每跑完一个Epoch用一下,防止显存占用一直增长
+(好像在OpenMMLab家族系列的框架中包含了这一点)</p></li>
 <li><p>稀疏化的tensor表达会省很多显存,尤其是在计算<code>CE_loss</code>的时候,稀疏化的<code>CE_loss</code>会给反向传播节省很多显存.</p></li>
 <li><p>太大的变量不要一直等着自动回收,可以手工定期delete一下</p></li>
 <li><p><code>torch.load(XXX.pt, map_location="cpu")</code>,
@@ -525,6 +526,18 @@ https://pytorch.org/tutorials/recipes/recipes/tuning_guide.html.</p></li>
 alt="Pytorch Doc 提示" />
 <figcaption aria-hidden="true">Pytorch Doc 提示</figcaption>
 </figure>
+<ol start="5" type="1">
+<li><p>发现的一个现象：pytorch中的dataset的num_workers，如果开少了可能CPU难以微保GPU，导致GPU空等CPU利用率不高；但是如果num_worker开的过高，比如一口气开到10以上(我有一次开到过32)，会出现:</p>
+<ol type="1">
+<li>CPU
+核被占的非常多，如果这台机器就你自己用还好，如果多人用，别人的程序也会被你连累了，变得特别慢；</li>
+<li>内存开销会陡然增加很多，会导致容易内存OOM，程序训练了几十个Epoch后不知道啥时候突然寄了，还没有报错原因，或者报错原因是signal
+9
+killed，因为超过内存被系统kill调了。如果是在物理机上，由于有硬盘可以作为虚拟内存的机制，或许能缓冲一下不会直接挂掉;
+但如果是在容器里环境基本立马被干掉。</li>
+<li>pytorch中num_workers开多了会放大内存泄露的风险。某一次实验观察发现：某多卡DDP的训练程序，开了num_workers=4，看内存占用曲线图有少量的内存泄漏，但是训练300多个Epoch一共泄漏不到几十G；但是一旦开到num_workers=32，瞬间十几个Epoch后就泄露了100多G。而且这种num_workers的现象在mindspore框架最初1.1~1.5版本中也出现过内存泄漏现象。估计这都是深度学习框架的通病吧，不能开太大了。。。</li>
+</ol></li>
+</ol>
 
                 
               </div>

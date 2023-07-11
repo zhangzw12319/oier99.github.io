@@ -65,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -79,7 +79,19 @@
   
 
   
-
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
   
 
   
@@ -95,7 +107,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -353,46 +369,46 @@
     
       
       
-        <a href="/posts/c6e1c86a/" title="课程笔记：矩阵理论3-4——盖尔圆定理与特征值估计"
+        <a href="/posts/c6e1c86a/" title="课程笔记：矩阵理论(34)——盖尔圆定理与特征值估计"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记：矩阵理论3-4——盖尔圆定理与特征值估计</span>
+          <span class="category-post">课程笔记：矩阵理论(34)——盖尔圆定理与特征值估计</span>
         </a>
       
     
       
       
-        <a href="/posts/7e08a53a/" title="课程专题-矩阵理论之矩阵对角化的条件汇总"
+        <a href="/posts/7e08a53a/" title="课程专题：矩阵理论(a)——矩阵对角化的条件汇总"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程专题-矩阵理论之矩阵对角化的条件汇总</span>
+          <span class="category-post">课程专题：矩阵理论(a)——矩阵对角化的条件汇总</span>
         </a>
       
     
       
       
-        <a href="/posts/7736990a/" title="课程笔记-矩阵理论(1)——线性代数知识回顾(下)"
+        <a href="/posts/7736990a/" title="课程笔记：矩阵理论(1)——线性代数知识回顾(下)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记-矩阵理论(1)——线性代数知识回顾(下)</span>
+          <span class="category-post">课程笔记：矩阵理论(1)——线性代数知识回顾(下)</span>
         </a>
       
     
       
       
-        <a href="/posts/84284e51/" title="课程笔记-矩阵理论2"
+        <a href="/posts/84284e51/" title="课程笔记：矩阵理论(2)——矩阵与线性变换"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记-矩阵理论2</span>
+          <span class="category-post">课程笔记：矩阵理论(2)——矩阵与线性变换</span>
         </a>
       
     
       
       
-        <a href="/posts/6e2da84b/" title="课程笔记-矩阵理论(1)——线性代数知识回顾(上)"
+        <a href="/posts/6e2da84b/" title="课程笔记：矩阵理论(1)——线性代数知识回顾(上)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记-矩阵理论(1)——线性代数知识回顾(上)</span>
+          <span class="category-post">课程笔记：矩阵理论(1)——线性代数知识回顾(上)</span>
         </a>
       
     
@@ -431,10 +447,10 @@
     
       
       
-        <a href="/posts/3c8c02ec/" title="课程笔记-统计学习理论与方法(ELS_Chap7)"
+        <a href="/posts/3c8c02ec/" title="课程笔记：统计学习理论与方法(ELS_Chap7)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记-统计学习理论与方法(ELS_Chap7)</span>
+          <span class="category-post">课程笔记：统计学习理论与方法(ELS_Chap7)</span>
         </a>
       
     
@@ -524,10 +540,10 @@
     
       
       
-        <a href="/posts/ffef3022/" title="课程笔记：算法分析与设计(0)"
+        <a href="/posts/ffef3022/" title="课程笔记：算法分析与设计(0)——基础知识回顾"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记：算法分析与设计(0)</span>
+          <span class="category-post">课程笔记：算法分析与设计(0)——基础知识回顾</span>
         </a>
       
     
@@ -762,10 +778,10 @@
     
       
       
-        <a href="/posts/9cb0ed26/" title="一句话读论文:Panoptic-PHNet(CVPR2022)"
+        <a href="/posts/9cb0ed26/" title="一句话读论文:Panoptic Neural Fields(CVPR2022)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">一句话读论文:Panoptic-PHNet(CVPR2022)</span>
+          <span class="category-post">一句话读论文:Panoptic Neural Fields(CVPR2022)</span>
         </a>
       
     
@@ -840,10 +856,10 @@
     
       
       
-        <a href="/posts/a69f9b72/" title="论文十问:GASN(ECCV2022)"
+        <a href="/posts/a69f9b72/" title="论文十问：GASN(ECCV2022)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">论文十问:GASN(ECCV2022)</span>
+          <span class="category-post">论文十问：GASN(ECCV2022)</span>
         </a>
       
     
@@ -890,10 +906,10 @@
     
       
       
-        <a href="/posts/45554f7f/" title="Luna--Linear Unified Nested Attention[阅读笔记]"
+        <a href="/posts/45554f7f/" title="论文精读笔记：Luna--Linear Unified Nested Attention"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Luna--Linear Unified Nested Attention[阅读笔记]</span>
+          <span class="category-post">论文精读笔记：Luna--Linear Unified Nested Attention</span>
         </a>
       
     
@@ -932,10 +948,10 @@
     
       
       
-        <a href="/posts/a35429c/" title="Partial FC--Training 10 Million Identities on a Single Machine[阅读笔记]"
+        <a href="/posts/a35429c/" title="论文精读笔记：Partial FC--Training 10 Million Identities on a Single Machine"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">Partial FC--Training 10 Million Identities on a Single Machine[阅读笔记]</span>
+          <span class="category-post">论文精读笔记：Partial FC--Training 10 Million Identities on a Single Machine</span>
         </a>
       
     
@@ -979,10 +995,10 @@
     
       
       
-        <a href="/posts/6492fdf5/" title="随笔_一些DL编程中的小&#34;寄&#34;巧"
+        <a href="/posts/6492fdf5/" title="随笔：一些DL编程中的小&#34;寄&#34;巧"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">随笔_一些DL编程中的小&#34;寄&#34;巧</span>
+          <span class="category-post">随笔：一些DL编程中的小&#34;寄&#34;巧</span>
         </a>
       
     
@@ -1126,10 +1142,10 @@
     
       
       
-        <a href="/posts/77084934/" title="map_reduce"
+        <a href="/posts/77084934/" title="一种简单优雅的Map-Reduce手工实现方式(Python)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">map_reduce</span>
+          <span class="category-post">一种简单优雅的Map-Reduce手工实现方式(Python)</span>
         </a>
       
     
@@ -1166,10 +1182,10 @@
     
       
       
-        <a href="/posts/6492fdf5/" title="随笔_一些DL编程中的小&#34;寄&#34;巧"
+        <a href="/posts/6492fdf5/" title="随笔：一些DL编程中的小&#34;寄&#34;巧"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">随笔_一些DL编程中的小&#34;寄&#34;巧</span>
+          <span class="category-post">随笔：一些DL编程中的小&#34;寄&#34;巧</span>
         </a>
       
     
@@ -1259,10 +1275,10 @@
     
       
       
-        <a href="/posts/6492fdf5/" title="随笔_一些DL编程中的小&#34;寄&#34;巧"
+        <a href="/posts/6492fdf5/" title="随笔：一些DL编程中的小&#34;寄&#34;巧"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">随笔_一些DL编程中的小&#34;寄&#34;巧</span>
+          <span class="category-post">随笔：一些DL编程中的小&#34;寄&#34;巧</span>
         </a>
       
     
@@ -1305,28 +1321,28 @@
     
       
       
-        <a href="/posts/b2b25956/" title="LaTex 讲解系列：如何优雅地插入图表"
+        <a href="/posts/b2b25956/" title="LaTeX讲解系列(1)：如何优雅地插入图表"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">LaTex 讲解系列：如何优雅地插入图表</span>
+          <span class="category-post">LaTeX讲解系列(1)：如何优雅地插入图表</span>
         </a>
       
     
       
       
-        <a href="/posts/200e31c0/" title="LaTex讲解系列：如何插入代码块/伪代码"
+        <a href="/posts/200e31c0/" title="LaTeX讲解系列(3)：如何插入代码块/伪代码"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">LaTex讲解系列：如何插入代码块/伪代码</span>
+          <span class="category-post">LaTeX讲解系列(3)：如何插入代码块/伪代码</span>
         </a>
       
     
       
       
-        <a href="/posts/98374ae/" title="LaTeX讲解系列：常用数学符号大全"
+        <a href="/posts/98374ae/" title="LaTeX讲解系列(2)：常用数学符号大全"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">LaTeX讲解系列：常用数学符号大全</span>
+          <span class="category-post">LaTeX讲解系列(2)：常用数学符号大全</span>
         </a>
       
     
@@ -1352,7 +1368,7 @@
       
         <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-count col-2 col-md-1 col-xm-1">
           <i class="iconfont icon-articles"></i>
-          <span>2</span>
+          <span>3</span>
         </a>
       
       <div class="category-collapse collapse " id="collapse-20dce2c6fa909a5cd62526615fe2788a"
@@ -1362,6 +1378,15 @@
           
   <div class="category-post-list">
     
+    
+      
+      
+        <a href="/posts/eb6bb29/" title="Hexo兼容性问题Fix小记"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Hexo兼容性问题Fix小记</span>
+        </a>
+      
     
       
       
@@ -1448,10 +1473,10 @@
     
       
       
-        <a href="/posts/3c8c02ec/" title="课程笔记-统计学习理论与方法(ELS_Chap7)"
+        <a href="/posts/3c8c02ec/" title="课程笔记：统计学习理论与方法(ELS_Chap7)"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程笔记-统计学习理论与方法(ELS_Chap7)</span>
+          <span class="category-post">课程笔记：统计学习理论与方法(ELS_Chap7)</span>
         </a>
       
     
@@ -1535,10 +1560,10 @@
     
       
       
-        <a href="/posts/7e08a53a/" title="课程专题-矩阵理论之矩阵对角化的条件汇总"
+        <a href="/posts/7e08a53a/" title="课程专题：矩阵理论(a)——矩阵对角化的条件汇总"
            class="list-group-item list-group-item-action
            ">
-          <span class="category-post">课程专题-矩阵理论之矩阵对角化的条件汇总</span>
+          <span class="category-post">课程专题：矩阵理论(a)——矩阵对角化的条件汇总</span>
         </a>
       
     
@@ -1648,7 +1673,7 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>

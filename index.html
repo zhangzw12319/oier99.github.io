@@ -65,7 +65,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -79,7 +79,19 @@
   
 
   
-
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
   
 
   
@@ -95,7 +107,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -296,19 +312,19 @@
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
         <a href="/posts/4a17b156/" target="_blank">
           Hello World
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/posts/4a17b156/" target="_blank">
         <div>
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHu
         </div>
       </a>
 
@@ -316,8 +332,8 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2022-10-30 03:05" pubdate>
-              2022-10-30
+            <time datetime="2021-07-26 01:11" pubdate>
+              2021-07-26
             </time>
           </div>
         
@@ -331,25 +347,25 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/a35429c/" target="_blank">
-          <img src="https://i.loli.net/2021/08/15/43dKpjCLtfSJ16v.png" srcset="/img/loading.gif" lazyload alt="Partial FC--Training 10 Million Identities on a Single Machine[阅读笔记]">
+        <a href="/posts/eb6bb29/" target="_blank">
+          <img src="https://s2.loli.net/2023/02/21/zqA95yKpaRBMCde.jpg" srcset="/img/loading.gif" lazyload alt="Hexo兼容性问题Fix小记">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
           <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
-        <a href="/posts/a35429c/" target="_blank">
-          Partial FC--Training 10 Million Identities on a Single Machine[阅读笔记]
+        <a href="/posts/eb6bb29/" target="_blank">
+          Hexo兼容性问题Fix小记
         </a>
-      </h1>
+      </h2>
 
       
-      <a class="index-excerpt " href="/posts/a35429c/" target="_blank">
+      <a class="index-excerpt " href="/posts/eb6bb29/" target="_blank">
         <div>
-          对于分类ID数量特别多的时候能节省计算量，减小显存开销有效的方法，多人推荐。用在Insight-face模型上
+          Hexo-Fluid兼容性问题Fix小记   背景 自从2023年开始好久没有捣鼓自己的博客了，也一直没有更新兼容环境。偶然七月的一天发现自己blog里很多公式显示不出来，此外还有很多兼容性错误，于是在此立下一个记录，防止以后迁移到其他工作电脑时再出现兼容性问题。 定期更新 还是要记住定期更新hexo-fluid-theme 1npm update --save hexo-theme
         </div>
       </a>
 
@@ -357,8 +373,79 @@
         
           <div class="post-meta mr-3">
             <i class="iconfont icon-date"></i>
-            <time datetime="2021-08-14 22:03" pubdate>
-              2021-08-14
+            <time datetime="2023-07-11 03:46" pubdate>
+              2023-07-11
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E5%85%BC%E5%AE%B9%E6%80%A7%E9%97%AE%E9%A2%98/">#兼容性问题</a>
+            
+              <a href="/tags/Fluid/">#Fluid</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/9cb0ed26/" target="_blank">
+          <img src="https://s2.loli.net/2023/07/11/4jbTmOtDpf6GRF1.jpg" srcset="/img/loading.gif" lazyload alt="一句话读论文:Panoptic Neural Fields(CVPR2022)">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/posts/9cb0ed26/" target="_blank">
+          一句话读论文:Panoptic Neural Fields(CVPR2022)
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/9cb0ed26/" target="_blank">
+        <div>
+          NeRF首次闯入自动驾驶领域，而且要来就要来个大的。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-24 01:51" pubdate>
+              2022-05-24
             </time>
           </div>
         
@@ -378,7 +465,101 @@
   
     <span>></span>
     
-  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E5%88%86%E7%B1%BB%E5%99%A8/" class="category-chain-item">分类器</a>
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/" class="category-chain-item">点云</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%85%A8%E6%99%AF%E5%88%86%E5%89%B2/" class="category-chain-item">全景分割</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/%E7%82%B9%E4%BA%91/%E5%85%A8%E6%99%AF%E5%88%86%E5%89%B2/2022/" class="category-chain-item">2022</a>
+  
+  
+
+  
+
+  
+
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E4%B8%80%E5%8F%A5%E8%AF%9D%E8%AF%BB%E8%AE%BA%E6%96%87%E7%B3%BB%E5%88%97/">#一句话读论文系列</a>
+            
+              <a href="/tags/CVPR2022/">#CVPR2022</a>
+            
+              <a href="/tags/%E7%82%B9%E4%BA%91%E5%85%A8%E6%99%AF%E5%88%86%E5%89%B2/">#点云全景分割</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/45554f7f/" target="_blank">
+          <img src="https://i.loli.net/2021/08/20/jJdZAOwCgLXbWH8.png" srcset="/img/loading.gif" lazyload alt="论文精读笔记：Luna--Linear Unified Nested Attention">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/posts/45554f7f/" target="_blank">
+          论文精读笔记：Luna--Linear Unified Nested Attention
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/45554f7f/" target="_blank">
+        <div>
+          传统Transformer中的注意力机制计算量是平方级别的。本文提出的Luna通过增加一个额外的固定长度的序列作为输入和输出，把平方级别的注意力计算拆分成两个线性时间的计算步骤来做近似，并且该固定长度的序列可以存储足够的上下文相关信息(Contexual Infomation)。
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2021-08-20 09:52" pubdate>
+              2021-08-20
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/" class="category-chain-item">论文阅读</a>
+  
+  
+    <span>></span>
+    
+  <a href="/categories/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/Transformer/" class="category-chain-item">Transformer</a>
   
   
 
@@ -395,7 +576,214 @@
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/Model-Parallel/">#Model Parallel</a>
+              <a href="/tags/Attention/">#Attention</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/b2b25956/" target="_blank">
+          <img src="https://s2.loli.net/2023/07/11/pFfd38GV1JlmsDg.jpg" srcset="/img/loading.gif" lazyload alt="LaTeX讲解系列(1)：如何优雅地插入图表">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/posts/b2b25956/" target="_blank">
+          LaTeX讲解系列(1)：如何优雅地插入图表
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/b2b25956/" target="_blank">
+        <div>
+          学习一下如何优雅地在LaTex里插入图表吧~(●'◡'●)
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-29 12:23" pubdate>
+              2022-12-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LaTex/">#LaTex</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/98374ae/" target="_blank">
+          <img src="https://s2.loli.net/2022/05/24/v7oqPuU2LfKQWFG.jpg" srcset="/img/loading.gif" lazyload alt="LaTeX讲解系列(2)：常用数学符号大全">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/posts/98374ae/" target="_blank">
+          LaTeX讲解系列(2)：常用数学符号大全
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/98374ae/" target="_blank">
+        <div>
+          最详尽的常用LaTex数学符号整理在这里！
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-05-24 13:33" pubdate>
+              2022-05-24
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LaTex/">#LaTex</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/posts/200e31c0/" target="_blank">
+          <img src="https://s2.loli.net/2023/07/11/vwKHlxUWBsYJMhC.jpg" srcset="/img/loading.gif" lazyload alt="LaTeX讲解系列(3)：如何插入代码块/伪代码">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
+        
+        <a href="/posts/200e31c0/" target="_blank">
+          LaTeX讲解系列(3)：如何插入代码块/伪代码
+        </a>
+      </h2>
+
+      
+      <a class="index-excerpt " href="/posts/200e31c0/" target="_blank">
+        <div>
+          LaTex常用代码插入/伪代码描述使用方法在这里！
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-29 10:17" pubdate>
+              2022-12-29
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3 d-flex align-items-center">
+            <i class="iconfont icon-category"></i>
+            
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/LaTex/">#LaTex</a>
             
           </div>
         
@@ -408,17 +796,19 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/6492fdf5/" target="_blank">
-          <img src="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png" srcset="/img/loading.gif" lazyload alt="随笔_一些DL编程中的小&#34;寄&#34;巧">
+          <img src="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png" srcset="/img/loading.gif" lazyload alt="随笔：一些DL编程中的小&#34;寄&#34;巧">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
+        
+          <i class="index-pin iconfont icon-top" title="Pin on top"></i>
         
         <a href="/posts/6492fdf5/" target="_blank">
-          随笔_一些DL编程中的小&#34;寄&#34;巧
+          随笔：一些DL编程中的小&#34;寄&#34;巧
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/posts/6492fdf5/" target="_blank">
@@ -476,57 +866,18 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/18466784/" target="_blank">
-          <img src="https://i.loli.net/2021/08/14/J5AnQitNUmwLMrR.jpg" srcset="/img/loading.gif" lazyload alt="probability_beginner">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/18466784/" target="_blank">
-          probability_beginner
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/18466784/" target="_blank">
-        <div>
-          
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-01-08 10:18" pubdate>
-              2023-01-08
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/5d51c93/" target="_blank">
           <img src="https://s2.loli.net/2023/01/06/VsndXzpAO3eI6Di.jpg" srcset="/img/loading.gif" lazyload alt="numpy部分函数讲解">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/posts/5d51c93/" target="_blank">
           numpy部分函数讲解
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/posts/5d51c93/" target="_blank">
@@ -589,191 +940,18 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/5d4e3cda/" target="_blank">
-          <img src="https://i.loli.net/2021/08/14/J5AnQitNUmwLMrR.jpg" srcset="/img/loading.gif" lazyload alt="Music Collection">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/5d4e3cda/" target="_blank">
-          Music Collection
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/5d4e3cda/" target="_blank">
-        <div>
-          var options = {"narrow":false,"autoplay":false,"showlrc":3,"mode":"random","mutex":true,"theme":"#e6d0b2","preload":"metadata","listmaxheight":"513px","music":[{"title":"player 桜
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2023-01-03 18:00" pubdate>
-              2023-01-03
-            </time>
-          </div>
-        
-        
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/b2b25956/" target="_blank">
-          <img src="https://s2.loli.net/2022/12/29/rmyPt2Sn5dFEB3Z.jpg" srcset="/img/loading.gif" lazyload alt="LaTex 讲解系列：如何优雅地插入图表">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/b2b25956/" target="_blank">
-          LaTex 讲解系列：如何优雅地插入图表
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/b2b25956/" target="_blank">
-        <div>
-          学习一下如何优雅地在LaTex里插入图表吧~(●'◡'●)
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-29 12:23" pubdate>
-              2022-12-29
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/LaTex/">#LaTex</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/200e31c0/" target="_blank">
-          <img src="https://s2.loli.net/2022/12/29/XwSe2x86yNmkTfr.jpg" srcset="/img/loading.gif" lazyload alt="LaTex讲解系列：如何插入代码块/伪代码">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/200e31c0/" target="_blank">
-          LaTex讲解系列：如何插入代码块/伪代码
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/200e31c0/" target="_blank">
-        <div>
-          LaTex常用代码插入/伪代码描述使用方法在这里！
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-29 10:17" pubdate>
-              2022-12-29
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/LaTex%E5%AD%A6%E4%B9%A0/" class="category-chain-item">LaTex学习</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/LaTex/">#LaTex</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
         <a href="/posts/77084934/" target="_blank">
-          <img src="https://s2.loli.net/2023/01/03/aYC97iqJnuQyWGd.jpg" srcset="/img/loading.gif" lazyload alt="map_reduce">
+          <img src="https://s2.loli.net/2023/01/03/aYC97iqJnuQyWGd.jpg" srcset="/img/loading.gif" lazyload alt="一种简单优雅的Map-Reduce手工实现方式(Python)">
         </a>
       </div>
     
     <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
+      <h2 class="index-header">
         
         <a href="/posts/77084934/" target="_blank">
-          map_reduce
+          一种简单优雅的Map-Reduce手工实现方式(Python)
         </a>
-      </h1>
+      </h2>
 
       
       <a class="index-excerpt " href="/posts/77084934/" target="_blank">
@@ -827,71 +1005,11 @@
     </article>
   </div>
 
-  <div class="row mx-auto index-card">
-    
-    
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/posts/fd1c2b6f/" target="_blank">
-          <img src="https://s2.loli.net/2022/12/21/JWIVUBHCfAR4lSu.png" srcset="/img/loading.gif" lazyload alt="first_encrypted_blog">
-        </a>
-      </div>
-    
-    <article class="col-12 col-md-8 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/posts/fd1c2b6f/" target="_blank">
-          first_encrypted_blog
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt " href="/posts/fd1c2b6f/" target="_blank">
-        <div>
-          It is my first encrypted blog.
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-21 20:09" pubdate>
-              2022-12-21
-            </time>
-          </div>
-        
-        
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            
-
-<span class="category-chains">
-  
-  
-    
-      <span class="category-chain">
-        
-  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
-  
-  
-
-      </span>
-    
-  
-</span>
-
-          </div>
-        
-        
-      </div>
-    </article>
-  </div>
-
 
 
   <nav aria-label="navigation">
     <span class="pagination" id="pagination">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="page-number" href="/page/4/#board">4</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/#board">2</a><a class="page-number" href="/page/3/#board">3</a><a class="extend next" rel="next" href="/page/2/#board"><i class="iconfont icon-arrowright"></i></a>
     </span>
   </nav>
 
@@ -990,7 +1108,7 @@
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>

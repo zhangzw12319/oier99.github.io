@@ -18,21 +18,21 @@
   <meta name="author" content="oier99">
   <meta name="keywords" content="">
   
-    <meta name="description" content="随笔-每日bug系列_2021-11-05 Bug 1 计算矩阵特征值，求行列式\(|\lambda I_n - A|\)时，一定要写成 $$ $$ 的形式，否则展开求解时极容易出错(今天计算行列式看着原矩阵脑补写特征多项式一连写错五次的痛，对自己的算术能力表示深刻怀疑) Bug 2 记住 \(A + 2&#x3D; A + 2I_n\)，是加在对角线元素上的，不是每个位置都加2。这个惯性错误">
+    <meta name="description" content="随笔-每日bug系列_2021-11-05 Bug 1 计算矩阵特征值，求行列式时，一定要写成  的形式，否则展开求解时极容易出错(今天计算行列式看着原矩阵脑补写特征多项式一连写错五次的痛，对自己的算术能力表示深刻怀疑) Bug 2 记住 ，是加在对角线元素上的，不是每个位置都加2。这个惯性错误犯了好多次了！！ Bug 3 相似矩阵有相同特征值，但逆命题不成立(即有相同特征值，包括">
 <meta property="og:type" content="article">
 <meta property="og:title" content="随笔-每日bug系列（2021-11-05）">
 <meta property="og:url" content="https://oier99.cn/posts/c0437afa/index.html">
 <meta property="og:site_name" content="Oier99">
-<meta property="og:description" content="随笔-每日bug系列_2021-11-05 Bug 1 计算矩阵特征值，求行列式\(|\lambda I_n - A|\)时，一定要写成 $$ $$ 的形式，否则展开求解时极容易出错(今天计算行列式看着原矩阵脑补写特征多项式一连写错五次的痛，对自己的算术能力表示深刻怀疑) Bug 2 记住 \(A + 2&#x3D; A + 2I_n\)，是加在对角线元素上的，不是每个位置都加2。这个惯性错误">
+<meta property="og:description" content="随笔-每日bug系列_2021-11-05 Bug 1 计算矩阵特征值，求行列式时，一定要写成  的形式，否则展开求解时极容易出错(今天计算行列式看着原矩阵脑补写特征多项式一连写错五次的痛，对自己的算术能力表示深刻怀疑) Bug 2 记住 ，是加在对角线元素上的，不是每个位置都加2。这个惯性错误犯了好多次了！！ Bug 3 相似矩阵有相同特征值，但逆命题不成立(即有相同特征值，包括">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg">
+<meta property="og:image" content="https://s2.loli.net/2023/07/11/O4JGalK2euFCsjI.jpg">
 <meta property="article:published_time" content="2021-11-05T15:05:03.000Z">
-<meta property="article:modified_time" content="2023-01-03T03:56:52.521Z">
+<meta property="article:modified_time" content="2023-07-11T00:43:15.426Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="特征值">
 <meta property="article:tag" content="矩阵理论">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg">
+<meta name="twitter:image" content="https://s2.loli.net/2023/07/11/O4JGalK2euFCsjI.jpg">
   
   
   
@@ -79,7 +79,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+    var CONFIG = {"hostname":"oier99.cn","root":"/","version":"1.9.5","typing":{"enable":true,"typeSpeed":100,"cursorChar":"|","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":{"measurement_id":null},"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":"7BL86tkKW6DaLSAPakWTB3Az-MdYXbMMI","app_key":"am9pKcTN7A1b0s0E9Y0h1kGd","server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -93,7 +93,19 @@
   
 
   
-
+    <!-- Google tag (gtag.js) -->
+    <script async>
+      if (!Fluid.ctx.dnt) {
+        Fluid.utils.createScript("https://www.googletagmanager.com/gtag/js?id=", function() {
+          window.dataLayer = window.dataLayer || [];
+          function gtag() {
+            dataLayer.push(arguments);
+          }
+          gtag('js', new Date());
+          gtag('config', '');
+        });
+      }
+    </script>
   
 
   
@@ -109,7 +121,11 @@
 
 
   
-<meta name="generator" content="Hexo 6.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -262,7 +278,7 @@
   
 
 <div id="banner" class="banner" parallax=true
-     style="background: url('https://i.loli.net/2021/09/30/tfhTo6NrOJKRikm.jpg') no-repeat center center; background-size: cover;">
+     style="background: url('https://s2.loli.net/2023/07/11/O4JGalK2euFCsjI.jpg') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
       <div class="banner-text text-center fade-in-up">
@@ -296,7 +312,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          348 字
+          312 字
         
       </span>
     
@@ -348,20 +364,18 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <!-- SEO header -->
-            <h1 style="display: none">随笔-每日bug系列（2021-11-05）</h1>
+            <h1 id="seo-header">随笔-每日bug系列（2021-11-05）</h1>
             
             
               <div class="markdown-body">
                 
                 <h1 id="随笔-每日bug系列_2021-11-05">随笔-每日bug系列_2021-11-05</h1>
 <h2 id="bug-1">Bug 1</h2>
-<p>计算矩阵特征值，求行列式<span class="math inline">\(|\lambda I_n -
-A|\)</span>时，一定要写成 $$ $$
+<p>计算矩阵特征值，求行列式<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.564ex;" xmlns="http://www.w3.org/2000/svg" width="9.183ex" height="2.26ex" role="img" focusable="false" viewBox="0 -749.5 4058.7 999" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-14-TEX-N-7C" d="M139 -249H137Q125 -249 119 -235V251L120 737Q130 750 139 750Q152 750 159 735V-235Q151 -249 141 -249H139Z"></path><path id="MJX-14-TEX-I-1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path><path id="MJX-14-TEX-I-1D43C" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path><path id="MJX-14-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-14-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-14-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mo" transform="translate(0 -0.5)"><use data-c="7C" xlink:href="#MJX-14-TEX-N-7C"></use></g><g data-mml-node="mi" transform="translate(278,0)"><use data-c="1D706" xlink:href="#MJX-14-TEX-I-1D706"></use></g><g data-mml-node="msub" transform="translate(861,0)"><g data-mml-node="mi"><use data-c="1D43C" xlink:href="#MJX-14-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(473,-150) scale(0.707)"><use data-c="1D45B" xlink:href="#MJX-14-TEX-I-1D45B"></use></g></g><g data-mml-node="mo" transform="translate(2030.5,0)"><use data-c="2212" xlink:href="#MJX-14-TEX-N-2212"></use></g><g data-mml-node="mi" transform="translate(3030.7,0)"><use data-c="1D434" xlink:href="#MJX-14-TEX-I-1D434"></use></g><g data-mml-node="mo" transform="translate(3780.7,0) translate(0 -0.5)"><use data-c="7C" xlink:href="#MJX-14-TEX-N-7C"></use></g></g></g></svg></mjx-container>时，一定要写成 <mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -4.355ex;" xmlns="http://www.w3.org/2000/svg" width="31.5ex" height="9.842ex" role="img" focusable="false" viewBox="0 -2425 13922.9 4350" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-13-TEX-S4-23A1" d="M319 -645V1154H666V1070H403V-645H319Z"></path><path id="MJX-13-TEX-S4-23A3" d="M319 -644V1155H403V-560H666V-644H319Z"></path><path id="MJX-13-TEX-S4-23A2" d="M319 0V602H403V0H319Z"></path><path id="MJX-13-TEX-I-1D706" d="M166 673Q166 685 183 694H202Q292 691 316 644Q322 629 373 486T474 207T524 67Q531 47 537 34T546 15T551 6T555 2T556 -2T550 -11H482Q457 3 450 18T399 152L354 277L340 262Q327 246 293 207T236 141Q211 112 174 69Q123 9 111 -1T83 -12Q47 -12 47 20Q47 37 61 52T199 187Q229 216 266 252T321 306L338 322Q338 323 288 462T234 612Q214 657 183 657Q166 657 166 673Z"></path><path id="MJX-13-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-13-TEX-I-1D44E" d="M33 157Q33 258 109 349T280 441Q331 441 370 392Q386 422 416 422Q429 422 439 414T449 394Q449 381 412 234T374 68Q374 43 381 35T402 26Q411 27 422 35Q443 55 463 131Q469 151 473 152Q475 153 483 153H487Q506 153 506 144Q506 138 501 117T481 63T449 13Q436 0 417 -8Q409 -10 393 -10Q359 -10 336 5T306 36L300 51Q299 52 296 50Q294 48 292 46Q233 -10 172 -10Q117 -10 75 30T33 157ZM351 328Q351 334 346 350T323 385T277 405Q242 405 210 374T160 293Q131 214 119 129Q119 126 119 118T118 106Q118 61 136 44T179 26Q217 26 254 59T298 110Q300 114 325 217T351 328Z"></path><path id="MJX-13-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path id="MJX-13-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-13-TEX-N-22EF" d="M78 250Q78 274 95 292T138 310Q162 310 180 294T199 251Q199 226 182 208T139 190T96 207T78 250ZM525 250Q525 274 542 292T585 310Q609 310 627 294T646 251Q646 226 629 208T586 190T543 207T525 250ZM972 250Q972 274 989 292T1032 310Q1056 310 1074 294T1093 251Q1093 226 1076 208T1033 190T990 207T972 250Z"></path><path id="MJX-13-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-13-TEX-N-22EE" d="M78 30Q78 54 95 72T138 90Q162 90 180 74T199 31Q199 6 182 -12T139 -30T96 -13T78 30ZM78 440Q78 464 95 482T138 500Q162 500 180 484T199 441Q199 416 182 398T139 380T96 397T78 440ZM78 840Q78 864 95 882T138 900Q162 900 180 884T199 841Q199 816 182 798T139 780T96 797T78 840Z"></path><path id="MJX-13-TEX-S4-23A4" d="M0 1070V1154H347V-645H263V1070H0Z"></path><path id="MJX-13-TEX-S4-23A6" d="M263 -560V1155H347V-644H0V-560H263Z"></path><path id="MJX-13-TEX-S4-23A5" d="M263 0V602H347V0H263Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mrow"><g data-mml-node="mo"><use data-c="23A1" xlink:href="#MJX-13-TEX-S4-23A1" transform="translate(0,1271)"></use><use data-c="23A3" xlink:href="#MJX-13-TEX-S4-23A3" transform="translate(0,-1281)"></use><svg width="667" height="952" y="-226" x="0" viewBox="0 238 667 952"><use data-c="23A2" xlink:href="#MJX-13-TEX-S4-23A2" transform="scale(1,2.372)"></use></svg></g><g data-mml-node="mtable" transform="translate(667,0)"><g data-mml-node="mtr" transform="translate(0,1675)"><g data-mml-node="mtd"><g data-mml-node="mi"><use data-c="1D706" xlink:href="#MJX-13-TEX-I-1D706"></use></g><g data-mml-node="mo" transform="translate(805.2,0)"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(1805.4,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-13-TEX-N-31"></use><use data-c="31" xlink:href="#MJX-13-TEX-N-31" transform="translate(500,0)"></use></g></g></g></g><g data-mml-node="mtd" transform="translate(4638.3,0)"><g data-mml-node="mo"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-13-TEX-N-31"></use><use data-c="32" xlink:href="#MJX-13-TEX-N-32" transform="translate(500,0)"></use></g></g></g></g><g data-mml-node="mtd" transform="translate(8249.1,0)"><g data-mml-node="mo"><use data-c="22EF" xlink:href="#MJX-13-TEX-N-22EF"></use></g></g><g data-mml-node="mtd" transform="translate(10421.1,0)"><g data-mml-node="mo"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="31" xlink:href="#MJX-13-TEX-N-31"></use></g><g data-mml-node="mi" transform="translate(500,0)"><use data-c="1D45B" xlink:href="#MJX-13-TEX-I-1D45B"></use></g></g></g></g></g><g data-mml-node="mtr" transform="translate(0,275)"><g data-mml-node="mtd" transform="translate(513.7,0)"><g data-mml-node="mo"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-13-TEX-N-32"></use><use data-c="31" xlink:href="#MJX-13-TEX-N-31" transform="translate(500,0)"></use></g></g></g></g><g data-mml-node="mtd" transform="translate(4124.6,0)"><g data-mml-node="mi"><use data-c="1D706" xlink:href="#MJX-13-TEX-I-1D706"></use></g><g data-mml-node="mo" transform="translate(805.2,0)"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(1805.4,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-13-TEX-N-32"></use><use data-c="32" xlink:href="#MJX-13-TEX-N-32" transform="translate(500,0)"></use></g></g></g></g><g data-mml-node="mtd" transform="translate(8249.1,0)"><g data-mml-node="mo"><use data-c="22EF" xlink:href="#MJX-13-TEX-N-22EF"></use></g></g><g data-mml-node="mtd" transform="translate(10421.1,0)"><g data-mml-node="mo"><use data-c="2212" xlink:href="#MJX-13-TEX-N-2212"></use></g><g data-mml-node="msub" transform="translate(778,0)"><g data-mml-node="mi"><use data-c="1D44E" xlink:href="#MJX-13-TEX-I-1D44E"></use></g><g data-mml-node="TeXAtom" transform="translate(562,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mn"><use data-c="32" xlink:href="#MJX-13-TEX-N-32"></use></g><g data-mml-node="mi" transform="translate(500,0)"><use data-c="1D45B" xlink:href="#MJX-13-TEX-I-1D45B"></use></g></g></g></g></g><g data-mml-node="mtr" transform="translate(0,-1675)"><g data-mml-node="mtd" transform="translate(1423.3,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><use data-c="22EE" xlink:href="#MJX-13-TEX-N-22EE"></use></g></g></g><g data-mml-node="mtd" transform="translate(5547.8,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><use data-c="22EE" xlink:href="#MJX-13-TEX-N-22EE"></use></g></g></g><g data-mml-node="mtd" transform="translate(8696.1,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><use data-c="22EE" xlink:href="#MJX-13-TEX-N-22EE"></use></g></g></g><g data-mml-node="mtd" transform="translate(11366,0)"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mo"><use data-c="22EE" xlink:href="#MJX-13-TEX-N-22EE"></use></g></g></g></g></g><g data-mml-node="mo" transform="translate(13255.9,0)"><use data-c="23A4" xlink:href="#MJX-13-TEX-S4-23A4" transform="translate(0,1271)"></use><use data-c="23A6" xlink:href="#MJX-13-TEX-S4-23A6" transform="translate(0,-1281)"></use><svg width="667" height="952" y="-226" x="0" viewBox="0 238 667 952"><use data-c="23A5" xlink:href="#MJX-13-TEX-S4-23A5" transform="scale(1,2.372)"></use></svg></g></g></g></g></svg></mjx-container>
 的形式，否则展开求解时极容易出错(今天计算行列式看着原矩阵脑补写特征多项式一连写错五次的痛，对自己的算术能力表示深刻怀疑)</p>
 <h2 id="bug-2">Bug 2</h2>
-<p>记住 <span class="math inline">\(A + 2= A +
-2I_n\)</span>，是加在对角线元素上的，不是每个位置都加2。这个惯性错误犯了好多次了！！</p>
+<p>记住
+<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.357ex;" xmlns="http://www.w3.org/2000/svg" width="16.348ex" height="1.977ex" role="img" focusable="false" viewBox="0 -716 7225.7 873.8" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="MJX-13-TEX-I-1D434" d="M208 74Q208 50 254 46Q272 46 272 35Q272 34 270 22Q267 8 264 4T251 0Q249 0 239 0T205 1T141 2Q70 2 50 0H42Q35 7 35 11Q37 38 48 46H62Q132 49 164 96Q170 102 345 401T523 704Q530 716 547 716H555H572Q578 707 578 706L606 383Q634 60 636 57Q641 46 701 46Q726 46 726 36Q726 34 723 22Q720 7 718 4T704 0Q701 0 690 0T651 1T578 2Q484 2 455 0H443Q437 6 437 9T439 27Q443 40 445 43L449 46H469Q523 49 533 63L521 213H283L249 155Q208 86 208 74ZM516 260Q516 271 504 416T490 562L463 519Q447 492 400 412L310 260L413 259Q516 259 516 260Z"></path><path id="MJX-13-TEX-N-2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path><path id="MJX-13-TEX-N-32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path id="MJX-13-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-13-TEX-I-1D43C" d="M43 1Q26 1 26 10Q26 12 29 24Q34 43 39 45Q42 46 54 46H60Q120 46 136 53Q137 53 138 54Q143 56 149 77T198 273Q210 318 216 344Q286 624 286 626Q284 630 284 631Q274 637 213 637H193Q184 643 189 662Q193 677 195 680T209 683H213Q285 681 359 681Q481 681 487 683H497Q504 676 504 672T501 655T494 639Q491 637 471 637Q440 637 407 634Q393 631 388 623Q381 609 337 432Q326 385 315 341Q245 65 245 59Q245 52 255 50T307 46H339Q345 38 345 37T342 19Q338 6 332 0H316Q279 2 179 2Q143 2 113 2T65 2T43 1Z"></path><path id="MJX-13-TEX-I-1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></defs><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><use data-c="1D434" xlink:href="#MJX-13-TEX-I-1D434"></use></g><g data-mml-node="mo" transform="translate(972.2,0)"><use data-c="2B" xlink:href="#MJX-13-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(1972.4,0)"><use data-c="32" xlink:href="#MJX-13-TEX-N-32"></use></g><g data-mml-node="mo" transform="translate(2750.2,0)"><use data-c="3D" xlink:href="#MJX-13-TEX-N-3D"></use></g><g data-mml-node="mi" transform="translate(3806,0)"><use data-c="1D434" xlink:href="#MJX-13-TEX-I-1D434"></use></g><g data-mml-node="mo" transform="translate(4778.2,0)"><use data-c="2B" xlink:href="#MJX-13-TEX-N-2B"></use></g><g data-mml-node="mn" transform="translate(5778.4,0)"><use data-c="32" xlink:href="#MJX-13-TEX-N-32"></use></g><g data-mml-node="msub" transform="translate(6278.4,0)"><g data-mml-node="mi"><use data-c="1D43C" xlink:href="#MJX-13-TEX-I-1D43C"></use></g><g data-mml-node="mi" transform="translate(473,-150) scale(0.707)"><use data-c="1D45B" xlink:href="#MJX-13-TEX-I-1D45B"></use></g></g></g></g></svg></mjx-container>，是加在对角线元素上的，不是每个位置都加2。这个惯性错误犯了好多次了！！</p>
 <h2 id="bug-3">Bug 3</h2>
 <p>相似矩阵有相同特征值，但逆命题不成立(即有相同特征值，包括每个特征值的代数重数也相同的两个矩阵不一定相似)。因为可能有不同的Jordan标准型形式。比如一个矩阵可以对角化，相似于某个对角阵；而另一个矩阵无法对角化，只能相似于某个Jordan标准型，相同特征值个数的Jordan标准型又有很多种，所以导致这两个矩阵无法相似。</p>
 
@@ -404,9 +418,9 @@ A|\)</span>时，一定要写成 $$ $$
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E7%89%B9%E5%BE%81%E5%80%BC/">#特征值</a>
+        <a href="/tags/%E7%89%B9%E5%BE%81%E5%80%BC/" class="print-no-link">#特征值</a>
       
-        <a href="/tags/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/">#矩阵理论</a>
+        <a href="/tags/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA/" class="print-no-link">#矩阵理论</a>
       
     </div>
   
@@ -442,19 +456,19 @@ A|\)</span>时，一定要写成 $$ $$
             
               
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="BY - 署名">
                     <i class="iconfont icon-by"></i>
                   </span>
                 </a>
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
                     <i class="iconfont icon-nc"></i>
                   </span>
                 </a>
               
-                <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
                   <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
                     <i class="iconfont icon-sa"></i>
                   </span>
@@ -485,8 +499,8 @@ A|\)</span>时，一定要写成 $$ $$
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/7e08a53a/" title="课程专题-矩阵理论之矩阵对角化的条件汇总">
-                        <span class="hidden-mobile">课程专题-矩阵理论之矩阵对角化的条件汇总</span>
+                      <a href="/posts/7e08a53a/" title="课程专题：矩阵理论(a)——矩阵对角化的条件汇总">
+                        <span class="hidden-mobile">课程专题：矩阵理论(a)——矩阵对角化的条件汇总</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -644,7 +658,7 @@ A|\)</span>时，一定要写成 $$ $$
   </script>
 
 
-<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/jquery/3.6.4/jquery.min.js" ></script>
 <script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
@@ -677,7 +691,7 @@ A|\)</span>时，一定要写成 $$ $$
 
   
 <script>
-  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.20.1/tocbot.min.js', function() {
     var toc = jQuery('#toc');
     if (toc.length === 0 || !window.tocbot) { return; }
     var boardCtn = jQuery('#board-ctn');

@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
 <meta property="article:published_time" content="2023-02-11T22:58:48.000Z">
-<meta property="article:modified_time" content="2023-09-07T17:03:19.535Z">
+<meta property="article:modified_time" content="2023-09-07T17:09:18.564Z">
 <meta property="article:author" content="zhangzw12319">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
@@ -495,7 +495,7 @@ Demo代码--快来戳我┗|｀O′|┛ 嗷~~
 深度网络对精度的适当下降，如从FL32变为BF32格式，不会有收敛性上的太大损失；2.精度适当的截取下降，配合上混合精度，可以给网络带来更多噪声，有利于防止过拟合，增强泛化能力。目前在自己代码上亲测效果，4090能加速5-6倍的训练速度，精度目前还在调bug中。</p></li>
 <li><p>支持条件: <code>torch.cuda.is_bf16_supported()</code></p>
 <p><img
-src="https://img-blog.csdnimg.cn/img_convert/d2203bd61c51acf4808f9153b8d9dbab.png" srcset="/img/loading.gif" lazyload /></p></li>
+src="https://s2.loli.net/2023/09/08/SinMrh4NFPKsELf.png" srcset="/img/loading.gif" lazyload /></p></li>
 </ul></li>
 <li><p>总原则：CPU
 把算子和任务下发到CUDA上。尽可能不要让CUDA等CPU，CPU一次性把没有数据依赖的算子下发完毕，然后让cuda去算。(下发的斜线越倾斜越好，cuda

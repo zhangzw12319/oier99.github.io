@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
 <meta property="article:published_time" content="2023-02-11T22:58:48.000Z">
-<meta property="article:modified_time" content="2023-12-17T10:52:57.779Z">
+<meta property="article:modified_time" content="2024-07-22T06:17:42.212Z">
 <meta property="article:author" content="zhangzw12319">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2023/02/12/1GCEIVwPzmD7Mr4.png">
@@ -310,7 +310,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          13k 字
+          14k 字
         
       </span>
     
@@ -321,7 +321,7 @@
         
         
         
-          109 分钟
+          116 分钟
         
       </span>
     
@@ -482,6 +482,20 @@ Demo代码--快来戳我┗|｀O′|┛ 嗷~~
 <li><p>分布式训练出来的权重再次load时候</p></li>
 </ol>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">if</span> args.resume:<br>        <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;load&#x27;</span>)<br>        pretrained_model = torch.load(model_load_path)<br>        <span class="hljs-comment"># 消除分布式训练时在保存参数的时候多出来的module.</span><br>        weights_dict = &#123;&#125;<br>        <span class="hljs-keyword">for</span> k, v <span class="hljs-keyword">in</span> pretrained_model.items():<br>            new_k = k.replace(<span class="hljs-string">&#x27;module.&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>) <span class="hljs-keyword">if</span> <span class="hljs-string">&#x27;module&#x27;</span> <span class="hljs-keyword">in</span> k <span class="hljs-keyword">else</span> k<br>            weights_dict[new_k] = v<br>        <span class="hljs-comment"># # debug的时候查看参数量</span><br>        <span class="hljs-comment"># model_dict = my_model.state_dict()</span><br>        my_model.load_state_dict(weights_dict)<br></code></pre></td></tr></table></figure>
+<ol start="5" type="1">
+<li>(2024.07更新)
+在使用多卡推理的时候，建议每个DDP进程把自己负责的每个图片文件的推理结果都同步过来，类似</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">dist.all_gather_object(ddp_metric_list, single_node_metric_dict)<br></code></pre></td></tr></table></figure>
+<p>来做多进程结果手机。这样多卡推理时metric计算误差最小，基本和单卡推理结果一模一样。不太建议比如每张卡先算个平均的分指标/求和算个总指标，然后只同步一个总的数字，然后再8个节点上算平均，这样误差大(甚至波动1个点)。</p>
+<ol start="6" type="1">
+<li>注意tensorboardX使用summary
+writer记录日志时,最好只用一个进程(比如rank0)来创建，或者每个进程日志创建地址名字结尾用进程名字作为隔离<code>(f"XXX_tb_process_&#123;rank&#125;")</code>，不然一直报错"File
+Exists"错误。</li>
+<li>通过如下方式，只对rank0进程上使用tqdm避免显示混乱。<code>_data_loader = tqdm(_data_loader, ascii=True) if self.rank==0 else _data_loader</code></li>
+<li>DDP多卡从obs远程下载/读取文件到云节点的Docker时，一定注意避免多个进程读/写同一个文件导致一致性冲突。比如如果在<code>__init__</code>阶段需要copy同一个文件到本地(8个进程都需要)，不如提前下载好到本地，然后执行代码；或者8个进程下载8次，每次文件名后缀用<code>f"_process_&#123;rank&#125;"</code>区分，，如果在<code>__get_item_</code>阶段读取文件，因为数据集会被8个进程完整分成8份互不相交的文件，不应该有读写冲突。所以关注不同文件名下的文件有没有重名现象，避免重名造成一些隐性的error。</li>
+<li>注意算推理时间的时候，还是尽可能把可视化和文件读写关闭一下。因为关闭可视化和文件读写，有可能会省去网络模型的某些操作，算FPS和Latency时能更快。</li>
+</ol>
 <h2 id="三.-pytorch-中节约时间开销的一些方法持续汇总">三. Pytorch
 中节约时间开销的一些方法(持续汇总)</h2>
 <ol type="1">

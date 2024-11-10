@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/07/11/vwKHlxUWBsYJMhC.jpg">
 <meta property="article:published_time" content="2022-12-29T02:17:16.000Z">
-<meta property="article:modified_time" content="2023-07-11T00:20:20.320Z">
+<meta property="article:modified_time" content="2024-11-10T04:04:32.502Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
@@ -311,7 +311,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          4.5k 字
+          5.7k 字
         
       </span>
     
@@ -322,7 +322,7 @@
         
         
         
-          38 分钟
+          48 分钟
         
       </span>
     
@@ -375,7 +375,7 @@
 <div class="note note-primary">
             <p>资料更新：用LaTeX优雅地书写伪代码——Algorithm2e简明指南</p><p>https://zhuanlan.zhihu.com/p/166418214</p><p>这篇网上找到的知乎讲的非常好，简明常用优雅~建议阅读</p>
           </div>
-<h2 id="latex-插入代码块的方法">LaTex 插入代码块的方法</h2>
+<h2 id="一latex-插入代码块的方法">一、LaTex 插入代码块的方法</h2>
 <p>参考资料：overleaf官方文档(https://www.overleaf.com/learn/latex/Code_listing)</p>
 <p><strong>方法1 使用verbatim环境</strong></p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;verbatim&#125;<span class="hljs-string"></span><br><span class="hljs-string">% 插入你的代码</span><br><span class="hljs-string"></span><span class="hljs-keyword">\end</span>&#123;verbatim&#125;<br></code></pre></td></tr></table></figure>
@@ -393,13 +393,49 @@
 假如定义了多个style可以选择一个来用)，最后在花括号里选择引用的代码文件。</p>
 <p>也可以选择创建一个环境，如下：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>[languange=Python]&#123;lstlisting&#125;<br><span class="hljs-comment">% 代码块</span><br><span class="hljs-keyword">\end</span>&#123;lstlisting&#125;<br></code></pre></td></tr></table></figure>
-<h2 id="latex中插入伪代码的方法">LaTex中插入伪代码的方法</h2>
+<h2 id="二latex中插入伪代码的方法">二、LaTex中插入伪代码的方法</h2>
 <p>常用的伪代码宏包有<code>algorithm</code>, <code>algorithm2e</code>,
-``等等。那么如何选择使用呢？首先，如果有论文投稿计划的话，按照相关期刊/会议要求LaTex使用伪代码的规定使用哪些宏包；如果没有明确规定，那么怎么顺手怎么来。</p>
+<code>algorithmic</code>等等。那么如何选择使用呢？首先，如果有论文投稿计划的话，按照相关期刊/会议要求LaTex使用伪代码的规定使用哪些宏包；如果没有明确规定，那么怎么顺手怎么来。</p>
 <p><strong><code>algorithm</code>宏包</strong>，支持简单的伪代码格式。</p>
 <p>基本格式如下:</p>
-<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;algorithm&#125;[H]<br>	<span class="hljs-keyword">\KwIn</span>&#123;XXX&#125;		<span class="hljs-comment">% 算法输入</span><br>    <span class="hljs-keyword">\KwOut</span>&#123;XXX&#125;		<span class="hljs-comment">% 算法输出</span><br>    <span class="hljs-keyword">\BlankLine</span><br>    <span class="hljs-keyword">\caption</span>&#123;XXX&#125;	<span class="hljs-comment">% 算法标题</span><br>    <br>    <span class="hljs-comment">%写伪代码</span><br><span class="hljs-keyword">\end</span>&#123;algorithm&#125;<br></code></pre></td></tr></table></figure>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>&#123;algorithm&#125;[htbp]<br>	<span class="hljs-keyword">\KwIn</span>&#123;XXX&#125;		<span class="hljs-comment">% 算法输入</span><br>    <span class="hljs-keyword">\KwOut</span>&#123;XXX&#125;		<span class="hljs-comment">% 算法输出</span><br>    <span class="hljs-keyword">\BlankLine</span><br>    <span class="hljs-keyword">\caption</span>&#123;XXX&#125;	<span class="hljs-comment">% 算法标题</span><br>    <span class="hljs-keyword">\label</span>&#123;&#125; <span class="hljs-comment">% 定义该段算法的标签</span><br>    <br>    <span class="hljs-comment">%写伪代码</span><br><span class="hljs-keyword">\end</span>&#123;algorithm&#125;<br></code></pre></td></tr></table></figure>
+<div class="note note-danger">
+            <p>algorithm算法环境中<code>\label{}</code>尽量紧跟在<code>\caption{}</code>后面,而且五个命令的顺序尽可能和示例中一样，不然使用<code>\cref{}</code>时可能会出现奇怪的问题。</p><p>聪明的联网版GPT4o给的解释是:在 LaTeX 中，<code>\label</code>的位置很重要，因为它引用的是最近的编号对象。如果 <code>\label</code> 在<code>\caption</code>之前，可能会默认引用到前一个环境的编号或行号，导致错误。放在<code>\caption</code>后面可以确保它引用的是当前算法的编号。这样就能正确地使用<code>cleveref</code> 进行引用。确保 <code>\label</code>紧跟在产生编号的命令之后是个好习惯，以避免类似问题。</p>
+          </div>
 <p><strong><code>algorithm2e</code>宏包</strong></p>
+<p>详细讲解强烈推荐这篇博客：https://blog.csdn.net/qq_43486745/article/details/124344365</p>
+<p>部分内容从该博客里“借鉴”，结合本人一些实践经验补充。</p>
+<p>Step-0 宏包参数使用</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\usepackage</span>[linesnumbered,ruled,vlined]&#123;algorithm2e&#125;<br></code></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>linesnumbered</td>
+<td>显示行号</td>
+</tr>
+<tr class="even">
+<td>ruled</td>
+<td>标题显示在上方，不加就默认显示在下方</td>
+</tr>
+<tr class="odd">
+<td>vlined</td>
+<td>代码段中用线连接</td>
+</tr>
+<tr class="even">
+<td>boxed</td>
+<td>将算法插入在一个盒子里</td>
+</tr>
+</tbody>
+</table>
+<div class="note note-warning">
+            <p>如果遇到一篇文档里有多段伪代码，第二段伪代码的行号没有重新开始计数的情况时，可以采用如下办法(Poweredby smart GPT4o)：</p><ul><li>如果是在algorithm2e环境中，可以在每段伪代码前加入<code>\setcounter{AlgoLine}{0}</code></li><li>如果是在algorithmic环境中，可以在每段伪代码前加入<code>\setcounter{ALC@line}{0}</code></li></ul>
+          </div>
 <p>step-1
 包裹在<code>algorithm</code>环境中(同时也要有<code>algorithm宏包</code>)</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\usepackage</span>[vlined,ruled,linesnumbered]&#123;algorithm2e&#125;<br></code></pre></td></tr></table></figure>
@@ -414,6 +450,87 @@
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\eIf</span>&#123;<span class="hljs-built_in">$</span>j<span class="hljs-built_in">$</span> is odd&#125;&#123;<br>if执行以及<br>&#125;&#123;else执行语句&#125;<br></code></pre></td></tr></table></figure>
 <p>step-5 定义子函数</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\SetKwFunction</span>&#123;FMain&#125;&#123;你定义的函数名，如gcd&#125;<br><span class="hljs-keyword">\SetKwProg</span>&#123;Fn&#125;&#123;Function&#125;&#123;:&#125;&#123;&#125;<br><span class="hljs-keyword">\Fn</span>&#123;<span class="hljs-keyword">\FMain</span>&#123;函数的参变量,如int a, int b&#125;&#125;&#123;<br>XXX		<span class="hljs-comment">% 函数内容</span><br>&#125;<br><span class="hljs-keyword">\textbf</span>&#123;End Function&#125;<br>...<br>c <span class="hljs-keyword">\leftarrow</span> gcd(a, b) <span class="hljs-comment">% 在某个地方调用</span><br></code></pre></td></tr></table></figure>
+<p>step-6 其他</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: center;">代码</th>
+<th style="text-align: center;">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">;</td>
+<td style="text-align: center;">行末添加行号并自动换行</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">插入算法名称</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“Data：输入信息”</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“Output：输出信息”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“Result：输出信息”</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">For循环</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">If条件判断</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">If-else判断语句</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">While循环</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">ForEach遍历</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“* 注释 *”</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“\注释”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示“每个结尾的end”</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;">显示行号</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p>step-7 修改算法部分为中文</p>
+<p>使用以下语句可将默认的“Algorithm”修改为中文“算法”</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs LaTex"><span class="hljs-keyword">\renewcommand</span>&#123;<span class="hljs-keyword">\algorithmcfname</span>&#125;&#123;算法&#125;<br></code></pre></td></tr></table></figure>
+<p>修改Input、Output为中文</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\SetKwInOut</span>&#123;KwIn&#125;&#123;输入&#125;<br><span class="hljs-keyword">\SetKwInOut</span>&#123;KwOut&#125;&#123;输出&#125;<br></code></pre></td></tr></table></figure>
+<p>自定义算法编号</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs LaTex"><span class="hljs-keyword">\renewcommand</span>&#123;<span class="hljs-keyword">\thealgocf</span>&#125;&#123;3-1&#125;<br></code></pre></td></tr></table></figure>
+<p>添加算法目录</p>
+<figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs LaTex"><span class="hljs-keyword">\renewcommand</span>&#123;<span class="hljs-keyword">\listalgorithmcfname</span>&#125;&#123;算<span class="hljs-keyword">\ </span>法<span class="hljs-keyword">\ </span>目<span class="hljs-keyword">\ </span>录&#125;<br><span class="hljs-comment">% 生成算法目录命令</span><br><span class="hljs-keyword">\listofalgorithms</span><br></code></pre></td></tr></table></figure>
+<hr />
 <p>e.g.1. 冒泡排序</p>
 <p>效果图：</p>
 <p><img src="https://s2.loli.net/2022/12/29/p3NC4QEujBvq9Fd.png" srcset="/img/loading.gif" lazyload style="zoom:80%;" /></p>

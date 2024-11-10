@@ -27,7 +27,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2023/07/11/vwKHlxUWBsYJMhC.jpg">
 <meta property="article:published_time" content="2022-12-29T02:17:16.000Z">
-<meta property="article:modified_time" content="2024-11-10T04:04:32.502Z">
+<meta property="article:modified_time" content="2024-11-10T04:31:09.564Z">
 <meta property="article:author" content="zhangzw12319">
 <meta property="article:tag" content="LaTex">
 <meta name="twitter:card" content="summary_large_image">
@@ -311,7 +311,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          5.7k 字
+          5.8k 字
         
       </span>
     
@@ -322,7 +322,7 @@
         
         
         
-          48 分钟
+          49 分钟
         
       </span>
     
@@ -394,6 +394,13 @@
 <p>也可以选择创建一个环境，如下：</p>
 <figure class="highlight latex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs latex"><span class="hljs-keyword">\begin</span>[languange=Python]&#123;lstlisting&#125;<br><span class="hljs-comment">% 代码块</span><br><span class="hljs-keyword">\end</span>&#123;lstlisting&#125;<br></code></pre></td></tr></table></figure>
 <h2 id="二latex中插入伪代码的方法">二、LaTex中插入伪代码的方法</h2>
+<h3 id="易出错的地方总结">2.1 易出错的地方总结</h3>
+<ol type="1">
+<li>注意换行的时候， <span
+style="color:orange"><strong>可以末尾用<code>\;</code>，或者多空一行，但是不要像写公式换行一行用<code>//</code></strong>
+</span>。<code>//</code>只是段内增加一行，不会开启新一行的编号。往往太长了放不下的时候可以<code>//</code>，如果要写下一行code还是用上述前两种方法。</li>
+</ol>
+<h3 id="插入伪代码的方法">2.2 插入伪代码的方法</h3>
 <p>常用的伪代码宏包有<code>algorithm</code>, <code>algorithm2e</code>,
 <code>algorithmic</code>等等。那么如何选择使用呢？首先，如果有论文投稿计划的话，按照相关期刊/会议要求LaTex使用伪代码的规定使用哪些宏包；如果没有明确规定，那么怎么顺手怎么来。</p>
 <p><strong><code>algorithm</code>宏包</strong>，支持简单的伪代码格式。</p>
